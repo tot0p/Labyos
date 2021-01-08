@@ -8,7 +8,10 @@ from pygame.locals import *
 pygame.init()
 
 
-#event
+#------------------------------------------------
+#---------------------Event----------------------
+#------------------------------------------------
+
 def eventGame():
     pass
 
@@ -17,6 +20,7 @@ def eventMenu():
         if escape(event) == 0:
             return 0
     return 1
+
 
 def escape(event):
     if event.type == pygame.QUIT :
