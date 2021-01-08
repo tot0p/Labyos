@@ -32,8 +32,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\level\" />
+    <Folder Include="assets\img\" />
+    <Folder Include="assets\level\level1\" />
     <Folder Include="moteur\" />
+    <Folder Include="assets\" />
     <Folder Include="view\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\config.txt" />
+    <Content Include="assets\level\level1\code.txt" />
+    <Content Include="assets\level\level1\level1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
