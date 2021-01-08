@@ -25,7 +25,7 @@
     <Compile Include="graphics.py" />
     <Compile Include="main.py" />
     <Compile Include="moteur\map.py" />
-    <Compile Include="moteur.py" />
+    <Compile Include="m.py" />
     <Compile Include="moteur\tiles.py" />
     <Compile Include="view\error.py">
       <SubType>Code</SubType>
