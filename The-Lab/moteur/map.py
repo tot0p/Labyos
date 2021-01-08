@@ -10,8 +10,8 @@ class Map(pygame.sprite.Group):
         self.encodageMap = []
         self.coordMap =[]
         self.__load(filenameMap,filenameCode)
-        for x in range(self.x//50):
-            for y in range(self.y//50):
+        for x in range(self.x):
+            for y in range(self.y):
                 self.coordMap.append((0+50*x,0+50*y))
                 print((0+50*x,0+50*y))
 
@@ -27,7 +27,7 @@ class Map(pygame.sprite.Group):
         self.y = len(self.encodageMap)
         self.x = self.__verifX()
         self.__mapBuild()
-        self.__listrectBuild()
+
         
     def __verifX(self):
         t = len(self.encodageMap[0])
@@ -46,10 +46,8 @@ class Map(pygame.sprite.Group):
                     self.tileslist.append(tile)
         self.nbtile = len(self.tileslist)
 
-    def __listrectBuild(self):
-        for i in range(self.nbtile):
-            rect = self.get_rect(i)
-            self.listRect.append([(rect.x,rect.y),(rect.x+rect.width,rect.y),(rect.x,rect.y+rect.height),(rect.x+rect.width,rect.y+rect.height)])
+    def get_rect(self,n):
+        return self.tileslist[n].get_rect()
 
     def aff(self,surface):
         self.draw(surface)
