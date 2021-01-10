@@ -1,21 +1,22 @@
 import pygame
 from moteur.fichier import Fichier
+from moteur.labyrinthe import Labyrinthe
 
 class Map(pygame.sprite.Group):
 
-    def __init__(self,filenameMap,filenameCode):
+    def __init__(self):
         super().__init__()
         self.tileslist = []  #liste d'objet des tiles
         self.nbtile = 0
         self.encodageMap = []
         self.coordMap =[]
-        self.__load(filenameMap,filenameCode)
-        for x in range(self.x):
-            for y in range(self.y):
-                self.coordMap.append((0+50*x,0+50*y))
-                print((0+50*x,0+50*y))
 
-    def __load(self,filenameMap,filenameCode):
+    def __createCoordMap(self):
+        for x in range(self.x//50):
+            for y in range(self.y//50):
+                self.coordMap.append((0+50*x,0+50*y))
+
+    def load(self,filenameMap,filenameCode):
         fichier = Fichier(filenameMap)
         code = Fichier(filenameCode)
         exist = fichier.existFile() and code.existFile()
@@ -26,8 +27,16 @@ class Map(pygame.sprite.Group):
             self.encodageMap[i] = self.encodageMap[i].split(",")
         self.y = len(self.encodageMap)
         self.x = self.__verifX()
-        self.__mapBuild()
+        self.__createCoordMap()
 
+    def create(self,x,y):
+        self.x,self.y = x,y
+        self.__createCoordMap()
+        self.encodageMap = Labyrinthe(self.coordMap)
+        f = Fichier('t.txt')
+        f.createFile()
+        f.writeTable(self.encodageMap)
+        
         
     def __verifX(self):
         t = len(self.encodageMap[0])
