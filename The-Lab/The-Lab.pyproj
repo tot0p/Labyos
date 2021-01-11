@@ -24,9 +24,15 @@
     <Compile Include="moteur\fichier.py" />
     <Compile Include="graphics.py" />
     <Compile Include="main.pyw" />
+    <Compile Include="moteur\Image.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="moteur\map.py" />
     <Compile Include="m.py" />
     <Compile Include="moteur\labyrinthe.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="moteur\window.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\tiles.py" />
@@ -38,6 +44,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\img\logo\" />
     <Folder Include="assets\level\" />
     <Folder Include="assets\img\" />
     <Folder Include="assets\level\level1\" />
@@ -47,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\config.txt" />
+    <Content Include="assets\img\logo\logo.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />
   </ItemGroup>
