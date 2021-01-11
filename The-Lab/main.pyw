@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 #import
-from graphics import *
-from m import *
-from moteur.map import *
+from moteur.window import Window
+from moteur.Image import Image
+from m import eventMenu,quit
 
 def main():
     init_graphic(500,500)
@@ -18,4 +18,15 @@ def main():
     
 
 
-main()
+def test():
+    img = Image('assets/img/logo/logo.png')
+    window = Window(500,500,'test',img)
+    run = 1
+    img.resize(100,100)
+    img.aff(window,150,150)
+    while run == 1:
+        window.update()
+        run = eventMenu()
+    quit()
+
+test()

@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="moteur\event.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="moteur\fichier.py" />
     <Compile Include="graphics.py" />
     <Compile Include="main.pyw" />

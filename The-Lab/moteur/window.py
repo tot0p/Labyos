@@ -28,11 +28,12 @@ class Window:
         self.W = int(W)
         self.H = int(H)
         self.window = self.display.set_mode((int(W),int(H)),fullscreen)
-        self.window.set_caption(self.name)
+        self.display.set_caption(self.name)
+        self.display.set_icon(icon.img)
         self.window.fill(bg_color)
         self.update()
-
-    def reload(self,W=self.W,H=self.H,bg_color=black,fullscreen=0):
+    
+    def reload(self,W,H,bg_color=black,fullscreen=0):
         self.W = int(W)
         self.H = int(H)
         self.window = self.display.set_mode((int(W),int(H)),fullscreen)
@@ -40,7 +41,7 @@ class Window:
         self.window.fill(bg_color)
         self.update()
 
-    def get_size():
+    def get_size(self):
         return (self.W , self.H)
 
     def update(self):
