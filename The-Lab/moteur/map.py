@@ -67,7 +67,17 @@ class Items(pygame.sprite.Sprite):
 
 class Tiles(pygame.sprite.Sprite):
 
-    def __init__(self):
+    def __init__(self,name,x,y):
         super().__init__()
+        tile_table = load_tile_table('assets/tilemap/tileset.png',16,16) #temp
+        self.image = pygame.transform.scale(tile_table[name],(50,50)) #temp
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
 
+    def texture_choose(self,name):
+        pass
+
+    def get_rect(self):
+        return self.rect
 

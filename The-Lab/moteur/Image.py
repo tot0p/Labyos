@@ -36,6 +36,12 @@ class Image:
         '''
         return self.rect
 
+    def get_image(self):
+        '''
+        permet de recuperer self.img
+        '''
+        return self.img
+
     def aff(self,window,X:int,Y:int):
         '''
         permet d'afficher l'image
