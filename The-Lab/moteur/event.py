@@ -15,5 +15,8 @@ def escape(event):
         return 0
     return 1
 
+def get_click(event):
+    pass
+
 def stop():
     pygame.quit()

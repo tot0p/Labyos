@@ -4,6 +4,7 @@
 from moteur.window import Window
 from moteur.Image import Image
 from moteur.event import *
+from moteur.mouse import get_PressedMouse
 
 def test():
     img = Image('assets/img/logo/logo.png')
@@ -15,6 +16,7 @@ def test():
     print(img.get_rect())
     while run == 1:
         window.update()
+        print(get_PressedMouse())
         for event in get_event():
             run = escape(event)
     stop()
