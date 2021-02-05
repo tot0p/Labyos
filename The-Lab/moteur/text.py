@@ -6,4 +6,9 @@ class Text:
     def __init__(self,text,color=black,font='Bold'):
         self.text = text
         self.color = color
-        self.font = font+'.ttf'
+        self.font = 'assets/font/'font+'.ttf'
+
+    
+
+    def aff(self):
+        pass

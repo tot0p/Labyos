@@ -21,12 +21,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="moteur\color.py" />
     <Compile Include="moteur\event.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\fichier.py" />
     <Compile Include="graphics.py" />
     <Compile Include="main.pyw" />
+    <Compile Include="moteur\forme.py" />
     <Compile Include="moteur\Image.py">
       <SubType>Code</SubType>
     </Compile>
@@ -41,6 +43,8 @@
     <Compile Include="moteur\player.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="moteur\text.py" />
+    <Compile Include="moteur\time.py" />
     <Compile Include="moteur\window.py">
       <SubType>Code</SubType>
     </Compile>
