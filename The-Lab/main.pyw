@@ -18,6 +18,7 @@ def test():
     print(img.get_rect())
     img.aff(window,150,150)
     print(img.get_rect())
+    print(F.space_taken())
     F.aff(5,5,window)
     while run == 1:
         window.update()
