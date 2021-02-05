@@ -23,6 +23,12 @@ class Window:
         self.update()
     
     def reload(self,W,H,bg_color=black,fullscreen=0):
+        '''
+        permet de recharger la fenetre
+        W(int) , H(int) represante la taille la fenetre
+        bg_color(tuple(r,g,b)) optionel
+        fullscreen(bool) optionel
+        '''
         self.W = int(W)
         self.H = int(H)
         self.window = self.display.set_mode((int(W),int(H)),fullscreen)
@@ -30,9 +36,21 @@ class Window:
         self.window.fill(bg_color)
         self.update()
 
+    def set_fullscreen(self):
+        '''
+        Mais en fullscreen ou en fenetre si deja en fullscreen
+        '''
+        self.display.toggle_fullscreen()
+
     def get_size(self):
+        '''
+        return un tuple de la taille de la fenetre
+        '''
         return (self.W , self.H)
 
     def update(self):
+        '''
+        permet d'afficher les nouveaux elements sur l'ecran
+        '''
         self.display.flip()
         
