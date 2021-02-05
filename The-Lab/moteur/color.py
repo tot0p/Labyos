@@ -18,3 +18,4 @@ silver=pygame.Color(206,206,206)
 turquoise=pygame.Color(37,253,233)
 white=pygame.Color(255,255,255)
 yellow=pygame.Color(255,255,0)
+

@@ -7,8 +7,10 @@ from moteur.event import *
 from moteur.time import *
 from moteur.mouse import get_PressedMouse , get_posMouse
 from moteur.text import *
+from controller.init import init
 
 def test():
+    init()
     img = Image('assets/img/logo/logo.png')
     window = Window(500,500,'test',img)
     run = 1
