@@ -4,6 +4,14 @@ from moteur.color import *
 class Window:
 
     def __init__(self,W,H,name,icon,bg_color=black,fullscreen=0):
+        '''
+        initialisation de la fenetre graphique
+        W(int) , H(int) represante la taille la fenetre
+        name(str) represante le nom de la fenetre
+        icon(Image (moteur.Image)) est l'icon de la fenetre graphique
+        bg_color(tuple(r,g,b)) optionel
+        fullscreen(bool) optionel
+        '''
         self.name = name
         self.display  = pygame.display
         self.W = int(W)

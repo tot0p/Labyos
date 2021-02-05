@@ -13,7 +13,7 @@ def test():
     window = Window(500,500,'test',img)
     run = 1
     tick = Tick(60)
-    F = Font('hello',18,color=white)
+    F = Font('hello',40,color=white,font='Pixel')
     img.resize(100,100)
     print(img.get_rect())
     img.aff(window,150,150)
