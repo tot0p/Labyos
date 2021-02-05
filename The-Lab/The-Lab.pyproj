@@ -57,6 +57,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\font\" />
     <Folder Include="assets\img\logo\" />
     <Folder Include="assets\level\" />
     <Folder Include="assets\img\" />
@@ -67,6 +68,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\config.txt" />
+    <Content Include="assets\font\Blocks.ttf" />
+    <Content Include="assets\font\Bold.ttf" />
+    <Content Include="assets\font\Future Narrow.ttf" />
+    <Content Include="assets\font\Future Square.ttf" />
+    <Content Include="assets\font\Future.ttf" />
+    <Content Include="assets\font\High Square.ttf" />
+    <Content Include="assets\font\High.ttf" />
+    <Content Include="assets\font\Mini Square.ttf" />
+    <Content Include="assets\font\Mini.ttf" />
+    <Content Include="assets\font\Pixel Square.ttf" />
+    <Content Include="assets\font\Pixel.ttf" />
+    <Content Include="assets\font\Rocket Square.ttf" />
+    <Content Include="assets\font\Rocket.ttf" />
+    <Content Include="assets\font\Space.ttf" />
+    <Content Include="assets\font\Thick.ttf" />
     <Content Include="assets\img\logo\logo.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />

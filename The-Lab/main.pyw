@@ -4,7 +4,7 @@
 from moteur.window import Window
 from moteur.Image import Image
 from moteur.event import *
-from moteur.time import Tick
+from moteur.time import *
 from moteur.mouse import get_PressedMouse , get_posMouse
 
 def test():
@@ -19,7 +19,7 @@ def test():
     while run == 1:
         window.update()
         #print(get_PressedMouse())
-        print(get_posMouse())
+        #print(get_posMouse())
         for event in get_event():
             run = escape(event)
         tick.set_tick()
