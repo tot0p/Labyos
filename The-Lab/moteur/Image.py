@@ -50,4 +50,4 @@ class Image:
         '''
         self.rect.x = X
         self.rect.y = Y
-        window.window.blit(self.img,(X,Y))
+        window.aff(self.img,X,Y)

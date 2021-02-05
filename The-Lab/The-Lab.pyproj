@@ -40,6 +40,9 @@
     <Compile Include="moteur\labyrinthe.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="moteur\mapV2.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="moteur\mouse.py">
       <SubType>Code</SubType>
     </Compile>

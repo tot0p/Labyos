@@ -23,5 +23,4 @@ class Font(pygame.font.Font):
         sur window de type Window
         avec comme cordonné au point haut gauche x et y
         '''
-        t =self.render(self.text,None,self.color)
-        window.window.blit(t,(x,y))
+        window.aff(self.render(self.text,0,self.color),x,y)

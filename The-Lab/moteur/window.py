@@ -54,3 +54,5 @@ class Window:
         '''
         self.display.flip()
         
+    def aff(self,elem,x,y):
+        self.window.blit(elem,(x,y))
