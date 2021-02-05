@@ -23,6 +23,9 @@ class Fichier:
         return contenuFinal
 
     def lectureTable(self):
+        '''
+        return un list des ligne du fichier
+        '''
         f = open(self.fName,'r',encoding=self.encodage)
         contenu = f.readlines()
         f.close()
@@ -120,6 +123,9 @@ class Fichier:
     #variableFile
 
     def variableFileLecture(self):
+        '''
+        return un dict des variables du fichiers
+        '''
         contenu = self.lectureTable()
         nbVariable = len(contenu)
         contenuFinal = {}

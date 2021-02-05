@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="controller\init.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="moteur\color.py" />
     <Compile Include="moteur\event.py">
       <SubType>Code</SubType>
@@ -64,10 +67,11 @@
     <Folder Include="assets\level\level1\" />
     <Folder Include="moteur\" />
     <Folder Include="assets\" />
+    <Folder Include="controller\" />
+    <Folder Include="donne\" />
     <Folder Include="view\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\config.txt" />
     <Content Include="assets\font\Blocks.ttf" />
     <Content Include="assets\font\Bold.ttf" />
     <Content Include="assets\font\Future Narrow.ttf" />
@@ -86,6 +90,10 @@
     <Content Include="assets\img\logo\logo.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />
+    <Content Include="donne\config.txt" />
+    <Content Include="donne\touche.txt">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
