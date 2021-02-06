@@ -24,6 +24,9 @@
     <Compile Include="controller\init.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="moteur\Button.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="moteur\color.py" />
     <Compile Include="moteur\event.py">
       <SubType>Code</SubType>

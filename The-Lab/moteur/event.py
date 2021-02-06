@@ -1,11 +1,17 @@
 import pygame
+from moteur.mouse import *
 
+def clicdroit(event):
+    if event.type == pygame.MOUSEBUTTONDOWN and get_PressedMouse()[0] :
+        return True , get_posMouse()
+    return False , None
 
 def keypressed(event):
     pressed = {}
     if event.type == pygame.KEYDOWN:
         pressed[event.key] = True
     return pressed
+
 
 def get_event():
     return pygame.event.get()

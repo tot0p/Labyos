@@ -15,3 +15,6 @@ def get_PressedMouse():
 
 def set_Mouse_visible():
     pass
+
+def Mouse_on_window():
+    return pygame.mouse.get_focused()
