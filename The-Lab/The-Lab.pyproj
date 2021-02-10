@@ -68,6 +68,7 @@
   <ItemGroup>
     <Folder Include="assets\font\" />
     <Folder Include="assets\img\logo\" />
+    <Folder Include="assets\img\player\" />
     <Folder Include="assets\level\" />
     <Folder Include="assets\img\" />
     <Folder Include="assets\level\level1\" />
@@ -94,6 +95,7 @@
     <Content Include="assets\font\Space.ttf" />
     <Content Include="assets\font\Thick.ttf" />
     <Content Include="assets\img\logo\logo.png" />
+    <Content Include="assets\img\player\playerIDLE.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />
     <Content Include="donne\config.txt" />

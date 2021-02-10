@@ -17,4 +17,7 @@ def set_Mouse_visible():
     pass
 
 def Mouse_on_window():
+    '''
+    renvoie True si la souris est sur la fenetre sinon False
+    '''
     return pygame.mouse.get_focused()

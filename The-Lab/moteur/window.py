@@ -9,8 +9,8 @@ class Window:
         W(int) , H(int) represante la taille la fenetre
         name(str) represante le nom de la fenetre
         icon(Image (moteur.Image)) est l'icon de la fenetre graphique
-        bg_color(tuple(r,g,b)) optionel
-        fullscreen(bool) optionel
+        bg_color(tuple(r,g,b)) optionel de base Noir
+        fullscreen(bool) optionel de base False
         '''
         self.name = name
         self.display  = pygame.display

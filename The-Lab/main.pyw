@@ -16,7 +16,7 @@ def test():
     run = 1
     tick = Tick(60)
     print(img.get_rect())
-    
+
     while run == 1:
         window.update()
         for event in get_event():
@@ -27,13 +27,13 @@ def test():
 
 img = Image('assets/img/logo/logo.png')
 img.resize(50,50)
-window = Window(2000,720,'test',img)
+window = Window(2000,720,'test',img,bg_color=white)
 run = 1
 tick = Tick(60)
 text= Font('Rousseau il est pas bo',100,'Future',salmon)
 
 b = Button(img,text)
-  
+
 while run == 1:
     window.update()
     for event in get_event():
