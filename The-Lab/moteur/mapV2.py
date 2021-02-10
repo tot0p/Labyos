@@ -32,7 +32,7 @@ class Map(pygame.sprite.Group):
     def aff(self,window):
         self.draw(window)
 
-def Tiles(pygame.sprite.Sprite):
+class Tiles(pygame.sprite.Sprite):
     def __init__(self,name,x,y):
         super().__init__()
         tile_table = load_tile_table('assets/tilemap/tileset.png',16,16) # a changer
