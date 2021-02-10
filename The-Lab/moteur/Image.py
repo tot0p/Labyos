@@ -7,8 +7,12 @@ class Image:
 
     def __init__(self,filename):
         self.filename = filename
-        self.img = pygame.image.load(filename)
-        self.rect = self.img.get_rect()
+        try :
+            self.img = pygame.image.load(filename)
+            self.rect = self.img.get_rect()
+        except : 
+            self.img = pygame.image.load('assets/img/texture-none.png')
+            self.rect = self.img.get_rect()
 
     def fondTransparant(self):
         '''
