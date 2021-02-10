@@ -6,7 +6,6 @@ class Image:
     '''
 
     def __init__(self,filename):
-        self.filename = filename
         try :
             self.img = pygame.image.load(filename)
             self.rect = self.img.get_rect()
