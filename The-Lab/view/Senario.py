@@ -1,5 +1,6 @@
-from moteur.Button import*
-from moteur.Image import*
+from moteur.Button import Button
+from moteur.Image import Image
+from moteur.text import Font
 
 class naration:
     def __init__(self,img):
@@ -15,5 +16,5 @@ class naration:
         pass
 
     def lecture(self,text):
-        img.aff(window,0,0)
-        text.aff(window,0,0)
+        img.aff(window,50,50)
+        t.aff(window,50,50)

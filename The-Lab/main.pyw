@@ -10,32 +10,29 @@ from moteur.text import *
 from moteur.Button import Button
 from moteur.player import Player
 from moteur.mapV2 import Map
-#from controller import Menu
 from view.Menu import Menu
 
 if __name__ == '__main__':
     view = ['menu',True]
     img = Image('assets/img/logo/logo.png')
     img.resize(50,50)
-    window = Window(500,500,'Labios',img)
+    window = Window(10,10,'Labios',img)
     run = 1
     text= Font('Rousseau il est pas bo',100,'Future',salmon)
     b = Button(img,text)
     tick = Tick(60)
-    #menu = Menu()
+    menu  = Menu()
     while run:
          window.update()
-         #if view[0] == 'menu':
-             #if view[1]:
-                 #view[1] == False
-                 #menu.aff(window)
-         b.aff(window,50,50)
-                 #Menu.start(window)
-             #Menu.update(window)
+         if view[0] == 'menu':
+             if view[1]:
+                 view[1] = False
+                 print("oui")
+                 menu.aff(window)
+             menu.affUpdate(window)
          for event in get_event():
-             #Menu.events(event)
-             #run = Menu.eventEscape(event)
-             run = escape(event)
+             menu.events(event)
+             run = menu.eventEscape(event)
          tick.set_tick()
          
     stop()

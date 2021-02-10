@@ -6,12 +6,13 @@ class Image:
     '''
 
     def __init__(self,filename):
-        try:
+        try :
             self.img = pygame.image.load(filename)
             self.rect = self.img.get_rect()
         except : 
             self.img = pygame.image.load('assets/img/texture-none.png')
             self.rect = self.img.get_rect()
+
     def fondTransparant(self):
         '''
         permet de rendre le fond transparent d'une image
@@ -44,7 +45,7 @@ class Image:
         '''
         return self.img
 
-    def aff(self,X:int,Y:int,window):
+    def aff(self,window,X:int,Y:int):
         '''
         permet d'afficher l'image
         sur window : Window

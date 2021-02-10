@@ -34,4 +34,9 @@ class Button:
     def aff(self,window,x,y):
         self.afficher=True
         self.img.aff(window,x,y)
+        #X2= self.rect.x+ self.rect.width               
+        #Y2=self.rect.y+ self.rect.height
+        #L= self.text.size()
+        #self.rect.x >L[0] and L[0] < X2
+        #self.rect.y >L[0] and L[0] < Y2
         #ecriture

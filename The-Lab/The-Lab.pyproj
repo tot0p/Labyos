@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>16795359-a17e-41d8-97f4-a2a3fb44ea79</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>m.py</StartupFile>
+    <StartupFile>main.pyw</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,9 +23,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="controller\init.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="controller\Menu.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\Button.py">

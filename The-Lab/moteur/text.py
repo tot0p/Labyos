@@ -17,7 +17,7 @@ class Font(pygame.font.Font):
         '''
         return self.size(self.text)
 
-    def aff(self,x:int,y:int,window):
+    def aff(self,window,x:int,y:int):
         '''
         affiche le texte
         sur window de type Window

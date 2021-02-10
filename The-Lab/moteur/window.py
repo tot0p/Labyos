@@ -32,7 +32,6 @@ class Window:
         self.W = int(W)
         self.H = int(H)
         self.window = self.display.set_mode((int(W),int(H)),fullscreen)
-        self.window.set_caption(self.name)
         self.window.fill(bg_color)
         self.update()
 
