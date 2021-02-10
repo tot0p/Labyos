@@ -4,13 +4,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>16795359-a17e-41d8-97f4-a2a3fb44ea79</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>main.pyw</StartupFile>
+    <StartupFile>m.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>The-Lab</Name>
     <RootNamespace>The-Lab</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="controller\init.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="controller\Menu.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\Button.py">
@@ -62,6 +66,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="view\gameRandom.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view\Menu.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view\Senario.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
