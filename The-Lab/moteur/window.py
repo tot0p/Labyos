@@ -20,7 +20,7 @@ class Window:
         self.display.set_caption(self.name)
         self.display.set_icon(icon.img)
         self.window.fill(bg_color)
-        self.update()
+        self.sprites = pygame.sprite.Group()
     
     def reload(self,W,H,bg_color=black,fullscreen=0):
         '''
@@ -56,3 +56,16 @@ class Window:
         
     def aff(self,elem,x,y):
         self.window.blit(elem,(x,y))
+
+    #beta
+
+    def addSprite(self,sprite):
+        self.sprites.add(sprite)
+
+    def affSprite(self):
+        self.sprites.draw(self.window)
+
+    def removeSprite(self,type):
+        for i in self.sprites:
+            if isinstance(i,type):
+                self.sprites.remove(i)

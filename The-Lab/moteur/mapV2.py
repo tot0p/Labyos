@@ -8,7 +8,7 @@ class Map(pygame.sprite.Group):
         self.window = window
         self.dictTiles = {}
         self.encodageMap = []
-        self.__load(filename)
+        #self.__load(filename)
         self.coordMap = []
 
     def __createCoordMap(self,taillecase):

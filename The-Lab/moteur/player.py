@@ -18,6 +18,10 @@ class Player(pygame.sprite.Sprite):
         #imgWalk
         self.imgWalk = imgWalk
 
+    def spawn(self,window):
+        window.addSprite(self)
+        
+
     def event(self):
         pass
 

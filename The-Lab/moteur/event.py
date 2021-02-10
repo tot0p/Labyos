@@ -1,7 +1,7 @@
 import pygame
 from moteur.mouse import *
 
-def clicdroit(event):
+def clicgauche(event):
     if event.type == pygame.MOUSEBUTTONDOWN and get_PressedMouse()[0] :
         return True , get_posMouse()
     return False , None
