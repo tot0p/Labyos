@@ -44,3 +44,8 @@ class Tiles(pygame.sprite.Sprite):
     def get_rect(self):
         return self.rect
 
+
+class scanner(pygame.sprite.Sprite):
+    def __init__(self):
+        pass
+
