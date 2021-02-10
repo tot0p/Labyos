@@ -18,8 +18,6 @@ if __name__ == '__main__':
     img.resize(50,50)
     window = Window(10,10,'Labios',img)
     run = 1
-    text= Font('Rousseau il est pas bo',100,'Future',salmon)
-    b = Button(img,text)
     tick = Tick(60)
     menu  = Menu()
     while run:
@@ -27,7 +25,6 @@ if __name__ == '__main__':
          if view[0] == 'menu':
              if view[1]:
                  view[1] = False
-                 print("oui")
                  menu.aff(window)
              menu.affUpdate(window)
          for event in get_event():
