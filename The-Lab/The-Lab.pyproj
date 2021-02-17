@@ -68,6 +68,12 @@
     <Compile Include="view\Menu.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="view\MenuJouer.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view\MenuLevel.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="view\Senario.py">
       <SubType>Code</SubType>
     </Compile>

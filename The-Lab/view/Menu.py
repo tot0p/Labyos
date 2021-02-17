@@ -16,9 +16,6 @@ class Menu:
         self.text= Font('Jouer',40,'Future',salmon) # peut changer
         self.text2=Font('option',40,'Future',salmon)
         self.text3=Font('quiter',40,'Future',salmon)
-        self.b = Button(self.img,self.text)
-        self.b2=Button(self.img2,self.text2)
-        self.b3=Button(self.img3,self.text3)
         self.button = [Button(self.img,self.text),Button(self.img2,self.text2),Button(self.img3,self.text3)]
         self.function = [lambda : self.__view('menujouer'), lambda : self.__view('option') , self.__exit]
         self.exit = False

@@ -11,6 +11,7 @@ from moteur.Button import Button
 from moteur.player import Player
 from moteur.mapV2 import Map
 from view.Menu import Menu
+from view.MenuJouer import MenuJouer
 
 if __name__ == '__main__':
     view = ['menu',True]
@@ -20,6 +21,7 @@ if __name__ == '__main__':
     run = 1
     tick = Tick(60)
     menu  = Menu()
+    menuJouer = MenuJouer()
     while run:
          window.update()
          if view[0] == 'menu':
@@ -27,9 +29,18 @@ if __name__ == '__main__':
                  view[1] = False
                  menu.aff(window)
              menu.affUpdate(window)
+         elif view[0] == 'menujouer':
+             if view[1]:
+                 view[1] = False
+                 menuJouer.aff(window)
+             menuJouer.affUpdate(window)
          for event in get_event():
-             view = menu.events(event)
-             run = menu.eventEscape(event)
+            if view[0] == 'menu':
+                view = menu.events(event)
+                run = menu.eventEscape(event)
+            elif view[0] == 'menujouer':
+                view = menuJouer.events(event)
+                run = menuJouer.eventEscape(event)
          tick.set_tick()
 
     stop()
