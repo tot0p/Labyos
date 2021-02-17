@@ -28,7 +28,7 @@ if __name__ == '__main__':
                  menu.aff(window)
              menu.affUpdate(window)
          for event in get_event():
-             menu.events(event)
+             view = menu.events(event)
              run = menu.eventEscape(event)
          tick.set_tick()
 
