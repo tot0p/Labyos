@@ -4,4 +4,5 @@ from moteur.Button import Button
 from moteur.color import *
 from moteur.event import *
 class MenuLevel:
-    pass
+    def __init__(self):
+        pass
