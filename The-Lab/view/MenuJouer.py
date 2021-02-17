@@ -18,7 +18,7 @@ class MenuJouer:
         self.font2= Font(8,'Thick',salmon)
         self.button = [Button(self.img,self.font,'Histoire'),Button(self.img2,self.font,'Endless'),Button(self.img3,self.font,'Créatif'),Button(self.img4,self.font2,'Retour')]
         self.function = [lambda : self.__view('menulevel'), lambda : self.__view('gameendless') , lambda : self.__view('gamecharger') ,lambda : self.__view('menu')]
-        self.view = ['menu',False]
+        self.view = ['menujouer',False]
 
     def __view(self,name):
         self.view = [name,True]
