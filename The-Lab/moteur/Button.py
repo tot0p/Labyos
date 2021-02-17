@@ -34,6 +34,12 @@ class Button:
     def aff(self,window,x,y):
         self.afficher=True
         self.img.aff(window,x,y)
-        #L= self.text.size()
-        
-        self.text.aff(window,x,y)
+        L=self.text.space_taken()
+        if L[0] >= self.rect.width and L[1] >= self.rect.height:
+             self.text.aff(window,x,y)
+        elif L[0] < self.rect.width and L[1] < self.rect.height:
+            t1=self.rect.width - L[0]
+            t2=self.rect.height - L[1]
+            self.text.aff(window,self.rect.x+(t1//2),self.rect.y+(t2//2))
+        else:
+            self.text.aff(window,x,y)
