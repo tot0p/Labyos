@@ -1,9 +1,10 @@
 import pygame
 from moteur.fichier import *
+from moteur.tiles import load_tile_table
 
 class Map(pygame.sprite.Group):
 
-    def __init__(self,window,filename,taillecase=(50,50)):
+    def __init__(self,window,filename):
         super().__init__()
         self.window = window
         self.dictTiles = {}

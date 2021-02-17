@@ -31,6 +31,6 @@ if __name__ == '__main__':
              menu.events(event)
              run = menu.eventEscape(event)
          tick.set_tick()
-         
+
     stop()
-                
+

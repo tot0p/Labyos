@@ -50,7 +50,7 @@ class Map(pygame.sprite.Group):
             for k in range(self.x):
                 if self.encodageMap[i][k] != 'None':
                     x,y = 0+50*k,0+50*i
-                    tile = Tile(int(self.encodageMap[i][k]),x,y)
+                    tile = Tiles(int(self.encodageMap[i][k]),x,y)
                     self.add(tile)
                     self.tileslist.append(tile)
         self.nbtile = len(self.tileslist)
