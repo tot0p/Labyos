@@ -13,10 +13,8 @@ class Menu:
         self.img.resize(200,50)
         self.img2.resize(200,50)
         self.img3.resize(200,50)
-        self.text= Font('Jouer',40,'Future',salmon) # peut changer
-        self.text2=Font('option',40,'Future',salmon)
-        self.text3=Font('quiter',40,'Future',salmon)
-        self.button = [Button(self.img,self.text),Button(self.img2,self.text2),Button(self.img3,self.text3)]
+        self.font= Font(20,'Thick',salmon)
+        self.button = [Button(self.img,self.font,'Jouer'),Button(self.img2,self.font,'Option'),Button(self.img3,self.font,'Quitter')]
         self.function = [lambda : self.__view('menujouer'), lambda : self.__view('option') , self.__exit]
         self.exit = False
         self.view = ['menu',False]
@@ -30,7 +28,6 @@ class Menu:
         
 
     def events(self,event):
-        print(self.view)
         if Mouse_on_window():
             click , posCursor = clicgauche(event)
             if click == True:
