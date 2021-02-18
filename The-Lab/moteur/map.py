@@ -7,10 +7,11 @@ class Map(pygame.sprite.Group):
     def __init__(self,window,filename):
         super().__init__()
         self.window = window
-        #self.dictTiles = {}
-        #self.encodageMap = []
-        #self.__load(filename)
-        #self.coordMap = []
+        self.dictTiles = {}
+        self.encodageMap = []
+        self.__load(filename)
+        self.coordMap = []
+        self.__createCoordMap((50,50))
 
     def __createCoordMap(self,taillecase):
         for x in range(self.window.W//taillecase[0]):
@@ -22,21 +23,28 @@ class Map(pygame.sprite.Group):
         if not f.existFile():
             print("Erreur le ficier n'existe pas")
             return
-        self.encodageMap = fichier.lectureTable()
+        self.encodageMap = f.lectureTable()
         for i in range(len(self.encodageMap)):
             self.encodageMap[i] = self.encodageMap[i].split(",")
         self.__mapBuild()
 
     def __mapBuild(self):
-        pass
+        for i in range(len(self.encodageMap)):
+            for k in range(len(self.encodageMap[0])):
+                if self.encodageMap[i][k] != 'None':
+                    x,y = 0+50*k,0+50*i
+                    tile = Tiles(int(self.encodageMap[i][k]),x,y)
+                    self.add(tile)
+                    #self.tileslist.append(tile)
+        #self.nbtile = len(self.tileslist)
 
     def aff(self,window):
-        self.draw(window)
+        self.draw(window.window)
 
 class Tiles(pygame.sprite.Sprite):
     def __init__(self,name,x,y):
         super().__init__()
-        tile_table = load_tile_table('assets/map/tileset.png',36,36) # a changer
+        tile_table = load_tile_table('assets/img/map/tileset.png',36,36) # a changer
         self.image = pygame.transform.scale(tile_table[name],(50,50)) # a changer utiliser l'objet Image
         self.rect = self.image.get_rect()
         self.rect.x = x

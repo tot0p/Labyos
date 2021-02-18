@@ -58,6 +58,7 @@ if __name__ == '__main__':
             if view[1]:
                 view[1] = False
                 game = Game(window,'assets/level/level1/level1.txt')
+                game.aff(window)
         for event in get_event():
            if Ismenu:
                view = menu.events(event)

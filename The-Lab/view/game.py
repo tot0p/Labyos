@@ -1,6 +1,7 @@
 from moteur.map import Map
 #import random
 from view.Load import Load
+from moteur.time import wait
 
 class Game:
 
@@ -13,4 +14,11 @@ class Game:
     def __load(self):
         load = Load()
         load.aff(self.window)
+        self.window.update()
+        wait(2000)
+
+    def aff(self,window):
+        window.reload(500,500)
+        self.map.aff(window)
+        #pass
         

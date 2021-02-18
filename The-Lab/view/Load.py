@@ -9,12 +9,18 @@ class Load:
         file = Fichier('donne/load.txt')
         self.contenu = file.lectureTable() #[ligne1,ligne2,ligne3] list de str
         self.font= [Font(8,'Thick',salmon),Font(8,'Pixel',salmon),Font(8,'Thick',salmon),Font(8,'Rocket',salmon)]
+        #self.color = [black,salmon]
+        #self.font_family = ['Thick','Pixel']
+
 
     def aff(self,window):
         
         window.reload(500,500)
         s=random.choice(self.contenu)
         s2 = random.choice(self.font)
+        #s2 = random.choice(self.color)
+        #s3 = random.choice(self.font_family)
+        #font = Font(40,s3,s2)
         t = s2.space_taken(s)
         s2.aff(window,s,(500-t[0])//2,(500-t[1])//2)
             
