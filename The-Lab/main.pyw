@@ -9,7 +9,6 @@ from moteur.mouse import *
 from moteur.text import *
 from moteur.Button import Button
 from moteur.player import Player
-from moteur.mapV2 import Map
 from view.Menu import Menu
 from view.MenuJouer import MenuJouer
 from view.MenuLevel import MenuLevel

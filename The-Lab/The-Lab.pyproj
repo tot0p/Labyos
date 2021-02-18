@@ -81,6 +81,7 @@
   <ItemGroup>
     <Folder Include="assets\font\" />
     <Folder Include="assets\img\logo\" />
+    <Folder Include="assets\img\map\" />
     <Folder Include="assets\img\player\" />
     <Folder Include="assets\level\" />
     <Folder Include="assets\img\" />
@@ -108,6 +109,7 @@
     <Content Include="assets\font\Space.ttf" />
     <Content Include="assets\font\Thick.ttf" />
     <Content Include="assets\img\logo\logo.png" />
+    <Content Include="assets\img\map\fulltile.png" />
     <Content Include="assets\img\player\playerIDLE.png" />
     <Content Include="assets\img\texture-none.png" />
     <Content Include="assets\level\level1\code.txt" />

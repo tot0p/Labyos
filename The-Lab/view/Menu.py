@@ -24,7 +24,8 @@ class Menu:
         self.exit = True
 
     def __view(self,name):
-        self.view = [name,True]
+        #self.view = [name,True]
+        return [name,True]
         
 
     def events(self,event):
@@ -32,8 +33,8 @@ class Menu:
             click , posCursor = clicgauche(event)
             if click == True:
                 for i in range(len(self.button)):
-                    g = self.button[i].EventClic(posCursor[0],posCursor[1],self.function[i])
-                    if g:   print(self.view);return self.view
+                    g , v = self.button[i].EventClic(posCursor[0],posCursor[1],self.function[i])
+                    if g:   return v
         return self.view
 
     def affUpdate(self,window):

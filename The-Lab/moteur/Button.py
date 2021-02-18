@@ -13,20 +13,23 @@ class Button:
 
     def EventClic(self,xC,yC,function):
         '''
-        Fonction qui permet de lancer une fonction en cliqaunt sur un buttones
+        Fonction qui permet de lancer une fonction en cliqaunt sur un bouton
         Prend en paramètre:
         xC= coordonnée du curseur en X
         xY= coordonnée du curseur en Y
         function est une fonction exécuter l'or d'un clic
+        et renvoie False et None si le clic n'est pas dans le bouton ou True et le return de function si il existe
         '''
         X2= self.rect.x+ self.rect.width               
         Y2=self.rect.y+ self.rect.height
         if (xC >= self.rect.x and xC <= X2) : 
             if (yC >= self.rect.y and yC <= Y2):               
             #if self.rect.collidepoint(xC,yC):
-                function()
-                return True
-        return False
+                t =function()
+                if t is not None:
+                     return True , t
+                return True, None
+        return False , None
         
 
     def EventHover(self,xC,yC):

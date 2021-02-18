@@ -16,12 +16,13 @@ class MenuJouer:
         self.img4.resize(50,50)
         self.font= Font(20,'Thick',salmon) 
         self.font2= Font(8,'Thick',salmon)
-        self.button = [Button(self.img,self.font,'Histoire'),Button(self.img2,self.font,'Endless'),Button(self.img3,self.font,'Créatif'),Button(self.img4,self.font2,'Retour')]
+        self.button = [Button(self.img,self.font,'Histoire'),Button(self.img2,self.font,'Endless'),Button(self.img3,self.font,'Creatif'),Button(self.img4,self.font2,'Retour')]
         self.function = [lambda : self.__view('menulevel'), lambda : self.__view('gameendless') , lambda : self.__view('gamecharger') ,lambda : self.__view('menu')]
         self.view = ['menujouer',False]
 
     def __view(self,name):
-        self.view = [name,True]
+        #self.view = [name,True]
+        return [name,True]
 
 
     def events(self,event):
@@ -29,8 +30,8 @@ class MenuJouer:
             click , posCursor = clicgauche(event)
             if click == True:
                 for i in range(len(self.button)):
-                    g = self.button[i].EventClic(posCursor[0],posCursor[1],self.function[i])
-                    if g:   print(self.view);return self.view
+                    g , v = self.button[i].EventClic(posCursor[0],posCursor[1],self.function[i])
+                    if g:   return v
         return self.view
 
     def affUpdate(self,window):
