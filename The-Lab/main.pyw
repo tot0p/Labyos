@@ -38,16 +38,19 @@ if __name__ == '__main__':
         window.update()
         if Ismenu:
             if view[1]:
+                print(view[0])
                 view[1] = False
                 menu.aff(window)
             menu.affUpdate(window)
         elif Ismenujouer:
             if view[1]:
+                print(view[0])
                 view[1] = False
                 menuJouer.aff(window)
             menuJouer.affUpdate(window)
         elif Ismenulevel:
             if view[1]:
+                print(view[0])
                 view[1] = False
                 menuLevel.aff(window)
             menuLevel.affUpdate(window)

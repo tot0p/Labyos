@@ -9,6 +9,7 @@ class Button:
         self.font = Font
         self.text = text
         self.afficher = False
+        self.isClick = False
 
     def EventClic(self,xC,yC,function):
         '''

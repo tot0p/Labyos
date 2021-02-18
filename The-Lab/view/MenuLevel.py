@@ -25,7 +25,8 @@ class MenuLevel:
             if click == True:
                 for i in range(len(self.button)):
                     g = self.button[i].EventClic(posCursor[0],posCursor[1],self.function[i])
-                    if g:   return self.view
+                    if g:   print(self.view);return self.view
+
         return self.view
 
 

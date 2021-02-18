@@ -39,12 +39,12 @@
     <Compile Include="moteur\Image.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="moteur\map.py" />
+    <Compile Include="moteur\mapAlpha.py" />
     <Compile Include="m.py" />
     <Compile Include="moteur\labyrinthe.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="moteur\mapV2.py">
+    <Compile Include="moteur\map.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\mouse.py">
@@ -62,7 +62,7 @@
     <Compile Include="view\error.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="view\gameRandom.py">
+    <Compile Include="view\game.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="view\Menu.py">
