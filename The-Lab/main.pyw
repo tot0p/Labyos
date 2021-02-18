@@ -13,13 +13,16 @@ from view.Menu import Menu
 from view.MenuJouer import MenuJouer
 from view.MenuLevel import MenuLevel
 from moteur.mouse import *
+from view.game import Game
+from moteur.Senario import naration
 
 
 def whoIsSelect(view):
     t = view[0]
-    if t == 'menu': return True,False,False
-    elif t == 'menujouer': return False,True,False
-    elif t == 'menulevel': return False,False,True
+    if t == 'menu': return True,False,False,False
+    elif t == 'menujouer': return False,True,False,False
+    elif t == 'menulevel': return False,False,True,False
+    elif t == 'gamecharger': return False,False,False,True
 
 
 if __name__ == '__main__':
@@ -32,27 +35,29 @@ if __name__ == '__main__':
     menu  = Menu()
     menuJouer = MenuJouer()
     menuLevel = MenuLevel()
+    game = None
     while run:
-        Ismenu , Ismenujouer, Ismenulevel = whoIsSelect(view)
+        Ismenu , Ismenujouer, Ismenulevel , Isgame= whoIsSelect(view)
         window.update()
         if Ismenu:
             if view[1]:
-                print(view[0])
                 view[1] = False
                 menu.aff(window)
             menu.affUpdate(window)
         elif Ismenujouer:
             if view[1]:
-                print(view[0])
                 view[1] = False
                 menuJouer.aff(window)
             menuJouer.affUpdate(window)
         elif Ismenulevel:
             if view[1]:
-                print(view[0])
                 view[1] = False
                 menuLevel.aff(window)
             menuLevel.affUpdate(window)
+        elif Isgame:
+            if view[1]:
+                view[1] = False
+                game = Game(window,'assets/level/level1/level1.txt')
         for event in get_event():
            if Ismenu:
                view = menu.events(event)
@@ -64,5 +69,7 @@ if __name__ == '__main__':
                view = menuLevel.events(event)
                run = menuLevel.eventEscape(event)
         tick.set_tick()
+        
+
     stop()
 

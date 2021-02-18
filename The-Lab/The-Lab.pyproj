@@ -58,11 +58,14 @@
     <Compile Include="moteur\window.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="moteur\tiles.py" />
+    <Compile Include="moteur\loadtiletable.py" />
     <Compile Include="view\error.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="view\game.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view\Load.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="view\Menu.py">
@@ -74,7 +77,7 @@
     <Compile Include="view\MenuLevel.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="view\Senario.py">
+    <Compile Include="moteur\Senario.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -109,12 +112,13 @@
     <Content Include="assets\font\Space.ttf" />
     <Content Include="assets\font\Thick.ttf" />
     <Content Include="assets\img\logo\logo.png" />
-    <Content Include="assets\img\map\fulltile.png" />
+    <Content Include="assets\img\map\tileset.png" />
     <Content Include="assets\img\player\playerIDLE.png" />
     <Content Include="assets\img\texture-none.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />
     <Content Include="donne\config.txt" />
+    <Content Include="donne\load.txt" />
     <Content Include="donne\touche.txt">
       <SubType>Code</SubType>
     </Content>

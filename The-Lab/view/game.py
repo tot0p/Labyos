@@ -1,12 +1,16 @@
 from moteur.map import Map
 #import random
+from view.Load import Load
 
-class game:
+class Game:
 
     def __init__(self,window,filname):
+        self.window = window
         self.view = []
         self.map = Map(window,filname)
         self.__load()
 
-    def __load():
-        pass
+    def __load(self):
+        load = Load()
+        load.aff(self.window)
+        

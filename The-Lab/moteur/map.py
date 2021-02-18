@@ -1,16 +1,16 @@
 import pygame
 from moteur.fichier import *
-from moteur.tiles import load_tile_table
+from moteur.loadtiletable import load_tile_table
 
 class Map(pygame.sprite.Group):
 
     def __init__(self,window,filename):
         super().__init__()
         self.window = window
-        self.dictTiles = {}
-        self.encodageMap = []
+        #self.dictTiles = {}
+        #self.encodageMap = []
         #self.__load(filename)
-        self.coordMap = []
+        #self.coordMap = []
 
     def __createCoordMap(self,taillecase):
         for x in range(self.window.W//taillecase[0]):
@@ -36,7 +36,7 @@ class Map(pygame.sprite.Group):
 class Tiles(pygame.sprite.Sprite):
     def __init__(self,name,x,y):
         super().__init__()
-        tile_table = load_tile_table('assets/tilemap/tileset.png',16,16) # a changer
+        tile_table = load_tile_table('assets/map/tileset.png',36,36) # a changer
         self.image = pygame.transform.scale(tile_table[name],(50,50)) # a changer utiliser l'objet Image
         self.rect = self.image.get_rect()
         self.rect.x = x

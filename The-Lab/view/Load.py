@@ -1,0 +1,21 @@
+import random
+from moteur.fichier import Fichier
+from moteur.text import Font
+from moteur.color import *
+
+class Load:
+
+    def __init__(self):
+        file = Fichier('donne/load.txt')
+        self.contenu = file.lectureTable() #[ligne1,ligne2,ligne3] list de str
+        self.font= [Font(8,'Thick',salmon),Font(8,'Pixel',salmon),Font(8,'Thick',salmon),Font(8,'Rocket',salmon)]
+
+    def aff(self,window):
+        
+        window.reload(500,500)
+        s=random.choice(self.contenu)
+        s2 = random.choice(self.font)
+        t = s2.space_taken(s)
+        s2.aff(window,s,(500-t[0])//2,(500-t[1])//2)
+            
+       
