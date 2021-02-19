@@ -96,8 +96,12 @@
     <Folder Include="view\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\font\Ballet.ttf" />
+    <Content Include="assets\font\Barcode.ttf" />
     <Content Include="assets\font\Blocks.ttf" />
     <Content Include="assets\font\Bold.ttf" />
+    <Content Include="assets\font\FasterOne.ttf" />
+    <Content Include="assets\font\Frijole.ttf" />
     <Content Include="assets\font\Future Narrow.ttf" />
     <Content Include="assets\font\Future Square.ttf" />
     <Content Include="assets\font\Future.ttf" />
@@ -105,8 +109,10 @@
     <Content Include="assets\font\High.ttf" />
     <Content Include="assets\font\Mini Square.ttf" />
     <Content Include="assets\font\Mini.ttf" />
+    <Content Include="assets\font\Monoton.ttf" />
     <Content Include="assets\font\Pixel Square.ttf" />
     <Content Include="assets\font\Pixel.ttf" />
+    <Content Include="assets\font\PressStart.ttf" />
     <Content Include="assets\font\Rocket Square.ttf" />
     <Content Include="assets\font\Rocket.ttf" />
     <Content Include="assets\font\Space.ttf" />
