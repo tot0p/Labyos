@@ -19,10 +19,11 @@ class Game:
         wait(2000)
 
     def eventEscape(self,event):
-        return escape(event)
+        return escapeandkey(event)
 
-    def aff(self,window):
-        window.reload(500,500)
-        self.map.aff(window)
+    def aff(self):
+        self.window.reload(500,500)
+        self.window.set_fullscreen()
+        self.map.aff(self.window)
         #pass
         

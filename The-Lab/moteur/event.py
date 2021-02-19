@@ -21,6 +21,13 @@ def escape(event):
         return 0
     return 1
 
+def escapeandkey(event,key=pygame.K_ESCAPE):
+    if event.type == pygame.QUIT:
+        return 0
+    elif event.type == pygame.KEYDOWN and event.key == key:
+        return 0
+    return 1
+
 def get_click(event):
     pass
 
