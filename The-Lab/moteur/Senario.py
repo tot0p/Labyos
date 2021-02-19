@@ -13,6 +13,3 @@ class naration:
     def aff(self,window,text):
         self.img.aff(window,50,50)
         self.font.aff(window,text,50,50)
-
-    def affUpdate(self,window):
-        pass

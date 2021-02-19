@@ -3,6 +3,7 @@ from moteur.map import Map
 from view.Load import Load
 from moteur.time import wait
 from moteur.event import *
+from moteur.player import Player
 
 class Game:
 
@@ -10,6 +11,7 @@ class Game:
         self.window = window
         self.view = []
         self.map = Map(window,filname)
+        self.player = Player('assets/img/player/IDLE.png')
         self.__load()
 
     def __load(self):
@@ -18,11 +20,19 @@ class Game:
         self.window.update()
         wait(2000)
 
+    def events(self,event):
+        self.player.event(event)
+
     def eventEscape(self,event):
         return escapeandkey(event)
+    
+    def affUpdate(self):
+        self.player.affUpdate(self.window)
 
     def aff(self):
         self.window.reload(500,500)
         self.map.aff(self.window)
+        self.player.aff(self.window)
+
         #pass
         

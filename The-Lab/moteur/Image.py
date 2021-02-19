@@ -12,6 +12,7 @@ class Image:
         except : 
             self.img = pygame.image.load('assets/img/texture-none.png')
             self.rect = self.img.get_rect()
+        self.tile_table = []
 
     def fondTransparant(self):
         '''
@@ -27,14 +28,30 @@ class Image:
         self.rect.width = W
         self.rect.height = H
 
-    def split(self):
-        pass
+    def split(self,width,height,n):
+        self.tile_table = []
+        for tile_x in range(0, self.rect.width//width):
+            for tile_y in range(0,self.rect.height//height):
+                rect = (tile_x*width, tile_y*height, width, height)
+                self.tile_table.append(self.img.subsurface(rect))
+        self.img = self.tile_table[n]
+
+    def changeImagewithtiletable(self,n):
+        self.img = self.tile_table[n]
+
+    def resize_all_tile(self,W,H):
+        self.resize(W,H)
+        for i in range(len(self.tile_table)):
+            self.tile_table[i] = pygame.transform.scale(self.tile_table[i],(W,H))
+
+
 
     def flip(self,X:bool,Y:bool):
         '''
         permet de retourner l'image sur x , y ou x et y
         '''
         self.img = pygame.transform.flip(self.img,X,Y)
+
 
     def get_rect(self):
         '''

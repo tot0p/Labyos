@@ -59,6 +59,7 @@ if __name__ == '__main__':
                 view[1] = False
                 game = Game(window,'assets/level/level1/level1.txt')
                 game.aff()
+            game.affUpdate()
         for event in get_event():
            if Ismenu:
                view = menu.events(event)
@@ -70,6 +71,7 @@ if __name__ == '__main__':
                view = menuLevel.events(event)
                run = menuLevel.eventEscape(event)
            elif Isgame:
+               game.events(event)
                run = game.eventEscape(event)
         tick.set_tick()
         
