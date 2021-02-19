@@ -96,10 +96,10 @@
     <Folder Include="view\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\font\Ballet.ttf" />
     <Content Include="assets\font\Barcode.ttf" />
     <Content Include="assets\font\Blocks.ttf" />
     <Content Include="assets\font\Bold.ttf" />
+    <Content Include="assets\font\FaceIt.ttf" />
     <Content Include="assets\font\FasterOne.ttf" />
     <Content Include="assets\font\Frijole.ttf" />
     <Content Include="assets\font\Future Narrow.ttf" />

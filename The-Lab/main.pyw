@@ -69,6 +69,8 @@ if __name__ == '__main__':
            elif Ismenulevel:
                view = menuLevel.events(event)
                run = menuLevel.eventEscape(event)
+           elif Isgame:
+               run = game.eventEscape(event)
         tick.set_tick()
         
 
