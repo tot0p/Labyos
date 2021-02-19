@@ -27,6 +27,9 @@ class Image:
         self.rect.width = W
         self.rect.height = H
 
+    def split(self):
+        pass
+
     def flip(self,X:bool,Y:bool):
         '''
         permet de retourner l'image sur x , y ou x et y

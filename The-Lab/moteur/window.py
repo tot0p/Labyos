@@ -1,4 +1,3 @@
-import pygame
 from moteur.color import *
 
 class Window:
@@ -16,7 +15,11 @@ class Window:
         self.display  = pygame.display
         self.W = int(W)
         self.H = int(H)
-        self.window = self.display.set_mode((int(W),int(H)),fullscreen)
+        if fullscreen:
+            print("oui")
+            self.window = self.display.set_mode((int(W),int(H)),pygame.FULLSCREEN)
+        else:
+            self.window = self.display.set_mode((int(W),int(H)))
         self.display.set_caption(self.name)
         self.display.set_icon(icon.img)
         self.window.fill(bg_color)
@@ -31,15 +34,12 @@ class Window:
         '''
         self.W = int(W)
         self.H = int(H)
-        self.window = self.display.set_mode((int(W),int(H)),fullscreen)
+        if fullscreen:
+            self.window = self.display.set_mode((int(W),int(H)),pygame.FULLSCREEN)
+        else:
+            self.window = self.display.set_mode((int(W),int(H)))
         self.window.fill(bg_color)
         self.update()
-
-    def set_fullscreen(self):
-        '''
-        Mais en fullscreen ou en fenetre si deja en fullscreen
-        '''
-        self.display.toggle_fullscreen()
 
     def get_size(self):
         '''
@@ -55,16 +55,3 @@ class Window:
         
     def aff(self,elem,x,y):
         self.window.blit(elem,(x,y))
-
-    #beta
-
-    def addSprite(self,sprite):
-        self.sprites.add(sprite)
-
-    def affSprite(self):
-        self.sprites.draw(self.window)
-
-    def removeSprite(self,type):
-        for i in self.sprites:
-            if isinstance(i,type):
-                self.sprites.remove(i)

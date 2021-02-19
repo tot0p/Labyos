@@ -4,8 +4,6 @@ class Fichier:
     '''
     permet de toucher o fichier
     '''
-    fName=''
-    encodage=''
 
     def __init__(self,fileName,encodage='utf8'):
         self.fName = fileName

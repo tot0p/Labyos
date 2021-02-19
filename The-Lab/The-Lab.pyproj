@@ -40,7 +40,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\mapAlpha.py" />
-    <Compile Include="m.py" />
     <Compile Include="moteur\labyrinthe.py">
       <SubType>Code</SubType>
     </Compile>
@@ -78,6 +77,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\Senario.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view\Option.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

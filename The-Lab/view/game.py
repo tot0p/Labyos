@@ -23,7 +23,6 @@ class Game:
 
     def aff(self):
         self.window.reload(500,500)
-        self.window.set_fullscreen()
         self.map.aff(self.window)
         #pass
         

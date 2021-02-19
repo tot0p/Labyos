@@ -1,1 +1,4 @@
-
+avancer = 122
+reculer = 115
+aller a gauche = 97
+aller a droite = 100
