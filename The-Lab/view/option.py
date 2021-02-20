@@ -14,10 +14,10 @@ class Option:
         self.touche = self.file.variableFileLecture()  
         self.img = Image('assets/img/logo/1');self.img2 = Image('assets/img/logo/2');self.img3= Image('assets/img/logo/3'); self.img4=Image('assets/img/logo/4');self.imgApply=Image('assets/img/logo/apply');self.imgretour = Image('assets/img/logo/retour')
         self.img.resize(200,50);self.img2.resize(200,50);self.img3.resize(250,50);self.img4.resize(200,50);self.imgretour.resize(50,50);self.imgApply.resize(200,50)
-        self.font= Font(,'Thick',salmon)
+        self.font= Font(20,'Thick',salmon)
         self.font2=Font(8,'Thick',salmon)
         self.button = [Button(self.img,self.font,'Avancer'),Button(self.img2,self.font,'reculer'),Button(self.img2,self.font,'gauche'),Button(self.img2,self.font,'droite')]
-        self.retour = Button(self.imgretour,self.font,'Retour')
+        self.retour = Button(self.imgretour,self.font2,'Retour')
         self.attribut = ["avancer","reculer","aller a gauche","aller a droite"]
         self.buttonApply = Button(self.imgApply,self.font,'Apply')
         self.view = ['option',False]
