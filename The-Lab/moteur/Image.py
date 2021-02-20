@@ -44,6 +44,11 @@ class Image:
         for i in range(len(self.tile_table)):
             self.tile_table[i] = pygame.transform.scale(self.tile_table[i],(W,H))
 
+    def flip_all_tile(self,X:bool,Y:bool):
+        self.flip(X,Y)
+        for i in range(len(self.tile_table)):
+            self.tile_table[i] = pygame.transform.flip(self.tile_table[i],X,Y)
+
 
 
     def flip(self,X:bool,Y:bool):
@@ -58,6 +63,12 @@ class Image:
         permet de recuperer self.rect
         '''
         return self.rect
+
+    def get_imgFormpygame(self):
+        '''
+        permet de recuperer self.img
+        '''
+        return self.img
 
     def aff(self,window,X:int,Y:int):
         '''

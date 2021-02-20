@@ -11,7 +11,7 @@ class Game:
         self.window = window
         self.view = []
         self.map = Map(window,filname)
-        self.player = Player('assets/img/player/IDLE.png')
+        self.player = Player(self.map,'assets/img/player/IDLE.png','assets/img/player/RUN.png')
         self.__load()
 
     def __load(self):
@@ -27,6 +27,7 @@ class Game:
         return escapeandkey(event)
     
     def affUpdate(self):
+        self.map.aff(self.window)
         self.player.affUpdate(self.window)
 
     def aff(self):
