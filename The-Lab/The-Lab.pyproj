@@ -128,6 +128,7 @@
     <Content Include="assets\img\player\IDLE.png" />
     <Content Include="assets\img\player\RUN.png" />
     <Content Include="assets\img\player\RUNDOWN.png" />
+    <Content Include="assets\img\player\RUNUP.png" />
     <Content Include="assets\img\texture-none.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />

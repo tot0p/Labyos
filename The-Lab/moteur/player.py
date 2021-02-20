@@ -2,6 +2,7 @@ import pygame
 from moteur.Image import Image
 from moteur.time import Chrono
 from moteur.event import keypressed
+from moteur.map import Wall
 
 
 
@@ -68,6 +69,10 @@ class Player:
                     self.nRun = 0
                 self.imgRun.changeImagewithtiletable(self.nRun)
             self.imgRun.aff(window,self.pos[0],self.pos[1])
+
+    
+    def detect(self,rectpos,rectWall):
+        pass
 
 
 

@@ -23,7 +23,7 @@ def whoIsSelect(view):
     elif t == 'menujouer': return False,True,False,False,False
     elif t == 'menulevel': return False,False,True,False,False
     elif t == 'gamecharger': return False,False,False,True,False
-    elif t== 'Option': return False,False,False,False,True
+    elif t== 'option': return False,False,False,False,True
 
 
 if __name__ == '__main__':
@@ -82,7 +82,7 @@ if __name__ == '__main__':
                game.events(event)
                run = game.eventEscape(event)
            elif Isoption:
-                option.events(event)
+                view = option.events(event)
                 run = option.eventEscape(event)
         tick.set_tick()
         
