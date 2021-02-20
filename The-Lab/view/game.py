@@ -11,7 +11,7 @@ class Game:
         self.window = window
         self.view = []
         self.map = Map(window,filname)
-        self.player = Player(self.map,'assets/img/player/IDLE.png','assets/img/player/RUN.png')
+        self.player = Player(self.map,'assets/img/player/IDLE.png','assets/img/player/RUNDOWN.png')
         self.__load()
 
     def __load(self):
@@ -31,7 +31,7 @@ class Game:
         self.player.affUpdate(self.window)
 
     def aff(self):
-        self.window.reload(500,500,fullscreen=True)
+        self.window.reload(500,500)
         self.map.aff(self.window)
         self.player.aff(self.window)
 

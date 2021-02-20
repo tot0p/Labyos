@@ -81,7 +81,7 @@
     <Compile Include="moteur\Senario.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="view\Option.py">
+    <Compile Include="view\option.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -127,6 +127,7 @@
     <Content Include="assets\img\map\tileset.png" />
     <Content Include="assets\img\player\IDLE.png" />
     <Content Include="assets\img\player\RUN.png" />
+    <Content Include="assets\img\player\RUNDOWN.png" />
     <Content Include="assets\img\texture-none.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />

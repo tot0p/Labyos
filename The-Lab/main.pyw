@@ -14,15 +14,16 @@ from view.MenuJouer import MenuJouer
 from view.MenuLevel import MenuLevel
 from moteur.mouse import *
 from view.game import Game
-from moteur.Senario import naration
+from view.option import Option
 
 
 def whoIsSelect(view):
     t = view[0]
-    if t == 'menu': return True,False,False,False
-    elif t == 'menujouer': return False,True,False,False
-    elif t == 'menulevel': return False,False,True,False
-    elif t == 'gamecharger': return False,False,False,True
+    if t == 'menu': return True,False,False,False,False
+    elif t == 'menujouer': return False,True,False,False,False
+    elif t == 'menulevel': return False,False,True,False,False
+    elif t == 'gamecharger': return False,False,False,True,False
+    elif t== 'Option': return False,False,False,False,True
 
 
 if __name__ == '__main__':
@@ -35,9 +36,10 @@ if __name__ == '__main__':
     menu  = Menu()
     menuJouer = MenuJouer()
     menuLevel = MenuLevel()
+    option = Option()
     game = None
     while run:
-        Ismenu , Ismenujouer, Ismenulevel , Isgame= whoIsSelect(view)
+        Ismenu , Ismenujouer, Ismenulevel , Isgame , Isoption= whoIsSelect(view)
         window.update()
         if Ismenu:
             if view[1]:
@@ -60,6 +62,12 @@ if __name__ == '__main__':
                 game = Game(window,'assets/level/level1/level1.txt')
                 game.aff()
             game.affUpdate()
+        elif Isoption:
+            if view[1]:
+                view[1]=False
+                option.aff(window)
+            option.affUpdate(window)
+                
         for event in get_event():
            if Ismenu:
                view = menu.events(event)
@@ -73,6 +81,9 @@ if __name__ == '__main__':
            elif Isgame:
                game.events(event)
                run = game.eventEscape(event)
+           elif Isoption:
+                option.events(event)
+                run = option.eventEscape(event)
         tick.set_tick()
         
 

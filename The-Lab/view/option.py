@@ -3,11 +3,12 @@ from moteur.text import Font
 from moteur.Button import Button
 from moteur.color import *
 from moteur.event import *
-from moteur.fichier import *
+from moteur.fichier import Fichier
 
 #g{avancer : z,reculer : s,aller a gauche : q,aller a droite : d}
 #g['avancer'] 
 class Option:
+
     def __init__(self):
         self.file = Fichier('donne/touche.txt')
         self.touche = self.file.variableFileLecture()  
@@ -36,6 +37,7 @@ class Option:
 
     def aff(self,window):
         window.reload(500,500)
+
         
 
 
@@ -43,8 +45,9 @@ class Option:
     def __apply(self):
         self.file.variableFileWrite(self.touche)
         
-    def __change(self,attribut:str,event)
+    def __change(self,attribut:str,event):
             self.touche[attribut] = str(keypressed(event))
+
 
 
 

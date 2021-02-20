@@ -7,7 +7,7 @@ from moteur.event import keypressed
 
 class Player:
 
-    def __init__(self,map,imgbase:str,imgrun:str):
+    def __init__(self,map,imgbase:str,imgrunDown:str):
         super().__init__()
         self.map = map
         self.pos = [50,50,50,50]
@@ -16,11 +16,9 @@ class Player:
         self.nRun = 0
         self.left = False
         self.velocity = 5
-        self.imgRun = Image(imgrun)
-        self.imgRunLeft = Image(imgrun)
-        self.imgRun.split(36,36,0);self.imgRunLeft.split(36,36,0)
-        self.imgRun.resize_all_tile(50,50);self.imgRunLeft.resize_all_tile(50,50)
-        self.imgRunLeft.flip_all_tile(True,False)
+        self.imgRun = Image(imgrunDown)
+        self.imgRun.split(36,36,0)
+        self.imgRun.resize_all_tile(50,50)
         #chrono
         self.chrono = Chrono()
         #imgbase
@@ -63,17 +61,13 @@ class Player:
             self.imgbase.aff(window,self.pos[0],self.pos[1])
 
         if self.move:
-            if self.chrono.get_val()%10 == 0:
+            if self.chrono.get_val()%5 == 0:
                 self.nIDLE = 0
                 self.nRun += 1
-                if self.nRun > 3:
+                if self.nRun > 7:
                     self.nRun = 0
                 self.imgRun.changeImagewithtiletable(self.nRun)
-                self.imgRunLeft.changeImagewithtiletable(self.nRun)
-            if self.left:
-                self.imgRunLeft.aff(window,self.pos[0],self.pos[1])
-            else:
-                self.imgRun.aff(window,self.pos[0],self.pos[1])
+            self.imgRun.aff(window,self.pos[0],self.pos[1])
 
 
 
