@@ -25,10 +25,8 @@ class Player:
         self.chrono = Chrono()
         #imgbase
         self.imgbase = Image(imgbase)
-        self.imgbaseLeft = Image(imgbase)
-        self.imgbase.split(300,300,0);self.imgbaseLeft.split(300,300,0)
-        self.imgbase.resize_all_tile(50,50);self.imgbaseLeft.resize_all_tile(50,50)
-        self.imgbaseLeft.flip_all_tile(True,False)
+        self.imgbase.split(36,36,0)
+        self.imgbase.resize_all_tile(50,50)
         self.nIDLE = 0
         #control
         self.av = pygame.K_z
@@ -46,7 +44,7 @@ class Player:
         elif event.type == pygame.KEYUP:
             self.keys[event.key] = False
         if self.keys[self.av] and self.pos[1] > 0: self.pos[3] = self.pos[1];self.pos[1] -= self.velocity
-        if self.keys[self.re] and self.pos[1]-50 > 0:self.pos[3] = self.pos[1];self.pos[1] += self.velocity
+        if self.keys[self.re] and self.pos[1]+50 <500:self.pos[3] = self.pos[1];self.pos[1] += self.velocity
         if self.keys[self.le] and self.pos[0] > 0:self.pos[2] = self.pos[0];self.pos[0] -= self.velocity;self.left =True
         if self.keys[self.ri] and self.pos[0] + 50 < 500:self.pos[2] = self.pos[0];self.pos[0] += self.velocity;self.left =False
         if self.keys[self.av] or self.keys[self.re] or self.keys[self.le] or self.keys[self.ri]:self.move = True
@@ -61,12 +59,8 @@ class Player:
                 self.nIDLE +=1
                 if self.nIDLE > 7:
                     self.nIDLE = 0
-                self.imgbaseLeft.changeImagewithtiletable(self.nIDLE)
                 self.imgbase.changeImagewithtiletable(self.nIDLE)
-            if self.left:
-                self.imgbaseLeft.aff(window,self.pos[0],self.pos[1])
-            else:
-                self.imgbase.aff(window,self.pos[0],self.pos[1])
+            self.imgbase.aff(window,self.pos[0],self.pos[1])
 
         if self.move:
             if self.chrono.get_val()%10 == 0:

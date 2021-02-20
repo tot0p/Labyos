@@ -31,7 +31,7 @@ class Game:
         self.player.affUpdate(self.window)
 
     def aff(self):
-        self.window.reload(500,500)
+        self.window.reload(500,500,fullscreen=True)
         self.map.aff(self.window)
         self.player.aff(self.window)
 

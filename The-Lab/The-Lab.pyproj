@@ -33,7 +33,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\fichier.py" />
-    <Compile Include="graphics.py" />
     <Compile Include="main.pyw" />
     <Compile Include="moteur\forme.py" />
     <Compile Include="moteur\Image.py">
@@ -58,6 +57,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\loadtiletable.py" />
+    <Compile Include="test.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="view\error.py">
       <SubType>Code</SubType>
     </Compile>
