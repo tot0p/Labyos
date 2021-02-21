@@ -53,20 +53,7 @@ class Player:
             self.rect.y -= self.velocity
             self.up =True ; self.left = False;self.move = True
 
-    def event(self,event):
-        #for event in events:
-        if event.type == pygame.KEYDOWN:
-            self.keys[event.key] = True
-        elif event.type == pygame.KEYUP:
-            self.keys[event.key] = False
-        if self.keys[self.av] and self.pos[1] > 0: self.pos[3] = self.pos[1];self.pos[1] -= self.velocity
-        if self.keys[self.re] and self.pos[1]+50 <500:self.pos[3] = self.pos[1];self.pos[1] += self.velocity
-        if self.keys[self.le] and self.pos[0] > 0:self.pos[2] = self.pos[0];self.pos[0] -= self.velocity;self.left =True
-        if self.keys[self.ri] and self.pos[0] + 50 < 500:self.pos[2] = self.pos[0];self.pos[0] += self.velocity;self.left =False
-        if self.keys[self.av] or self.keys[self.re] or self.keys[self.le] or self.keys[self.ri]:self.move = True
-        else:self.move=False
-        if self.move:
-            self.change = [(self.pos[0],self.pos[1]),(self.pos[2],self.pos[3])]
+
 
     def affUpdate(self,window):
         if not self.move:
@@ -93,7 +80,11 @@ class Player:
         x = (self.rect.x // 50) +xb
         y = (self.rect.y // 50) +yb
         return not self.map.listoftiles[y][x].get_law()
-        
+    
+    def inter(self):
+        x = (self.rect.x // 50)
+        y = (self.rect.y // 50)
+        return self.map.listoftiles[y][x].get_event()
 
     def get_rect(self):
         return self.rect

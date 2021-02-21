@@ -50,10 +50,10 @@ class Map(pygame.sprite.Group):
                 self.listoftiles[i].append(tile)
                 self.add(tile)
     def aff(self,window):
-        #self.draw(window.window)
-        for i in self.listoftiles:
-            for k in i:
-                k.aff(window)
+        self.draw(window.window)
+        #for i in self.listoftiles:
+            #for k in i:
+                #k.aff(window)
         
 
 

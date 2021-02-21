@@ -37,6 +37,7 @@ class Game:
     def events(self,event):
         #self.player.event(event)
         self.__control(event)
+        print(self.player.inter())
 
     def eventEscape(self,event):
         return escapeandkey(event)
