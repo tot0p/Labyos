@@ -50,6 +50,9 @@
     <Compile Include="moteur\player.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="moteur\sound.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="moteur\text.py" />
     <Compile Include="moteur\time.py" />
     <Compile Include="moteur\window.py">
@@ -88,6 +91,7 @@
     <Folder Include="assets\font\" />
     <Folder Include="assets\img\logo\" />
     <Folder Include="assets\img\map\" />
+    <Folder Include="assets\img\button\" />
     <Folder Include="assets\img\player\" />
     <Folder Include="assets\level\" />
     <Folder Include="assets\img\" />
@@ -120,6 +124,8 @@
     <Content Include="assets\font\Rocket.ttf" />
     <Content Include="assets\font\Space.ttf" />
     <Content Include="assets\font\Thick.ttf" />
+    <Content Include="assets\img\button\200x50.png" />
+    <Content Include="assets\img\button\retour.png" />
     <Content Include="assets\img\logo\logo.png" />
     <Content Include="assets\img\map\sol.png" />
     <Content Include="assets\img\map\hole.png" />
@@ -128,6 +134,7 @@
     <Content Include="assets\img\player\RUN.png" />
     <Content Include="assets\img\player\RUNDOWN.png" />
     <Content Include="assets\img\player\RUNUP.png" />
+    <Content Include="assets\img\vide.png" />
     <Content Include="assets\img\texture-none.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />
