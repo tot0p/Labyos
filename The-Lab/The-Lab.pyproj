@@ -38,7 +38,6 @@
     <Compile Include="moteur\Image.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="moteur\mapAlpha.py" />
     <Compile Include="moteur\labyrinthe.py">
       <SubType>Code</SubType>
     </Compile>
