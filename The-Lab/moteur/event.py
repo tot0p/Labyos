@@ -7,9 +7,9 @@ def clicgauche(event):
     return False , None
 
 def keypressed(event):
-    pressed = []
+    pressed = None
     if event.type == pygame.KEYDOWN:
-        pressed.append(event.key)
+        pressed = (event.key)
     return pressed
 
 

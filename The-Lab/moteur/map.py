@@ -8,11 +8,17 @@ class Map(pygame.sprite.Group):
     def __init__(self,window,filename):
         super().__init__()
         self.window = window
+        self.listoftiles = []
+        print('e')
         self.encodageMap = []
+        for y in range(self.window.H//50):
+            self.listoftiles.append([])
+        print(self.listoftiles)
         self.__load(filename)
-        self.dictTiles = {}
-        self.coordMap = []
-        self.__createCoordMap((50,50))
+        #self.dictTiles = {}
+        #self.coordMap = []
+        #self.__createCoordMap((50,50))
+
 
     def __createCoordMap(self,taillecase):
         for x in range(self.window.W//taillecase[0]):
@@ -41,9 +47,15 @@ class Map(pygame.sprite.Group):
                 else:
                     tile = Sol(x,y)
                     #self.dictTiles[i][k] = None
+                self.listoftiles[i].append(tile)
                 self.add(tile)
     def aff(self,window):
-        self.draw(window.window)
+        #self.draw(window.window)
+        for i in self.listoftiles:
+            for k in i:
+                k.aff(window)
+        
+
 
 class Wall(pygame.sprite.Sprite):
     def __init__(self,name,x,y):
@@ -56,6 +68,13 @@ class Wall(pygame.sprite.Sprite):
 
     def get_rect(self):
         return self.rect
+    
+    def get_law(self):
+        return False
+
+    def aff(self,window):
+        window.aff(self.image,self.rect.x,self.rect.y)
+        
 
 
 class Sol(pygame.sprite.Sprite):
@@ -71,6 +90,14 @@ class Sol(pygame.sprite.Sprite):
     def get_rect(self):
         return self.rect
 
+    def get_law(self):
+        return True
+
+    def get_event(self):
+        return None
+    
+    def aff(self,window):
+        window.aff(self.image,self.rect.x,self.rect.y)
 
 class Hole(pygame.sprite.Sprite):
     def __init__(self,x,y):
@@ -84,6 +111,16 @@ class Hole(pygame.sprite.Sprite):
 
     def get_rect(self):
         return self.rect
+
+    def get_law(self):
+        return True
+
+    def get_event(self):
+        return 'mort'
+
+    def aff(self,window):
+        window.aff(self.image,self.rect.x,self.rect.y)
+        
 
 class scanner(pygame.sprite.Sprite):
     def __init__(self):
