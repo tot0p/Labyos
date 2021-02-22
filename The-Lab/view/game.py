@@ -5,14 +5,22 @@ from moteur.time import wait
 from moteur.event import *
 from moteur.player import Player
 from moteur.event import keypressed
+from moteur.fichier import Fichier
 
 class Game:
 
     def __init__(self,window,filname):
-        self.av = pygame.K_z
-        self.re = pygame.K_s
-        self.le = pygame.K_q
-        self.ri = pygame.K_d
+        file =Fichier('donne/touche.txt')
+        touche = file.variableFileLecture()
+        self.av = int(touche['avancer'])
+        self.re = int(touche['reculer'])
+        self.le = int(touche['gauche'])
+        self.ri = int(touche['droite'])
+        #self.av = pygame.K_z
+        #self.re = pygame.K_s
+        #self.le = pygame.K_q
+        #self.ri = pygame.K_d
+        self.pressed = {self.av : False , self.re : False , self.le : False,self.ri : False}
         self.window = window
         self.view = []
         self.map = Map(window,filname)
@@ -26,15 +34,26 @@ class Game:
         wait(2000)
 
     def __control(self,event):
-        key = keypressed(event)
+
+        #key = keypressed(event)
         rect = self.player.get_rect()
-        if key == self.av and rect.y > 0 and not self.player.prev_check_collision(0,-1): self.player.move_on_axe_y(False)
-        elif key == self.re and rect.y+50 <500 and not self.player.prev_check_collision(0,1):self.player.move_on_axe_y()
-        elif key == self.le and rect.x > 0 and not self.player.prev_check_collision(-1,0):self.player.move_on_axe_x(False)
-        elif key ==self.ri  and rect.x + 50 < 500 and not self.player.prev_check_collision(1,0):self.player.move_on_axe_x()
+        #if key == self.av and rect.y > 0 and not self.player.prev_check_collision(0,-1): self.player.move_on_axe_y(False)
+        #elif key == self.re and rect.y+50 <500 and not self.player.prev_check_collision(0,1):self.player.move_on_axe_y()
+        #elif key == self.le and rect.x > 0 and not self.player.prev_check_collision(-1,0):self.player.move_on_axe_x(False)
+        #elif key ==self.ri  and rect.x + 50 < 500 and not self.player.prev_check_collision(1,0):self.player.move_on_axe_x()
+        #else:self.player.move=False
+        if self.pressed[self.av] and rect.y > 0 and not self.player.prev_check_collision(0,-1): self.player.move_on_axe_y(False)
+        elif self.pressed[self.re] and rect.y+50 <500 and not self.player.prev_check_collision(0,1):self.player.move_on_axe_y()
+        elif self.pressed[self.le] and rect.x > 0 and not self.player.prev_check_collision(-1,0):self.player.move_on_axe_x(False)
+        elif self.pressed[self.ri]  and rect.x + 50 < 500 and not self.player.prev_check_collision(1,0):self.player.move_on_axe_x()
         else:self.player.move=False
 
     def events(self,event):
+        if event.type == pygame.KEYDOWN:
+            self.pressed[event.key] = True
+            #event player
+        elif event.type == pygame.KEYUP:
+            self.pressed[event.key] = False
         #self.player.event(event)
         self.__control(event)
         print(self.player.inter())

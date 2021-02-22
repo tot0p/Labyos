@@ -1,4 +1,4 @@
 avancer=122
 reculer=115
-gauche=97
+gauche=113
 droite=100
