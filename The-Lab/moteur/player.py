@@ -17,7 +17,7 @@ class Player:
         self.nRun = 0
         self.left = False
         self.up = False
-        self.velocity = 50
+        self.velocity = 5
         self.imgRun = Image(imgrunDown)
         self.imgRun.split(36,36,0)
         self.imgRun.resize_all_tile(50,50)
@@ -76,8 +76,15 @@ class Player:
 
 
     def prev_check_collision(self,xb,yb):
-        x = (self.rect.x+(self.velocity*xb)) // 50
-        y = (self.rect.y+(self.velocity*yb)) // 50
+        if xb == 1 and self.rect.x%50 == 0:
+            x = (self.rect.x+(self.velocity*xb)) // 50+1
+            y = (self.rect.y+(self.velocity*yb)) // 50
+        elif yb == 1 and self.rect.y%50 == 0:
+            x = (self.rect.x+(self.velocity*xb)) // 50
+            y = (self.rect.y+(self.velocity*yb)) // 50 +1
+        else:
+            x = (self.rect.x+(self.velocity*xb)) // 50
+            y = (self.rect.y+(self.velocity*yb)) // 50
         print(x,y)
         #x = (self.rect.x // 50) +xb
         #y = (self.rect.y // 50) +yb
