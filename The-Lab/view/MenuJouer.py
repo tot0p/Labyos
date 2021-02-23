@@ -6,17 +6,16 @@ from moteur.event import *
 class MenuJouer:
 
     def __init__(self):
-        self.img = Image('assets/img/logo/Metre nom de l image du premier jeux.png')
-        self.img2 = Image('assets/img/logo/Metre nom de l image du premier jeux.png')
-        self.img3 = Image('assets/img/logo/Metre nom de l image du premier jeux.png')
-        self.img4 = Image('assets/img/logo/metre nom d image du button retour')
-        self.img.resize(200,50)
+        self.img = Image('assets/img/button/200x50.png')
+        self.img2 = Image('assets/img/button/200x50.png')
+        self.img3 = Image('assets/img/button/200x50.png')
+        self.img4 = Image('assets/img/button/retour.png')
         self.img2.resize(200,50)
         self.img3.resize(200,50)
         self.img4.resize(50,50)
         self.font= Font(20,'Thick',salmon) 
         self.font2= Font(8,'Thick',salmon)
-        self.button = [Button(self.img,self.font,'Histoire'),Button(self.img2,self.font,'Endless'),Button(self.img3,self.font,'Creatif'),Button(self.img4,self.font2,'Retour')]
+        self.button = [Button(self.img,self.font,'Histoire'),Button(self.img2,self.font,'Endless'),Button(self.img3,self.font,'Creatif'),Button(self.img4,self.font2)]
         self.function = [lambda : self.__view('menulevel'), lambda : self.__view('gameendless') , lambda : self.__view('gamecharger') ,lambda : self.__view('menu')]
         self.view = ['menujouer',False]
 

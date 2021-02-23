@@ -7,9 +7,9 @@ from moteur.event import *
 class Menu:
 
     def __init__(self):
-        self.img = Image('assets/img/logo/testimage.png')
-        self.img2 = Image('assets/img/logo/testimage2.png')
-        self.img3 = Image('assets/img/logo/testimage3.png')
+        self.img = Image('assets/img/button/200x50.png')
+        self.img2 = Image('assets/img/button/200x50.png')
+        self.img3 = Image('assets/img/button/200x50.png')
         self.img.resize(200,50)
         self.img2.resize(200,50)
         self.img3.resize(200,50)
