@@ -27,7 +27,7 @@ class Game:
         self.le = int(touche['gauche'])
         self.ri = int(touche['droite'])
         self.pressed = {self.av : False , self.re : False , self.le : False,self.ri : False}
-        self.view = []
+        self.view = ['',False]
         self.player = Player('assets/img/player/IDLE.png','assets/img/player/RUNDOWN.png')
         self.code = codeFile(window,filename,self.player,self)
         self.map = self.code.get_map()
