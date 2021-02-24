@@ -1,7 +1,7 @@
 assets/level/level1/level1.txt
 initGame
 {
-spawn(0(4;
+spawn(3(4;
 }/
 inGame
 {

@@ -59,7 +59,7 @@ if __name__ == '__main__':
         elif Isgame:
             if view[1]:
                 view[1] = False
-                game = Game(window,'assets/level/level1/level1.txt')
+                game = Game(window)
                 game.aff()
             game.affUpdate()
         elif Isoption:

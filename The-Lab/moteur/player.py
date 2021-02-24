@@ -8,9 +8,8 @@ from moteur.map import Wall
 
 class Player:
 
-    def __init__(self,map,imgbase:str,imgrunDown:str):
+    def __init__(self,imgbase:str,imgrunDown:str):
         super().__init__()
-        self.map = map
         self.pos = [50,50,50,50]
         #move
         self.move = False
@@ -36,7 +35,15 @@ class Player:
         self.le = pygame.K_q
         self.ri = pygame.K_d
         self.keys = {self.av : False,self.re : False,self.le:False,self.ri:False}
+
+    def def_map(self,map):
+        self.map = map
   
+    def set_spawn(self,x,y):
+        self.rect.x = x
+        self.rect.y = y
+
+
     def move_on_axe_x(self,add:bool = True):
         if add:
             self.rect.x += self.velocity
@@ -102,7 +109,6 @@ class Player:
 
 
     def aff(self,window):
-        self.map.listoftiles[2][1].aff(window)
         self.imgbase.aff(window,self.rect.x,self.rect.y)
 
         

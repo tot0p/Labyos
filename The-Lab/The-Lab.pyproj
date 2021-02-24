@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>16795359-a17e-41d8-97f4-a2a3fb44ea79</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test.py</StartupFile>
+    <StartupFile>main.pyw</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -126,6 +126,7 @@
     <Content Include="assets\font\Space.ttf" />
     <Content Include="assets\font\Thick.ttf" />
     <Content Include="assets\img\button\200x50.png" />
+    <Content Include="assets\img\button\83x83.png" />
     <Content Include="assets\img\button\retour.png" />
     <Content Include="assets\img\logo\logo.png" />
     <Content Include="assets\img\map\sol.png" />
