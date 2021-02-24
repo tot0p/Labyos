@@ -1,3 +1,3 @@
-import pygame
+from moteur.codeFile import codeFile
 
-print(pygame.key.name(122))
+c = codeFile('','assets/level\level1/code.txt')

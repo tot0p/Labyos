@@ -6,10 +6,17 @@ from moteur.event import *
 from moteur.player import Player
 from moteur.event import keypressed
 from moteur.fichier import Fichier
+from tkinter.filedialog import *
+from tkinter import Tk
 
 class Game:
 
     def __init__(self,window,filname):
+        tk = Tk()
+        tk.geometry("0x0")
+        tk.iconbitmap('assets/img/logo/logo.ico')
+        filname = askopenfilename(initialdir="/Desktop", title="Ouvrir", filetypes=(("Text Files","*.txt"),("Python Files","*.py"),("all files","*.*")))   
+        tk.destroy()        
         file =Fichier('donne/touche.txt')
         touche = file.variableFileLecture()
         self.av = int(touche['avancer'])

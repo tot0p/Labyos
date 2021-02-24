@@ -12,7 +12,7 @@ class Option:
     def __init__(self):
         self.file = Fichier('donne/touche.txt')
         self.touche = self.file.variableFileLecture()  
-        self.img = Image('assets/img/button/200x50.png');self.img2 = Image('assets/img/button/200x50.png');self.img3= Image('assets/img/button/200x50.png'); self.img4=Image('assets/img/button/200x50.png');self.imgApply=Image('assets/img/button/200x50.png');self.imgretour = Image('assets/img/button/retour.png')
+        self.img = Image('assets/img/vide.png');self.img2 = Image('assets/img/button/200x50.png');self.img3= Image('assets/img/button/200x50.png'); self.img4=Image('assets/img/button/200x50.png');self.imgApply=Image('assets/img/button/200x50.png');self.imgretour = Image('assets/img/button/retour.png')
         self.img.resize(200,50);self.img2.resize(200,50);self.img3.resize(200,50);self.img4.resize(200,50);self.imgretour.resize(50,50);self.imgApply.resize(200,50)
         self.font= Font(20,'Thick',salmon)
         self.font2=Font(8,'Thick',salmon)

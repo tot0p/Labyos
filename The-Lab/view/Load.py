@@ -25,10 +25,6 @@ class Load:
                 s2.aff(window,Issplit[i],(500-t[0])//2,(500-t[1])//2+t[1]*i)
 
         else:
-
-        #s2 = random.choice(self.color)
-        #s3 = random.choice(self.font_family)
-        #font = Font(40,s3,s2)
             t = s2.space_taken(s)
             s2.aff(window,s,(500-t[0])//2,(500-t[1])//2)
             

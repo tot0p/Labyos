@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>16795359-a17e-41d8-97f4-a2a3fb44ea79</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>main.pyw</StartupFile>
+    <StartupFile>test.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -28,6 +28,9 @@
     <Compile Include="moteur\Button.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="moteur\codeFile.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="moteur\color.py" />
     <Compile Include="moteur\event.py">
       <SubType>Code</SubType>
@@ -36,9 +39,6 @@
     <Compile Include="main.pyw" />
     <Compile Include="moteur\forme.py" />
     <Compile Include="moteur\Image.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="moteur\labyrinthe.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\map.py">
@@ -96,6 +96,7 @@
     <Folder Include="assets\level\" />
     <Folder Include="assets\img\" />
     <Folder Include="assets\level\level1\" />
+    <Folder Include="assets\level\level2\" />
     <Folder Include="moteur\" />
     <Folder Include="assets\" />
     <Folder Include="controller\" />
@@ -138,6 +139,7 @@
     <Content Include="assets\img\texture-none.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />
+    <Content Include="assets\level\level2\level2.txt" />
     <Content Include="donne\config.txt" />
     <Content Include="donne\load.txt" />
     <Content Include="donne\touche.txt">
