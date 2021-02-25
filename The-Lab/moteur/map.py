@@ -68,7 +68,6 @@ class Wall(pygame.sprite.Sprite):
 
     def get_rect(self):
         return self.rect
-    
     def get_law(self):
         return False
 

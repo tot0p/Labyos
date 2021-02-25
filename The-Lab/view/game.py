@@ -61,7 +61,7 @@ class Game:
             self.pressed[event.key] = False
         #self.player.event(event)
         self.__control(event)
-        print(self.player.inter())
+        #print(self.player.inter())
 
     def eventEscape(self,event):
         return escapeandkey(event)

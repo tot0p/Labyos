@@ -16,7 +16,7 @@ class Player:
         self.nRun = 0
         self.left = False
         self.up = False
-        self.velocity = 5
+        self.velocity = 1
         self.imgRun = Image(imgrunDown)
         self.imgRun.split(36,36,0)
         self.imgRun.resize_all_tile(50,50)
@@ -83,19 +83,58 @@ class Player:
 
 
     def prev_check_collision(self,xb,yb):
-        if xb == 1 and self.rect.x%50 == 0:
-            x = (self.rect.x+(self.velocity*xb)) // 50+1
-            y = (self.rect.y+(self.velocity*yb)) // 50
-        elif yb == 1 and self.rect.y%50 == 0:
-            x = (self.rect.x+(self.velocity*xb)) // 50
-            y = (self.rect.y+(self.velocity*yb)) // 50 +1
-        else:
-            x = (self.rect.x+(self.velocity*xb)) // 50
-            y = (self.rect.y+(self.velocity*yb)) // 50
-        print(x,y)
-        #x = (self.rect.x // 50) +xb
-        #y = (self.rect.y // 50) +yb
-        return not self.map.listoftiles[y][x].get_law()
+        # x-x
+        # | |
+        # x-x
+        # x
+        #
+        # x
+        
+        x = (self.rect.x+(self.velocity*xb))
+        y = (self.rect.y+(self.velocity*yb))
+        law = self.map.listoftiles[y//50][x//50].get_law()
+        rect = self.map.listoftiles[y//50][x//50].get_rect()
+        if xb == 1:
+            xb =(self.rect.x+self.rect.width+(self.velocity*xb))
+            yb = (self.rect.y+self.rect.height+(self.velocity*yb))
+            law = self.map.listoftiles[y//50][x//50+1].get_law()
+            if not (xb >= rect.x and xb <= (rect.x + rect.width)) :
+                if not (yb >= rect.y and yb <= rect.y + rect.height):
+                    law = law and self.map.listoftiles[y//50+1][x//50+1].get_law()
+            return not law
+        elif xb == -1:
+            yb =y+self.rect.height
+            law = self.map.listoftiles[y//50][x//50].get_law()
+            if not (yb >= rect.y and yb <= rect.y + rect.height):
+                print('yes')
+                law = law and self.map.listoftiles[y//50+1][x//50].get_law()
+            return not law
+        elif yb == 1:
+            xb =(self.rect.x+self.rect.width+(self.velocity*xb))
+            yb =(self.rect.y+self.rect.height+(self.velocity*yb))
+            law = self.map.listoftiles[y//50+1][x//50].get_law()
+            if not (xb >= rect.x and xb <= rect.x + rect.width):
+               law = law and self.map.listoftiles[y//50+1][x//50+1].get_law()
+            return not law
+        elif yb == -1:
+            xb =x+self.rect.width
+            law = self.map.listoftiles[y//50][x//50].get_law()
+            if not (xb >= rect.x and xb <= rect.x + rect.width):
+                print('yes')
+                law = law and self.map.listoftiles[y//50][x//50+1].get_law()
+            return not law
+        return False
+        #if rect.x <= x and x <= (rect.x + rect.width):
+            #if rect.y <= y and y <= (rect.y + rect.height):
+                #return not self.map.listoftiles[y//50][x//50].get_law()
+        #xb = (self.rect.x+self.rect.width+(self.velocity*xb))
+        #if rect.x <= xb and xb <= (rect.x + rect.width):
+            #if rect.y <= y and y <= (rect.y + rect.height):
+                #print('ys')
+                #return not self.map.listoftiles[y//50][x//50].get_law()
+
+        
+        return False
     
     def inter(self):
         x = (self.rect.x // 50)
