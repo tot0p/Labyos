@@ -1,7 +1,7 @@
 assets/level/level1/level1.txt
 initGame
 {
-spawn(3(4;
+spawn(0(1;
 }/
 inGame
 {
@@ -9,8 +9,8 @@ wall(3(5:to:wall(3(6;
 }/
 endGameInLife
 {
-hist('test';
-hist('test';
+hist(test;
+hist(test;
 }/
 endGameDead
 {

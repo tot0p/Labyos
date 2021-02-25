@@ -41,10 +41,10 @@ class Game:
 
     def __control(self,event):
         rect = self.player.get_rect()
-        if self.pressed[self.av] and rect.y > 0 and not self.player.prev_check_collision(0,-1): self.player.move_on_axe_y(False)
-        elif self.pressed[self.re] and rect.y+50 <500 and not self.player.prev_check_collision(0,1):self.player.move_on_axe_y()
-        elif self.pressed[self.le] and rect.x > 0 and not self.player.prev_check_collision(-1,0):self.player.move_on_axe_x(False)
-        elif self.pressed[self.ri]  and rect.x + 50 < 500 and not self.player.prev_check_collision(1,0):self.player.move_on_axe_x()
+        if self.pressed[self.av] and rect.y > 0 : self.player.move_on_axe_y(False)
+        elif self.pressed[self.re] and rect.y+50 <500 :self.player.move_on_axe_y()
+        elif self.pressed[self.le] and rect.x > 0:self.player.move_on_axe_x(False)
+        elif self.pressed[self.ri]  and rect.x + 50 < 500 :self.player.move_on_axe_x()
         else:self.player.move=False
 
     def load_event(self,initGame,inGame,endGameInLife,endGameDead):

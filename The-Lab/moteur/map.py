@@ -13,7 +13,7 @@ class Map(pygame.sprite.Group):
         self.encodageMap = []
         for y in range(self.window.H//50):
             self.listoftiles.append([])
-        print(self.listoftiles)
+        self.listofwall = []
         self.__load(filename)
         #self.dictTiles = {}
         #self.coordMap = []
@@ -43,6 +43,7 @@ class Map(pygame.sprite.Group):
                     tile = Hole(x,y)
                 elif self.encodageMap[i][k] != 'None':
                     tile = Wall(int(self.encodageMap[i][k]),x,y)
+                    self.listofwall.append(tile)
                     #self.dictTiles[i][k] = tile
                 else:
                     tile = Sol(x,y)
