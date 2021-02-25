@@ -19,13 +19,13 @@ class Player:
         self.velocity = 1
         self.imgRun = Image(imgrunDown)
         self.imgRun.split(36,36,0)
-        self.imgRun.resize_all_tile(50,50)
+        self.imgRun.resize_all_tile(45,45)
         #chrono
         self.chrono = Chrono()
         #imgbase
         self.imgbase = Image(imgbase)
         self.imgbase.split(36,36,0)
-        self.imgbase.resize_all_tile(50,50)
+        self.imgbase.resize_all_tile(45,45)
         self.nIDLE = 0
         self.rect= self.imgbase.get_rect()
         self.rect.x , self.rect.y = 0,50
@@ -92,36 +92,51 @@ class Player:
         
         x = (self.rect.x+(self.velocity*xb))
         y = (self.rect.y+(self.velocity*yb))
-        law = self.map.listoftiles[y//50][x//50].get_law()
         rect = self.map.listoftiles[y//50][x//50].get_rect()
         if xb == 1:
             xb =(self.rect.x+self.rect.width+(self.velocity*xb))
             yb = (self.rect.y+self.rect.height+(self.velocity*yb))
             law = self.map.listoftiles[y//50][x//50+1].get_law()
+            print("law :",law)
+            print("name1 :",type(self.map.listoftiles[y//50][x//50+1]))
             if not (xb >= rect.x and xb <= (rect.x + rect.width)) :
                 if not (yb >= rect.y and yb <= rect.y + rect.height):
                     law = law and self.map.listoftiles[y//50+1][x//50+1].get_law()
+                    print("name2 :",type(self.map.listoftiles[y//50+1][x//50+1]))
+            print("law :",law)
             return not law
         elif xb == -1:
             yb =y+self.rect.height
             law = self.map.listoftiles[y//50][x//50].get_law()
+            print("law :",law)
+            print("name1 :",type(self.map.listoftiles[y//50][x//50]))
             if not (yb >= rect.y and yb <= rect.y + rect.height):
                 print('yes')
                 law = law and self.map.listoftiles[y//50+1][x//50].get_law()
+                print("name2 :",type(self.map.listoftiles[y//50+1][x//50]))
+            print("law :",law)
             return not law
         elif yb == 1:
             xb =(self.rect.x+self.rect.width+(self.velocity*xb))
             yb =(self.rect.y+self.rect.height+(self.velocity*yb))
             law = self.map.listoftiles[y//50+1][x//50].get_law()
+            print("law :",law)
+            print("name1 :",type(self.map.listoftiles[y//50+1][x//50]))
             if not (xb >= rect.x and xb <= rect.x + rect.width):
                law = law and self.map.listoftiles[y//50+1][x//50+1].get_law()
+               print("name2 :",type(self.map.listoftiles[y//50+1][x//50+1]))
+            print("law :",law)
             return not law
         elif yb == -1:
             xb =x+self.rect.width
             law = self.map.listoftiles[y//50][x//50].get_law()
+            print("law :",law)
+            print("name1 :",type(self.map.listoftiles[y//50][x//50]))
             if not (xb >= rect.x and xb <= rect.x + rect.width):
                 print('yes')
                 law = law and self.map.listoftiles[y//50][x//50+1].get_law()
+                print("name2 :",type(self.map.listoftiles[y//50][x//50+1]))
+            print("law :",law)
             return not law
         return False
         #if rect.x <= x and x <= (rect.x + rect.width):
