@@ -8,20 +8,28 @@ from moteur.event import *
 class GameOver:
 
     def __init__(self):
-        self.img = Image('assets/img/button/200x50.png');self.img2 = Image('assets/img/button/200.50.png');self.imgretour = Image('assets/img/button/retour.png')#créer les objets images
+        self.img = Image('assets/img/button/200x50.png');self.img2 = Image('assets/img/button/200x50.png');self.imgretour = Image('assets/img/button/retour.png')#créer les objets images
         self.img.resize(200,50);self.img2.resize(200,50);self.imgretour.resize(50,50) #redimentionne les images
-        self.font= Font(40,'Thick',salmon);self.font2= Font(8,'Thick',salmon)#les polices
-        self.button = [Button(self.img,self.font,'Réessayer'),Button(self.img2,self.font,'Retour aux Menu')]
+        self.font= Font(20,'Thick',salmon);self.font2= Font(8,'Thick',salmon);self.font3= Font(13,'Thick',salmon)#les polices
+        self.button = [Button(self.img,self.font,'Ressayer'),Button(self.img2,self.font3,'Retour aux Menu')]
         self.buttonretour = Button(self.imgretour,self.font2)
-        #self.function = [lambda : self.__view('menulevel'), lambda : self.__view('Menu') 
-        self.view = ['gameover',False]
+        self.filename = ''
+        self.function = [lambda : self.__view('game',self.filename), lambda : self.__view('menu','')]
+        self.view = ['gameover',False,'']
+
+    def set_filename(self,filename):
+        self.filename = filename
+
+    def __view(self,name,filename):
+        #self.view = [name,True]
+        return [name,True,filename]
 
 
     def aff(self,window):
         window.reload(500,500)
-        self.font.aff(window,'vous etes decedez',150,150)
+        self.font.aff(window,'vous etes decede',100,150)
         for i in range(len(self.button)):
-                self.button[i].aff(window,150+100*i,350)
+                self.button[i].aff(window,35+250*i,350)
 
 
     def events(self,event):
@@ -32,3 +40,8 @@ class GameOver:
                     g , v = self.button[i].EventClic(posCursor[0],posCursor[1],self.function[i])
                     if g:   return v
         return self.view
+
+
+    
+    def eventEscape(self,event):
+        return escape(event)

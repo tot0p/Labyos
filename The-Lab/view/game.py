@@ -7,17 +7,11 @@ from moteur.player import Player
 from moteur.event import keypressed
 from moteur.fichier import Fichier
 from moteur.codeFile import codeFile
-from tkinter.filedialog import *
-from tkinter import Tk
+
 
 class Game:
 
-    def __init__(self,window):
-        tk = Tk()
-        tk.geometry("0x0")
-        tk.iconbitmap('assets/img/logo/logo.ico')
-        filename = askopenfilename(initialdir="/Desktop", title="Ouvrir", filetypes=(("Text Files","*.txt"),("Python Files","*.py"),("all files","*.*")))   
-        tk.destroy() 
+    def __init__(self,window,filename): 
         self.window = window
         self.__load()
         file =Fichier('donne/touche.txt')
@@ -27,7 +21,7 @@ class Game:
         self.le = int(touche['gauche'])
         self.ri = int(touche['droite'])
         self.pressed = {self.av : False , self.re : False , self.le : False,self.ri : False}
-        self.view = ['',False]
+        self.view = ['game',False,filename]
         self.player = Player('assets/img/player/IDLE.png','assets/img/player/RUNDOWN.png')
         self.code = codeFile(window,filename,self.player,self)
         self.map = self.code.get_map()
@@ -56,12 +50,15 @@ class Game:
     def events(self,event):
         if event.type == pygame.KEYDOWN:
             self.pressed[event.key] = True
-            #event player
         elif event.type == pygame.KEYUP:
             self.pressed[event.key] = False
-        #self.player.event(event)
         self.__control(event)
-        #print(self.player.inter())
+        evgame = self.player.inter()
+        if evgame == 'mort':
+            return ['gameover',True,self.view[2]]
+        elif evgame == 'fin':
+            return ['win',True,'']
+        return self.view
 
     def eventEscape(self,event):
         return escapeandkey(event)

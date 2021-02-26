@@ -41,6 +41,8 @@ class Map(pygame.sprite.Group):
                 x,y = 0+50*k,0+50*i
                 if self.encodageMap[i][k] == 'hole':
                     tile = Hole(x,y)
+                elif self.encodageMap[i][k] == 'end':
+                    tile = arrive(x,y)
                 elif self.encodageMap[i][k] != 'None':
                     tile = Wall(int(self.encodageMap[i][k]),x,y)
                     self.listofwall.append(tile)
@@ -120,7 +122,28 @@ class Hole(pygame.sprite.Sprite):
 
     def aff(self,window):
         window.aff(self.image,self.rect.x,self.rect.y)
-        
+   
+class arrive(pygame.sprite.Sprite):
+    def __init__(self,x,y):
+        super().__init__()
+        image = Image('assets/img/map/solfin.png')
+        image.resize(50,50)
+        self.image = image.get_imgFormpygame()
+        self.rect = image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+
+    def get_rect(self):
+        return self.rect
+
+    def get_law(self):
+        return True
+
+    def get_event(self):
+        return 'fin'
+
+    def aff(self,window):
+        window.aff(self.image,self.rect.x,self.rect.y)
 
 class scanner(pygame.sprite.Sprite):
     def __init__(self):

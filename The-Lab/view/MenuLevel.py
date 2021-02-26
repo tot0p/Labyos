@@ -9,14 +9,14 @@ class MenuLevel:
         self.img.resize(83,83);self.img2.resize(83,83);self.img3.resize(83,83);self.img4.resize(83,83);self.img5.resize(83,83);self.img6.resize(83,83);self.img7.resize(83,83);self.img8.resize(83,83);self.img9.resize(83,83);self.img10.resize(83,83);self.imgretour.resize(50,50) #redimentionne les images
         self.font= Font(40,'Thick',salmon);self.font2= Font(8,'Thick',salmon)#les polices
         self.button = [Button(self.img,self.font,'1'),Button(self.img2,self.font,'2'),Button(self.img3,self.font,'3'),Button(self.img4,self.font,'4'),Button(self.img5,self.font,'5'),Button(self.img6,self.font,'6'),Button(self.img7,self.font,'7'),Button(self.img8,self.font,'8'),Button(self.img9,self.font,'9'),Button(self.img10,self.font,'10'),Button(self.imgretour,self.font2)]
-        self.function = [lambda : self.__view('menulevel'), lambda : self.__view('gameendless') , lambda : self.__view('gamecharger') , lambda : self.__view('gameendless') , lambda : self.__view('gamecharger'), lambda : self.__view('gameendless') , lambda : self.__view('gamecharger'), lambda : self.__view('gameendless') , lambda : self.__view('gamecharger'), lambda : self.__view('gameendless') ,lambda : self.__view('menujouer')]
-        self.view = ['menulevel',False]
+        self.function = [lambda : self.__view('game','assets/level/level1/code.txt'), lambda : self.__view('game','assets/level/level2/code.txt') , lambda : self.__view('game','assets/level/level3/code.txt') , lambda : self.__view('game','assets/level/level4/code.txt') , lambda : self.__view('game','assets/level/level5/code.txt'), lambda : self.__view('game','assets/level/level6/code.txt') , lambda : self.__view('game','assets/level/level7/code.txt'), lambda : self.__view('game','assets/level/level8/code.txt') , lambda : self.__view('game','assets/level/level9/code.txt'), lambda : self.__view('game','assets/level/level10/code.txt') ,lambda : self.__view('menujouer','')]
+        self.view = ['menulevel',False,'']
     
 
 
-    def __view(self,name):
+    def __view(self,name,filename):
         #self.view = [name,True]
-        return [name,True]
+        return [name,True,filename]
 
 
 

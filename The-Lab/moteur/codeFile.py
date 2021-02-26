@@ -1,6 +1,6 @@
 from moteur.fichier import Fichier
 from moteur.map import Map
-
+from moteur.Senario import Naration
 
 class codeFile:
 
@@ -45,6 +45,8 @@ class codeFile:
         print(t)
         if t[0] == 'spawn':
             return lambda : self.player.set_spawn(int(t[1])*50,int(t[2])*50)
+        elif t[0] == 'hist':
+            return lambda : print(t[1])
         return
     def get_map(self):
         return self.map

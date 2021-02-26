@@ -16,8 +16,8 @@ class Menu:
         self.font= Font(20,'Thick',salmon)
         self.button = [Button(self.img,self.font,'Jouer'),Button(self.img2,self.font,'Option'),Button(self.img3,self.font,'Quitter')]
         self.function = [lambda : self.__view('menujouer'), lambda : self.__view('option') , self.__exit]
+        self.view = ['menu',False,'']
         self.exit = False
-        self.view = ['menu',False]
 
 
     def __exit(self):
@@ -25,7 +25,7 @@ class Menu:
 
     def __view(self,name):
         #self.view = [name,True]
-        return [name,True]
+        return [name,True,'']
         
 
     def events(self,event):

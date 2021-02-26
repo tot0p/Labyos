@@ -89,6 +89,9 @@
     <Compile Include="view\option.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="view\win.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\font\" />
@@ -134,8 +137,10 @@
     <Content Include="assets\img\logo\logo.png" />
     <Content Include="assets\img\map\sol.png" />
     <Content Include="assets\img\map\hole.png" />
+    <Content Include="assets\img\map\solfin.png" />
     <Content Include="assets\img\map\tileset.png" />
     <Content Include="assets\img\player\IDLE.png" />
+    <Content Include="assets\img\player\perso1tile2400x300.png" />
     <Content Include="assets\img\player\RUN.png" />
     <Content Include="assets\img\player\RUNDOWN.png" />
     <Content Include="assets\img\player\RUNUP.png" />
@@ -143,6 +148,7 @@
     <Content Include="assets\img\texture-none.png" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />
+    <Content Include="assets\level\level2\code.txt" />
     <Content Include="assets\level\level2\level2.txt" />
     <Content Include="donne\config.txt" />
     <Content Include="donne\load.txt" />

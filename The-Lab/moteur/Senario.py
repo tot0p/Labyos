@@ -2,8 +2,7 @@ from moteur.Button import Button
 from moteur.Image import Image
 from moteur.text import Font
 from moteur.color import *
-
-class naration:
+class Naration:
     def __init__(self):
         self.img = Image("")
         self.font = Font(40)
