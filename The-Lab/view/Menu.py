@@ -13,6 +13,8 @@ class Menu:
         self.img.resize(200,50)
         self.img2.resize(200,50)
         self.img3.resize(200,50)
+        self.logo = Image('assets/img/logo/logo.png')
+        self.logo.resize(100,100)
         self.font= Font(20,'Thick',salmon)
         self.button = [Button(self.img,self.font,'Jouer'),Button(self.img2,self.font,'Option'),Button(self.img3,self.font,'Quitter')]
         self.function = [lambda : self.__view('menujouer'), lambda : self.__view('option') , self.__exit]
@@ -46,5 +48,6 @@ class Menu:
     def aff(self,window):
         
         window.reload(500,500)
+        self.logo.aff(window,200,50)
         for i in range(len(self.button)):
             self.button[i].aff(window,150,200+100*i)

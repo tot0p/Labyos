@@ -27,7 +27,7 @@ class GameOver:
 
     def aff(self,window):
         window.reload(500,500)
-        self.font.aff(window,'vous etes decede',100,150)
+        self.font.aff(window,'vous etes mort',100,150)
         for i in range(len(self.button)):
                 self.button[i].aff(window,35+250*i,350)
 

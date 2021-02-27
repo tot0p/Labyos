@@ -135,6 +135,9 @@
     <Content Include="assets\img\button\83x83.png" />
     <Content Include="assets\img\button\retour.png" />
     <Content Include="assets\img\logo\logo.png" />
+    <Content Include="assets\img\logo\logoAlpha.png" />
+    <Content Include="assets\img\map\fulltilewallnumeroter.png" />
+    <Content Include="assets\img\map\noirTrans.png" />
     <Content Include="assets\img\map\sol.png" />
     <Content Include="assets\img\map\hole.png" />
     <Content Include="assets\img\map\solfin.png" />
@@ -150,6 +153,7 @@
     <Content Include="assets\level\level1\level1.txt" />
     <Content Include="assets\level\level2\code.txt" />
     <Content Include="assets\level\level2\level2.txt" />
+    <Content Include="assets\song.mp3" />
     <Content Include="donne\config.txt" />
     <Content Include="donne\load.txt" />
     <Content Include="donne\touche.txt">

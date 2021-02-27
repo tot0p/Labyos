@@ -145,7 +145,46 @@ class arrive(pygame.sprite.Sprite):
     def aff(self,window):
         window.aff(self.image,self.rect.x,self.rect.y)
 
-class scanner(pygame.sprite.Sprite):
-    def __init__(self):
-        pass
+class FogOfWar:
+    def __init__(self,window):
+        super().__init__()
+        self.listOfFog = []
+        self.window = window
+        for y in range(self.window.H//50):
+            self.listOfFog.append([])
+        self.__load()
+
+    def __load(self):
+        for y in range(len(self.listOfFog)):
+            for x in range(len(self.listOfFog)) :
+                self.listOfFog[y][x] = Fog(x*50,y*50,2)
+        
+     
+
+    def aff(self,rectPlayer):
+        for y in range(len(self.listOfFog)):
+            for x in range(len(self.listOfFog[0])):
+                if x != rectPlayer.x//50 and y != rectPlayer.y:
+                    self.listOfFog[y][x].aff(self.window)
+
+class Fog:
+
+    def __init__(self,x,y,n):
+        super().__init__()
+        self.image = Image('assets/img/map/noirTrans.png')
+        self.image.split(32,32,n)
+        self.image.resize_all_tile(50,50)
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+
+    def change_xy(self,x,y):
+        self.rect.x = x
+        self.rect.y = y
+
+    def change_img(self,n):
+        self.image.changeImagewithtiletable(n)
+
+    def aff(self,window):
+        self.image.aff(window,self.rect.x,self.rect.y)
 
