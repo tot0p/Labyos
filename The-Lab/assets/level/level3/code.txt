@@ -1,0 +1,17 @@
+assets/level/level3/level3.txt
+initGame
+{
+spawn(4(0;
+}/
+inGame
+{
+wall(3(5:to:wall(3(6;
+}/
+endGameInLife
+{
+hist('test';
+hist('test';
+}/
+endGameDead
+{
+}

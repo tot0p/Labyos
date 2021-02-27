@@ -14,6 +14,7 @@ class Map(pygame.sprite.Group):
         for y in range(self.window.H//50):
             self.listoftiles.append([])
         self.listofwall = []
+        self.fogofwar = FogOfWar(window)
         self.__load(filename)
         #self.dictTiles = {}
         #self.coordMap = []
@@ -52,8 +53,9 @@ class Map(pygame.sprite.Group):
                     #self.dictTiles[i][k] = None
                 self.listoftiles[i].append(tile)
                 self.add(tile)
-    def aff(self,window):
+    def aff(self,window,playerRect):
         self.draw(window.window)
+        self.fogofwar.aff(playerRect)
         #for i in self.listoftiles:
             #for k in i:
                 #k.aff(window)
@@ -157,14 +159,14 @@ class FogOfWar:
     def __load(self):
         for y in range(len(self.listOfFog)):
             for x in range(len(self.listOfFog)) :
-                self.listOfFog[y][x] = Fog(x*50,y*50,2)
+                self.listOfFog[y].append(Fog(x*50,y*50,2))
         
      
 
     def aff(self,rectPlayer):
         for y in range(len(self.listOfFog)):
             for x in range(len(self.listOfFog[0])):
-                if x != rectPlayer.x//50 and y != rectPlayer.y:
+                if (x != rectPlayer.x//50 or y != rectPlayer.y//50 )and(x != (rectPlayer.x+rectPlayer.width//50) or y != rectPlayer.y//50 )and(x != rectPlayer.x//50 or y != (rectPlayer.y+rectPlayer.height)//50 )and( y != (rectPlayer.y+rectPlayer.height)//50 or x != (rectPlayer.x+rectPlayer.width)//50):
                     self.listOfFog[y][x].aff(self.window)
 
 class Fog:
@@ -172,7 +174,7 @@ class Fog:
     def __init__(self,x,y,n):
         super().__init__()
         self.image = Image('assets/img/map/noirTrans.png')
-        self.image.split(32,32,n)
+        self.image.split(36,36,n)
         self.image.resize_all_tile(50,50)
         self.rect = self.image.get_rect()
         self.rect.x = x

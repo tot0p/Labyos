@@ -64,7 +64,7 @@ class Game:
         return escapeandkey(event)
     
     def affUpdate(self):
-        self.map.aff(self.window)
+        self.map.aff(self.window,self.player.rect)
         self.player.affUpdate(self.window)
 
     def aff(self):
@@ -73,7 +73,7 @@ class Game:
         for i in self.initGame:
             print(i)
             i()
-        self.map.aff(self.window)
+        self.map.aff(self.window,self.player.rect)
 
         self.player.aff(self.window)
         #pass
