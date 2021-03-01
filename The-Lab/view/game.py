@@ -41,9 +41,9 @@ class Game:
         elif self.pressed[self.ri]  and rect.x + 50 < 500 :self.player.move_on_axe_x()
         else:self.player.move=False
 
-    def load_event(self,initGame,inGame,endGameInLife,endGameDead):
+    def load_event(self,initGame,endGameInLife,endGameDead):
         self.initGame = initGame
-        self.inGame = inGame
+        #self.inGame = inGame
         self.endGameInLife = endGameInLife
         self.endGmeDead = endGameDead
 

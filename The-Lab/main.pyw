@@ -17,6 +17,7 @@ from view.game import Game
 from view.option import Option
 from view.win import Win
 from view.gameover import GameOver
+from moteur.sound import play_music ,load_music
 
 
 def whoIsSelect(view):
@@ -35,6 +36,8 @@ def whoIsSelect(view):
 
 if __name__ == '__main__':
     view = ['menu',True,'']
+    load_music('assets/song.wav')
+    play_music(1)
     img = Image('assets/img/logo/logo.png')
     img.resize(50,50)
     window = Window(10,10,'Labios',img)

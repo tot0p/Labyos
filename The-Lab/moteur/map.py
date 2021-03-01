@@ -9,22 +9,14 @@ class Map(pygame.sprite.Group):
         super().__init__()
         self.window = window
         self.listoftiles = []
-        print('e')
         self.encodageMap = []
         for y in range(self.window.H//50):
             self.listoftiles.append([])
         self.listofwall = []
         self.fogofwar = FogOfWar(window)
+        self.afffogofwar = True
         self.__load(filename)
-        #self.dictTiles = {}
-        #self.coordMap = []
-        #self.__createCoordMap((50,50))
 
-
-    def __createCoordMap(self,taillecase):
-        for x in range(self.window.W//taillecase[0]):
-            for y in range(self.window.H//taillecase[1]):
-                self.coordMap.append((0+taillecase[0]*x,0+taillecase[1]*y))
 
     def __load(self,filename):
         f = Fichier(filename)
@@ -49,18 +41,20 @@ class Map(pygame.sprite.Group):
                 elif self.encodageMap[i][k] != 'None':
                     tile = Wall(int(self.encodageMap[i][k]),x,y)
                     self.listofwall.append(tile)
-                    #self.dictTiles[i][k] = tile
                 else:
                     tile = Sol(x,y)
-                    #self.dictTiles[i][k] = None
                 self.listoftiles[i].append(tile)
                 self.add(tile)
+
+    def set_fog(self,bool):
+        self.afffogofwar = bool
+        
+
     def aff(self,window,playerRect):
         self.draw(window.window)
-        self.fogofwar.aff(playerRect)
-        #for i in self.listoftiles:
-            #for k in i:
-                #k.aff(window)
+        if self.afffogofwar:
+            self.fogofwar.aff(playerRect)
+
         
 
 
@@ -178,14 +172,17 @@ class FogOfWar:
         self.window = window
         for y in range(self.window.H//50):
             self.listOfFog.append([])
-        self.__load()
+        self.__load(dif)
 
-    def __load(self):
+    def __load(self,dif):
         for y in range(len(self.listOfFog)):
             for x in range(len(self.listOfFog)) :
-                self.listOfFog[y].append(Fog(x*50,y*50,2))
+                self.listOfFog[y].append(Fog(x*50,y*50,dif))
         
-     
+    def set_dif(self,dif):
+        for y in range(len(self.listOfFog)):
+            for x in range(len(self.listOfFog)) :
+                self.listOfFog[y][x].change_img(dif)
 
     def aff(self,rectPlayer):
         xP = rectPlayer.x//50

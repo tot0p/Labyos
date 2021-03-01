@@ -104,7 +104,7 @@
     <Folder Include="assets\level\level1\" />
     <Folder Include="assets\level\level2\" />
     <Folder Include="assets\level\level3\" />
-    <Folder Include="assets\level\level10\" />
+    <Folder Include="assets\level\leveltest\" />
     <Folder Include="moteur\" />
     <Folder Include="assets\" />
     <Folder Include="controller\" />
@@ -152,15 +152,15 @@
     <Content Include="assets\img\player\RUNUP.png" />
     <Content Include="assets\img\vide.png" />
     <Content Include="assets\img\texture-none.png" />
-    <Content Include="assets\level\level10\code.txt" />
-    <Content Include="assets\level\level10\level10.txt" />
+    <Content Include="assets\level\leveltest\code.txt" />
+    <Content Include="assets\level\leveltest\level10.txt" />
     <Content Include="assets\level\level1\code.txt" />
     <Content Include="assets\level\level1\level1.txt" />
     <Content Include="assets\level\level2\code.txt" />
     <Content Include="assets\level\level2\level2.txt" />
     <Content Include="assets\level\level3\code.txt" />
     <Content Include="assets\level\level3\level3.txt" />
-    <Content Include="assets\song.mp3" />
+    <Content Include="assets\song.wav" />
     <Content Include="donne\config.txt" />
     <Content Include="donne\load.txt" />
     <Content Include="donne\touche.txt">
