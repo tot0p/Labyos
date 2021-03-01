@@ -42,6 +42,8 @@ class Map(pygame.sprite.Group):
                 x,y = 0+50*k,0+50*i
                 if self.encodageMap[i][k] == 'hole':
                     tile = Hole(x,y)
+                elif self.encodageMap[i][k] == 'fire':
+                    tile = Fire(x,y)
                 elif self.encodageMap[i][k] == 'end':
                     tile = arrive(x,y)
                 elif self.encodageMap[i][k] != 'None':
@@ -147,8 +149,30 @@ class arrive(pygame.sprite.Sprite):
     def aff(self,window):
         window.aff(self.image,self.rect.x,self.rect.y)
 
+class Fire(pygame.sprite.Sprite):
+    def __init__(self,x,y):
+        super().__init__()
+        image = Image('assets/img/map/feu.png')
+        image.resize(50,50)
+        self.image = image.get_imgFormpygame()
+        self.rect = image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+
+    def get_rect(self):
+        return self.rect
+
+    def get_law(self):
+        return True
+
+    def get_event(self):
+        return 'mort'
+
+    def aff(self,window):
+        window.aff(self.image,self.rect.x,self.rect.y)
+
 class FogOfWar:
-    def __init__(self,window):
+    def __init__(self,window,dif=0):
         super().__init__()
         self.listOfFog = []
         self.window = window
@@ -170,39 +194,30 @@ class FogOfWar:
             for x in range(len(self.listOfFog[0])):
                 if xP != 0 and yP !=0 and xP != 9 and yP != 9:
                     if (x != xP or y != yP)and(x!= xP+1 or y!= yP)and(x!= xP-1 or y!= yP)and(x!= xP or y!= yP-1)and(x!= xP or y!= yP+1):
-                        self.listOfFog[y][x].updateImg(xP,yP)
                         self.listOfFog[y][x].aff(self.window)
                 elif xP != 9 and yP !=0 and yP!=9:
                     if (x != xP or y != yP)and(x!= xP+1 or y!= yP)and(x!= xP or y!= yP-1)and(x!= xP or y!= yP+1):
-                        self.listOfFog[y][x].updateImg(xP,yP)
                         self.listOfFog[y][x].aff(self.window)
                 elif xP != 0 and yP !=0 and yP!=9:
                     if (x != xP or y != yP)and(x!= xP-1 or y!= yP)and(x!= xP or y!= yP-1)and(x!= xP or y!= yP+1):
-                        self.listOfFog[y][x].updateImg(xP,yP)
                         self.listOfFog[y][x].aff(self.window)
                 elif xP != 0 and xP != 9 and yP != 9:
                     if (x != xP or y != yP)and(x!= xP+1 or y!= yP)and(x!= xP-1 or y!= yP)and(x!= xP or y!= yP+1):
-                        self.listOfFog[y][x].updateImg(xP,yP)
                         self.listOfFog[y][x].aff(self.window)
                 elif xP != 0 and xP != 9 and yP != 0:
                     if (x != xP or y != yP)and(x!= xP+1 or y!= yP)and(x!= xP-1 or y!= yP)and(x!= xP or y!= yP-1):
-                        self.listOfFog[y][x].updateImg(xP,yP)
                         self.listOfFog[y][x].aff(self.window)
                 elif xP == 0 and yP == 0:
                     if (x != xP or y != yP)and(x!= xP+1 or y!= yP)and(x!= xP or y!= yP+1):
-                        self.listOfFog[y][x].updateImg(xP,yP)
                         self.listOfFog[y][x].aff(self.window)
                 elif xP == 9 and yP == 9:
                     if (x != xP or y != yP)and(x!= xP-1 or y!= yP)and(x!= xP or y!= yP-1):
-                        self.listOfFog[y][x].updateImg(xP,yP)
                         self.listOfFog[y][x].aff(self.window)
                 elif xP == 0 and yP == 9:
                     if (x != xP or y != yP)and(x!= xP+1 or y!= yP)and(x!= xP or y!= yP-1):
-                        self.listOfFog[y][x].updateImg(xP,yP)
                         self.listOfFog[y][x].aff(self.window)
                 elif xP == 9 and yP == 0:
                     if (x != xP or y != yP)and(x!= xP-1 or y!= yP)and(x!= xP or y!= yP+1):
-                        self.listOfFog[y][x].updateImg(xP,yP)
                         self.listOfFog[y][x].aff(self.window)
 
 
@@ -225,21 +240,6 @@ class Fog:
     def change_xy(self,x,y):
         self.rect.x = x
         self.rect.y = y
-
-    def updateImg(self,xP,yP):
-        if ((xP-self.rect.x//50) > 2 or (xP-self.rect.x//50) <0)  and ((self.rect.x//50 -xP) > 2 or (self.rect.x//50 -xP)<0) and ((self.rect.y//50 - yP) > 2 or (self.rect.y//50 - yP)<0) and ((yP-self.rect.y//50) > 2 or (yP-self.rect.y//50)<0):
-            t = 2
-        else:
-            if 0<=xP-self.rect.x//50<= 2:
-                t = xP-self.rect.x//50
-            elif 0<=self.rect.x//50 -xP <= 2:
-                t=self.rect.x//50 -xP
-            elif 0<=self.rect.y//50 - yP <= 2:
-                t = self.rect.y//50 - yP
-            elif 0<=yP-self.rect.y//50 <= 2:
-                t = yP-self.rect.y//50
-        print(t)
-        self.change_img(t)
 
     def change_img(self,n):
         self.image.changeImagewithtiletable(n)

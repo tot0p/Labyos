@@ -20,6 +20,9 @@ from view.gameover import GameOver
 
 
 def whoIsSelect(view):
+    '''
+    return des bool pour savoir quelle vue est selcetionner
+    '''
     t = view[0]
     if t == 'menu': return True,False,False,False,False,False,False
     elif t == 'menujouer': return False,True,False,False,False,False,False
