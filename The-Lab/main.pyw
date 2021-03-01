@@ -57,17 +57,14 @@ if __name__ == '__main__':
             if view[1]:
                 view[1] = False
                 menu.aff(window)
-            menu.affUpdate(window)
         elif Ismenujouer:
             if view[1]:
                 view[1] = False
                 menuJouer.aff(window)
-            menuJouer.affUpdate(window)
         elif Ismenulevel:
             if view[1]:
                 view[1] = False
                 menuLevel.aff(window)
-            menuLevel.affUpdate(window)
         elif Isgame:
             if view[1]:
                 view[1] = False

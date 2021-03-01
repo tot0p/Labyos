@@ -16,7 +16,6 @@ class Window:
         self.W = int(W)
         self.H = int(H)
         if fullscreen:
-            print("oui")
             self.window = self.display.set_mode((int(W),int(H)),pygame.FULLSCREEN)
         else:
             self.window = self.display.set_mode((int(W),int(H)))
@@ -54,4 +53,7 @@ class Window:
         self.display.flip()
         
     def aff(self,elem,x,y):
+        '''
+        permet d'afficher des elements sur la window
+        '''
         self.window.blit(elem,(x,y))

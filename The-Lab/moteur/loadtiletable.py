@@ -2,6 +2,9 @@ import pygame
 import pygame.locals
 
 def load_tile_table(filename, width, height):
+    '''
+    permet de charger un tile table en natif avec pygame (pour la classe map)
+    '''
     image = pygame.image.load(filename)
     image_width, image_height = image.get_size()
     tile_table = []

@@ -56,12 +56,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="moteur\loadtiletable.py" />
-    <Compile Include="test.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="view\error.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="view\game.py">
       <SubType>Code</SubType>
     </Compile>
@@ -98,9 +92,16 @@
     <Folder Include="assets\img\player\" />
     <Folder Include="assets\level\" />
     <Folder Include="assets\img\" />
+    <Folder Include="assets\level\level10\" />
     <Folder Include="assets\level\level1\" />
     <Folder Include="assets\level\level2\" />
     <Folder Include="assets\level\level3\" />
+    <Folder Include="assets\level\level4\" />
+    <Folder Include="assets\level\level5\" />
+    <Folder Include="assets\level\level6\" />
+    <Folder Include="assets\level\level7\" />
+    <Folder Include="assets\level\level8\" />
+    <Folder Include="assets\level\level9\" />
     <Folder Include="assets\level\leveltest\" />
     <Folder Include="moteur\" />
     <Folder Include="assets\" />
@@ -151,6 +152,20 @@
     <Content Include="assets\img\player\RUNUP.png" />
     <Content Include="assets\img\vide.png" />
     <Content Include="assets\img\texture-none.png" />
+    <Content Include="assets\level\level10\code.txt" />
+    <Content Include="assets\level\level10\level10.txt" />
+    <Content Include="assets\level\level4\code.txt" />
+    <Content Include="assets\level\level4\level4.txt" />
+    <Content Include="assets\level\level5\code.txt" />
+    <Content Include="assets\level\level5\level5.txt" />
+    <Content Include="assets\level\level6\code.txt" />
+    <Content Include="assets\level\level6\level6.txt" />
+    <Content Include="assets\level\level7\code.txt" />
+    <Content Include="assets\level\level7\level7.txt" />
+    <Content Include="assets\level\level8\code.txt" />
+    <Content Include="assets\level\level8\level8.txt" />
+    <Content Include="assets\level\level9\code.txt" />
+    <Content Include="assets\level\level9\level9.txt" />
     <Content Include="assets\level\leveltest\code.txt" />
     <Content Include="assets\level\leveltest\level10.txt" />
     <Content Include="assets\level\level1\code.txt" />
@@ -164,7 +179,6 @@
     <Content Include="donne\touche.txt">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

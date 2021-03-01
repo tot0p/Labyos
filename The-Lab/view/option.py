@@ -10,6 +10,7 @@ from moteur.fichier import Fichier
 class Option:
 
     def __init__(self):
+
         self.file = Fichier('donne/touche.txt')
         self.touche = self.file.variableFileLecture()  
         self.img = Image('assets/img/vide.png');self.img2 = Image('assets/img/vide.png');self.img3= Image('assets/img/vide.png'); self.img4=Image('assets/img/vide.png');self.imgApply=Image('assets/img/button/200x50.png');self.imgretour = Image('assets/img/button/retour.png')
@@ -24,6 +25,9 @@ class Option:
 
 
     def events(self,event):
+        '''
+        fonction qui prend en paramètre un event pygame et qui renvoie une liste qui est constituer d'un str option et d'un bool False 
+        '''
         if Mouse_on_window():
             click , posCursor = clicgauche(event)
             if click == True:
@@ -41,19 +45,33 @@ class Option:
         return self.view
 
     def __view(self,name):
+        '''
+        fonction qui prend en parametre name et qui renvoie une liste qui comprend le nom, un bool qui vaut True
+        '''
         return [name,True]
                 
 
     def eventEscape(self,event):
+        '''
+        Fonction qui prend en paramètre un event pygame et qui renvoie ce que renvoie la fonction escape avec comme paramètre event
+        '''
         return escape(event)
 
     def affUpdate(self,window):
+        '''
+        fonction qui prend en paramètre: window de type Window
+        sert a afficher la touche utiliser '
+        '''
         self.font.aff(window,pygame.key.name(int(self.touche['avancer'])),400,65)
         self.font.aff(window,pygame.key.name(int(self.touche['reculer'])),400,165)
         self.font.aff(window,pygame.key.name(int(self.touche['gauche'])),400,265)
         self.font.aff(window,pygame.key.name(int(self.touche['droite'])),400,365)
 
     def aff(self,window):
+        '''
+        fonction qui prend en paramètre: window de type Window
+        elle permet d'afficher les button, les str '='  
+        '''
         window.reload(500,500)
         self.buttonApply.aff(window,150,450)
         self.retour.aff(window,25,25)
@@ -61,22 +79,28 @@ class Option:
         self.font.aff(window,pygame.key.name(int(self.touche['reculer'])),400,165)
         self.font.aff(window,pygame.key.name(int(self.touche['gauche'])),400,265)
         self.font.aff(window,pygame.key.name(int(self.touche['droite'])),400,365)
-        self.font.aff(window,'=',350,65)
-        self.font.aff(window,'=',350,165)
-        self.font.aff(window,'=',350,265)
-        self.font.aff(window,'=',350,365)
+        self.font.aff(window,'vaut',300,65)
+        self.font.aff(window,'vaut',300,165)
+        self.font.aff(window,'vaut',300,265)
+        self.font.aff(window,'vaut',300,365)
         self.affUpdate(window)
         for i in range(len(self.button)):
-                self.button[i].aff(window,150,50+100*i)
+                self.button[i].aff(window,100,50+100*i)
 
         
 
 
 
     def __apply(self):
+        '''
+        Fonction qui sert a afficher les nouvelle option
+        '''
         self.file.variableFileWrite(self.touche)
         
     def __change(self,attribut:str):
+        '''
+        Fonction qui prend un attribut : str
+        '''
         key = None
         while key == None:
             for event in get_event():
@@ -84,7 +108,3 @@ class Option:
                     key = event.key
             
         self.touche[attribut] = str(key)
-
-
-
-

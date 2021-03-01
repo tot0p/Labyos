@@ -54,7 +54,6 @@ class codeFile:
         permet de charger les fonction correspondant au mot clé du fichier code
         '''
         t = t.split('(')
-        print(t)
         if t[0] == 'spawn':
             return lambda : self.player.set_spawn(int(t[1])*50,int(t[2])*50)
         elif t[0] == 'set_fog':

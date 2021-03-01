@@ -28,12 +28,18 @@ class Game:
         self.player.def_map(self.map)
 
     def __load(self):
+        '''
+        permet d'afficher l'ecran de chargement le temp de chargement + 2 secondes
+        '''
         load = Load()
         load.aff(self.window)
         self.window.update()
         wait(2000)
 
     def __control(self,event):
+        '''
+        defini les controle du jouer avec event un event pygame
+        '''
         rect = self.player.get_rect()
         if self.pressed[self.av] and rect.y > 0 : self.player.move_on_axe_y(False)
         elif self.pressed[self.re] and rect.y+50 <500 :self.player.move_on_axe_y()
@@ -42,12 +48,19 @@ class Game:
         else:self.player.move=False
 
     def load_event(self,initGame,endGameInLife,endGameDead):
+        '''
+        permet de charger les events du fichier code.txt
+        '''
         self.initGame = initGame
         #self.inGame = inGame
         self.endGameInLife = endGameInLife
         self.endGmeDead = endGameDead
 
     def events(self,event):
+        '''
+        permet de gerer les events en general avec event un event pygame
+        et return la view sur laquelle le programme doit etre
+        '''
         if event.type == pygame.KEYDOWN:
             self.pressed[event.key] = True
         elif event.type == pygame.KEYUP:
@@ -61,20 +74,26 @@ class Game:
         return self.view
 
     def eventEscape(self,event):
+        '''
+        return True ou False et event et un event pygame
+        '''
         return escapeandkey(event)
     
     def affUpdate(self):
+        '''
+        permet de mettre a jour l'affichage du jeu
+        '''
         self.map.aff(self.window,self.player.rect)
         self.player.affUpdate(self.window)
 
     def aff(self):
+        '''
+        permet d' afficher le jeu pour la premiere fois
+        '''
         self.window.reload(500,500)
-        print(self.initGame)
         for i in self.initGame:
-            print(i)
             i()
         self.map.aff(self.window,self.player.rect)
 
         self.player.aff(self.window)
-        #pass
         

@@ -9,6 +9,7 @@ from moteur.time import Chrono
 class Win:
 
     def __init__(self):
+       
         self.img = Image('assets/img/button/200x50.png');self.img2 = Image('assets/img/button/200x50.png');self.imgretour = Image('assets/img/button/retour.png')
         self.img.resize(200,50);self.img2.resize(200,50);self.imgretour.resize(50,50)
         self.font= Font(20,'Thick',salmon);self.font2= Font(8,'Thick',salmon); self.font3= Font(13,'Thick',salmon);self.font4= Font(11,'Thick',salmon)
@@ -24,11 +25,17 @@ class Win:
 
 
     def __view(self,name,filename):
+        '''
+        fonction qui prend en paramètre name et filename et qui renvoie une liste qui comprend le nom, un bool qui vaut True et le nom du File
+        '''
         #self.view = [name,True]
         return [name,True,filename]
 
 
     def affUpdate(self,window):
+        '''
+        fonction qui met a jour l'affichage
+        '''
         if self.chrono.get_val()%10 == 0:
                 self.nIDLE +=1
                 if self.nIDLE > 7:
@@ -37,8 +44,11 @@ class Win:
                 self.playerimg.aff(window,175,175)
 
     def aff(self,window):
+        '''
+        Fonction qui affiche un message lorsque le joueur à gagner
+        '''
         window.reload(500,500)
-        self.font.aff(window,'Ta dead ca chacal',100,125)
+        self.font.aff(window,'Vous avez reussie',100,125)
         # affiche le perso
         for i in range(len(self.button)):
                 self.button[i].aff(window,25+250*i,350)
@@ -46,6 +56,9 @@ class Win:
 
     
     def events(self,event):
+        '''
+        fonction qui prend en parametre un event et qui renvoie une liste qui est constituer d'un str win, d'un bool False et d'un str vide(self.view)
+        '''
         if Mouse_on_window():
             click , posCursor = clicgauche(event)
             if click == True:
@@ -57,4 +70,7 @@ class Win:
 
     
     def eventEscape(self,event):
+        '''
+        Fonction qui prend en paramètre un event pygame et qui renvoie ce que renvoie la fonction escape avec comme paramètre event
+        '''
         return escape(event)

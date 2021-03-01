@@ -1,5 +1,9 @@
 import pygame
 
+'''
+extrait  de graphics nsi
+'''
+
 pygame.mixer.init()
 
 

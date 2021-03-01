@@ -1,9 +1,9 @@
-assets/level/level10/level10.txt
+assets/level/level4/level4.txt
 initGame
 {
-spawn(8(0;
+spawn(0(9;
 set_fog(1;
-diff_fog(0;
+diff_fog(2;
 }/
 endGameInLife
 {

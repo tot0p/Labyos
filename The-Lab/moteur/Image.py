@@ -40,14 +40,23 @@ class Image:
         self.img = self.tile_table[n]
 
     def changeImagewithtiletable(self,n):
+        '''
+        permet de changer l'image qui est afficher d'une tile table
+        '''
         self.img = self.tile_table[n]
 
     def resize_all_tile(self,W,H):
+        '''
+        permet de resize toute les images d'une tile table avec comme taille w, h
+        '''
         self.resize(W,H)
         for i in range(len(self.tile_table)):
             self.tile_table[i] = pygame.transform.scale(self.tile_table[i],(W,H))
 
     def flip_all_tile(self,X:bool,Y:bool):
+        '''
+        permet de flip toute les tiles sur x , y ou x et y
+        '''
         self.flip(X,Y)
         for i in range(len(self.tile_table)):
             self.tile_table[i] = pygame.transform.flip(self.tile_table[i],X,Y)

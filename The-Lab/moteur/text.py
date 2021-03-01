@@ -4,6 +4,9 @@ from moteur.color import *
 pygame.font.init()
 
 class Font(pygame.font.Font):
+    '''
+    cree une font utilisable pour afficher du texte
+    '''
 
 
     def __init__(self,taille,font='Bold',color=black):

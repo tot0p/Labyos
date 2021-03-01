@@ -7,6 +7,7 @@ diff_fog(2;
 }/
 endGameInLife
 {
+start-hist;
 hist(test;
 hist(test;
 }/

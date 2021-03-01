@@ -9,8 +9,10 @@ from moteur.map import Wall
 class Player:
 
     def __init__(self,imgbase:str,imgrunDown:str):
+        '''
+        initialise le player avec imgbase : chemin img et imgrunDown  chemin img
+        '''
         super().__init__()
-        self.pos = [50,50,50,50]
         #move
         self.move = False
         self.nRun = 0
@@ -36,14 +38,23 @@ class Player:
         self.keys = {self.av : False,self.re : False,self.le:False,self.ri:False}
 
     def def_map(self,map):
+        '''
+        return la map charger a partir de code.txt
+        '''
         self.map = map
   
     def set_spawn(self,x,y):
+        '''
+        défini le spawn du joueur
+        '''
         self.rect.x = x
         self.rect.y = y
 
 
     def move_on_axe_x(self,add:bool = True):
+        '''
+        permet de se deplace sur l'axe x si add == True on ajoute sinon on supprime
+        '''
         if add:
             self.rect.x += self.velocity
             if self.check_collision():
@@ -56,6 +67,9 @@ class Player:
             self.left = True; self.up = False;self.move = True
 
     def move_on_axe_y(self,add:bool = True):
+        '''
+        permet de se deplace sur l'axe y si add == True on ajoute sinon on supprime
+        '''
         if add:
             self.rect.y += self.velocity
             if self.check_collision():
@@ -70,6 +84,9 @@ class Player:
 
 
     def affUpdate(self,window):
+        '''
+        permet de mettre a jour l'affichage du player
+        '''
         if not self.move:
             if self.chrono.get_val()%10 == 0:
                 self.nRun = 0
@@ -89,7 +106,10 @@ class Player:
             self.imgRun.aff(window,self.rect.x,self.rect.y)
 
 
-    def prev_check_collision1(self,xb,yb):        
+    def prev_check_collision1(self,xb,yb):
+        '''
+        marche mais obslete et pas fluide
+        '''
         x = (self.rect.x+(self.velocity*xb))
         y = (self.rect.y+(self.velocity*yb))
         rect = self.map.listoftiles[y//50][x//50].get_rect()
@@ -145,15 +165,17 @@ class Player:
         return False
 
     def check_collision(self):
+        '''
+        return True si le player a un colision avec un mur
+        '''
         return self.rect.collidelistall(self.map.listofwall)
-        #t =self.map.listoftiles[self.rect.y//50][self.rect.x//50]
-        #if not t.get_law():
-            #return self.rect.colliderect(t)
-        #return False
             
             
     
     def inter(self):
+        '''
+        permet de recuperer les eventes sur les sol ou est le player
+        '''
         xhg = (self.rect.x // 50)
         yhg = (self.rect.y // 50)
         xhd = ((self.rect.x + self.rect.width) // 50) 
@@ -180,12 +202,18 @@ class Player:
             return None
 
     def get_rect(self):
+        '''
+        permet de recuperer le rect du player
+        '''
         return self.rect
 
 
 
 
     def aff(self,window):
+        """
+        affiche le player sur la window de type window
+        """
         self.imgbase.aff(window,self.rect.x,self.rect.y)
 
         

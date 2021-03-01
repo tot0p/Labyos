@@ -5,6 +5,9 @@ from moteur.color import *
 from moteur.event import *
 class MenuLevel:
     def __init__(self):
+        '''
+        initialise le menu
+        '''
         self.img = Image('assets/img/button/83x83.png');self.img2 = Image('assets/img/button/83x83.png');self.img3 = Image('assets/img/button/83x83.png');self.img4 = Image('assets/img/button/83x83.png');self.img5 = Image('assets/img/button/83x83.png');self.img6 = Image('assets/img/button/83x83.png');self.img7 = Image('assets/img/button/83x83.png');self.img8 = Image('assets/img/button/83x83.png');self.img9 = Image('assets/img/button/83x83.png');self.img10 = Image('assets/img/button/83x83.png');self.imgretour = Image('assets/img/button/retour.png')#créer les objets images
         self.img.resize(83,83);self.img2.resize(83,83);self.img3.resize(83,83);self.img4.resize(83,83);self.img5.resize(83,83);self.img6.resize(83,83);self.img7.resize(83,83);self.img8.resize(83,83);self.img9.resize(83,83);self.img10.resize(83,83);self.imgretour.resize(50,50) #redimentionne les images
         self.font= Font(40,'Thick',salmon);self.font2= Font(8,'Thick',salmon)#les polices
@@ -15,12 +18,18 @@ class MenuLevel:
 
 
     def __view(self,name,filename):
-        #self.view = [name,True]
+        '''
+        fonction qui prend en parametre name et  filename qui renvoie une liste qui comprend name, un bool qui vaut True et le nom du fichier
+        '''
+
         return [name,True,filename]
 
 
 
     def events(self,event):
+        '''
+        fonction qui prend en parametre un event et qui renvoie une liste qui est constituer d'un str menulevel, d'un bool False et d'un str vide(self.view)
+        '''
         if Mouse_on_window():
             click , posCursor = clicgauche(event)
             if click == True:
@@ -31,13 +40,19 @@ class MenuLevel:
         return self.view
 
 
-    def affUpdate(self,window):
-        pass
 
     def eventEscape(self,event):
+        '''
+        fonction qui prend en paramètre: event  pygame
+        
+        '''
         return escape(event)
 
     def aff(self,window):
+        '''
+        fonction qui prend en paramètre: window de type Window
+        elle permet d'afficher les button '
+        '''
         
         window.reload(500,500)
         self.button[10].aff(window,25,25)

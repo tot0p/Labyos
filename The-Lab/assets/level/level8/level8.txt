@@ -1,0 +1,10 @@
+6,0,0,0,0,0,9,None,None,None
+1,None,None,None,None,fire,fire,None,11,None
+1,None,11,None,11,None,11,None,1,None
+1,None,1,None,1,None,1,None,8,None
+8,None,8,None,8,None,8,None,fire,None
+None,None,fire,None,None,None,fire,None,fire,end
+11,None,11,None,11,None,11,None,11,fire
+1,None,1,None,1,None,1,None,1,None
+1,None,fire,None,fire,None,None,None,None,None
+7,0,0,0,0,0,0,0,0,9
