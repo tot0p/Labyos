@@ -21,7 +21,7 @@ class Map(pygame.sprite.Group):
     def __load(self,filename):
         f = Fichier(filename)
         if not f.existFile():
-            print("Erreur le ficier n'existe pas")
+            print("Erreur le ficier n'existe pas ou incompatible--")
             return
         self.encodageMap = f.lectureTable()
         for i in range(len(self.encodageMap)):
