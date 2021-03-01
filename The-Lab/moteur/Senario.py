@@ -9,6 +9,6 @@ class Naration:
         self.button = Button(self.img,self.font)
         self.afficher=False
     
-    def aff(self,window,text):
-        self.img.aff(window,50,50)
+    def aff(self,window,text,x,y):
+        self.img.aff(window,x,y)
         self.font.aff(window,text,50,50)

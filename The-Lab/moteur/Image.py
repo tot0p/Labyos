@@ -29,6 +29,9 @@ class Image:
         self.rect.height = H
 
     def split(self,width,height,n):
+        '''
+        permet de load un tile table avec width et height la taille des morceaux et n l'image de numero 
+        '''
         self.tile_table = []
         for tile_x in range(0, self.rect.width//width):
             for tile_y in range(0,self.rect.height//height):

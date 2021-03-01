@@ -4,6 +4,11 @@ class Button:
 
 
     def __init__(self,img,Font,text:str=''):
+        '''
+        initialise le Button et prend en parrametre une Font de type Font,
+        une img de Type Image,
+        et text de type text
+        '''
         self.rect = img.get_rect() # contient x , y du point au gauche et height et width la taille
         self.img = img #image du fond du bouton
         self.font = Font
@@ -32,11 +37,11 @@ class Button:
         return False , None
         
 
-    def EventHover(self,xC,yC):
-        #si curseur au dessus
-        pass
 
     def aff(self,window,x,y):
+        '''
+        permet d'afficher le buton sur la window de type Window et de coordoné x , y (int,int)
+        '''
         self.afficher=True
         self.img.aff(window,x,y)
         L=self.font.space_taken(self.text)

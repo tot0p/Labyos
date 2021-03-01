@@ -5,6 +5,13 @@ from moteur.Senario import Naration
 class codeFile:
 
     def __init__(self,window,filename,player,view):
+        '''
+        initialise la class code file qui permet de lire le fichier code du jeu
+        prend window de type window
+        filename est un str 
+        player est de type player
+        view est la view du jeu ou il faut load les events
+        '''
         file = Fichier(filename)
         self.contenu = file.lectureTable()
         self.player = player
@@ -16,6 +23,10 @@ class codeFile:
         self.__load(window)
 
     def __load(self,window):
+        '''
+        methode privée qui sert a chargé la map
+        prend en parrametre window de type Window
+        '''
 
         self.map = Map(window,self.contenu.pop(0))
         self.contenu = ''.join(self.contenu).split('/') #   'initGame{spawn(0,4)}/inGame{wall(3,5):to:wall(3,6)}/endGameInLife{hist('test')}/endGameDead{}'
@@ -39,18 +50,24 @@ class codeFile:
         
 
     def __keyword(self,t):
+        '''
+        permet de charger les fonction correspondant au mot clé du fichier code
+        '''
         t = t.split('(')
         print(t)
         if t[0] == 'spawn':
             return lambda : self.player.set_spawn(int(t[1])*50,int(t[2])*50)
-        elif t[0] == 'set_frog':
+        elif t[0] == 'set_fog':
             return lambda : self.map.set_fog(bool(t[1]))
-        elif t[0] == 'diff_frog':
+        elif t[0] == 'diff_fog':
             return lambda : self.map.fogofwar.set_dif(int(t[1]))
         elif t[0] == 'hist':
             return lambda : print(t[1])
         return lambda:print('error')
     def get_map(self):
+        '''
+        permet de recuperer la map
+        '''
         return self.map
             
         

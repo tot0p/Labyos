@@ -22,9 +22,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="controller\init.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="moteur\Button.py">
       <SubType>Code</SubType>
     </Compile>
@@ -107,7 +104,6 @@
     <Folder Include="assets\level\leveltest\" />
     <Folder Include="moteur\" />
     <Folder Include="assets\" />
-    <Folder Include="controller\" />
     <Folder Include="donne\" />
     <Folder Include="view\" />
   </ItemGroup>
@@ -133,6 +129,9 @@
     <Content Include="assets\font\Rocket.ttf" />
     <Content Include="assets\font\Space.ttf" />
     <Content Include="assets\font\Thick.ttf" />
+    <Content Include="assets\img\histoiretile.png" />
+    <Content Include="assets\img\button\100x25.png" />
+    <Content Include="assets\img\button\150x120.png" />
     <Content Include="assets\img\button\200x50.png" />
     <Content Include="assets\img\button\83x83.png" />
     <Content Include="assets\img\button\retour.png" />
@@ -161,7 +160,6 @@
     <Content Include="assets\level\level3\code.txt" />
     <Content Include="assets\level\level3\level3.txt" />
     <Content Include="assets\song.wav" />
-    <Content Include="donne\config.txt" />
     <Content Include="donne\load.txt" />
     <Content Include="donne\touche.txt">
       <SubType>Code</SubType>

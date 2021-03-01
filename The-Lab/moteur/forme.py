@@ -1,6 +1,8 @@
 import pygame
 import cmath
 
+#forme de graphics_nsi addapter pour le moteur du jeu
+
 # PARTIE 1.2 : CLASSES PREDEFINIES
 
 class Point :

@@ -1,5 +1,10 @@
 import pygame
 
+'''
+sert juste a avoir des color définies
+'''
+
+
 #couleur predefinies
 black=pygame.Color(0,0,0)
 blue=pygame.Color(0,0,255)
