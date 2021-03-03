@@ -29,6 +29,7 @@ class codeFile:
         '''
 
         self.map = Map(window,self.contenu.pop(0))
+        self.naration = Naration(window)
         self.contenu = ''.join(self.contenu).split('/') #   'initGame{spawn(0,4)}/inGame{wall(3,5):to:wall(3,6)}/endGameInLife{hist('test')}/endGameDead{}'
         for i in range(len(self.contenu)):
             self.contenu[i] = self.contenu[i].split('{')
@@ -61,7 +62,7 @@ class codeFile:
         elif t[0] == 'diff_fog':
             return lambda : self.map.fogofwar.set_dif(int(t[1]))
         elif t[0] == 'hist':
-            return lambda : print(t[1])
+            return lambda : self.naration.addreplic(t[1],bool(t[2]),int(t[3]))
         return lambda:print('error')
     def get_map(self):
         '''
@@ -69,6 +70,11 @@ class codeFile:
         '''
         return self.map
             
+    def get_narration(self):
+        '''
+        permet de recuperer la naration
+        '''
+        return self.naration
         
 
 

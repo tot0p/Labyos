@@ -7,9 +7,8 @@ diff_fog(2;
 }/
 endGameInLife
 {
-start-hist;
-hist(test;
-hist(test;
+hist(test,True,50;
+hist(test,False,50;
 }/
 endGameDead
 {

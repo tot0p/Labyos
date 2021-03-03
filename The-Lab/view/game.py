@@ -25,7 +25,9 @@ class Game:
         self.player = Player('assets/img/player/IDLE.png','assets/img/player/RUNDOWN.png')
         self.code = codeFile(window,filename,self.player,self)
         self.map = self.code.get_map()
+        self.naration = self.code.get_narration()
         self.player.def_map(self.map)
+        self.fin = []
 
     def __load(self):
         '''
@@ -68,8 +70,12 @@ class Game:
         self.__control(event)
         evgame = self.player.inter()
         if evgame == 'mort':
+            for i in self.endGmeDead:
+                i()    
             return ['gameover',True,self.view[2]]
         elif evgame == 'fin':
+            for i in self.endGameInLife:
+                i()
             return ['win',True,'']
         return self.view
 
