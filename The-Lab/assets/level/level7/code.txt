@@ -7,8 +7,8 @@ diff_fog(2;
 }/
 endGameInLife
 {
-hist(test;
-hist(test;
+hist(Hier j etait chez ma mere*et elle ma preparer*un croc monsieur delicieux(False(6000;
+hist(...(True(1000;
 }/
 endGameDead
 {

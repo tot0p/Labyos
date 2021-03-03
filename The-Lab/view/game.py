@@ -58,7 +58,6 @@ class Game:
         #self.inGame = inGame
         self.endGameInLife = endGameInLife
         self.endGameDead = endGameDead
-        print(self.endGameInLife,self.endGameDead)
 
     def events(self,event):
         '''

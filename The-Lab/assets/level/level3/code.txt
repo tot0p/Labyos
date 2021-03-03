@@ -5,8 +5,8 @@ spawn(4(0;
 }/
 endGameInLife
 {
-hist(ah oui tu le sais*j avais oublier que je*te l avait dit lors de notre*premiere rencontre(False(500;
-hist(...(True(300;
+hist(ah oui tu le sais*j avais oublier que je*te l avait dit*lors de notre*premiere rencontre(False(6000;
+hist(...(True(1000;
 }/
 endGameDead
 {

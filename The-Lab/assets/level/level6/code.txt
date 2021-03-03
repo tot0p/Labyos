@@ -7,8 +7,8 @@ diff_fog(2;
 }/
 endGameInLife
 {
-hist(test;
-hist(test;
+hist(AH oui si tu peux*pas parler ces parceque*tu es un robot(False(6000;
+hist(...(True(1000;
 }/
 endGameDead
 {

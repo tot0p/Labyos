@@ -7,8 +7,8 @@ diff_fog(2;
 }/
 endGameInLife
 {
-hist(test;
-hist(test;
+hist(comment tu ose me*couper la parole*tu es si mal*discipliner(False(6000;
+hist(.....(True(1000;
 }/
 endGameDead
 {

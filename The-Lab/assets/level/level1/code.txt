@@ -7,9 +7,10 @@ diff_fog(2;
 }/
 endGameInLife
 {
-hist(bienvenue dans mon labyrinthe*si tu es ici*c'est parce que tu*es un sujet de test(False(500;
-hist(....(True(300;
+hist(bienvenue dans mon*labyrinthe si tu es*ici c est parce que*tu es un sujet*de test(False(6000;
+hist(....(True(1000;
 }/
 endGameDead
 {
+hist(t nul(False(3000;
 }

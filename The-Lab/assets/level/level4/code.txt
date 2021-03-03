@@ -7,8 +7,8 @@ diff_fog(2;
 }/
 endGameInLife
 {
-hist(test;
-hist(test;
+hist(on s ennui non*faudrai peut etre*accelerer tu pense pas(False(6000;
+hist(..(True(1000;
 }/
 endGameDead
 {

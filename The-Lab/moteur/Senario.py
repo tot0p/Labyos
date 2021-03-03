@@ -18,6 +18,7 @@ class Naration:
         self.rect = self.imgb.get_rect()
         self.rect.x = 0
         self.rect.y = 0
+        self.lastdelay = 0
 
     def aff(self):
         """
@@ -36,7 +37,7 @@ class Naration:
             self.imgb.changeImagewithtiletable(self.nIDLE)
         self.imgb.aff(self.window,self.rect.x,self.rect.y)
         self.replic[self.nReplic]()
-        if self.chrono.get_val()%self.delay[self.nReplic] == 0 :
+        if self.chrono.get_val() > self.delay[self.nReplic] :
             self.nReplic += 1
         
             
@@ -46,8 +47,9 @@ class Naration:
         """
         fonction qui permet d'afficher la réplique du personnage voulu avec un delai prechoisie en milisecond
         """
-        self.delay.append(delay)
+        self.delay.append(delay+self.chrono.get_val()+self.lastdelay)
         self.replic.append(lambda:self.__affreplic(text,gentil))
+        self.lastdelay = delay
 
     def __affreplic(self,text:str,gentil:bool):
         """

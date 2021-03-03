@@ -7,8 +7,8 @@ diff_fog(2;
 }/
 endGameInLife
 {
-hist(test;
-hist(test;
+hist(Je te trouve pas*tres parlant quand meme*allez dit moi que*tu me tres beau(False(6000;
+hist(.....(True(1000;
 }/
 endGameDead
 {
