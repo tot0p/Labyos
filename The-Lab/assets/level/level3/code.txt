@@ -3,14 +3,10 @@ initGame
 {
 spawn(4(0;
 }/
-inGame
-{
-wall(3(5:to:wall(3(6;
-}/
 endGameInLife
 {
-hist('test';
-hist('test';
+hist(ah oui tu le sais*j avais oublier que je*te l avait dit lors de notre*premiere rencontre(False(500;
+hist(...(True(300;
 }/
 endGameDead
 {

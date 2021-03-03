@@ -11,11 +11,8 @@ class Naration:
         self.chrono = Chrono()
         self.imgb = Image('assets/img/histoiretile.png')
         self.imgb.split(500,500,0)
-        self.imgg = Image('assets/img/button/100x25.png')
-        self.imgm = Image('assets/img/button/150x120.png')
         self.replic = []
-        self.font = Font(10)
-        self.font1 = Font(30)
+        self.font = Font(15,'Thick')
         self.nIDLE = 0
         self.nReplic = 0
         self.rect = self.imgb.get_rect()
@@ -39,7 +36,7 @@ class Naration:
             self.imgb.changeImagewithtiletable(self.nIDLE)
         self.imgb.aff(self.window,self.rect.x,self.rect.y)
         self.replic[self.nReplic]()
-        if self.chrono.get_val()%self.delay[self.nReplic] == 0:
+        if self.chrono.get_val()%self.delay[self.nReplic] == 0 :
             self.nReplic += 1
         
             
@@ -55,22 +52,21 @@ class Naration:
     def __affreplic(self,text:str,gentil:bool):
         """
         fonction permet d'afficher la replique choisi selon le personnage choisi avec le delai choisi en milisecond
-        la replique fait un saut de ligne a chaque '/'
+        la replique fait un saut de ligne a chaque '*'
         """
-        
-        t = text.split("/")
-        y = 200 - 15 * (len(t)-1)
+        t = text.split("*")
+        y = 200 - 30 * (len(t)-1)
         for i in range(len(t)):
             if gentil == True :
                 #self.imgg.aff(self.window,100,200)
-                self.font1.aff(self.window,t[i],110,y + i * 15)
+                self.font.aff(self.window,t[i],110,y + i * 30)
             elif gentil == False :
                 #self.imgm.aff(self.window,280,200)
-                self.font.aff(self.window,t[i],320,y + i * 15)
+                self.font.aff(self.window,t[i],320,y + i * 30)
 
     def stop(self):
         """
-        fonction qui permet d'arreter le gif en arriere plan
+        fonction qui permet de savoir si la fonction doit s'executer 
         """
         return len(self.replic) == self.nReplic
 

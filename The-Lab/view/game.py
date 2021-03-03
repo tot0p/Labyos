@@ -13,6 +13,7 @@ class Game:
 
     def __init__(self,window,filename): 
         self.window = window
+        self.isFin = False
         self.__load()
         file =Fichier('donne/touche.txt')
         touche = file.variableFileLecture()
@@ -56,7 +57,8 @@ class Game:
         self.initGame = initGame
         #self.inGame = inGame
         self.endGameInLife = endGameInLife
-        self.endGmeDead = endGameDead
+        self.endGameDead = endGameDead
+        print(self.endGameInLife,self.endGameDead)
 
     def events(self,event):
         '''
@@ -69,14 +71,22 @@ class Game:
             self.pressed[event.key] = False
         self.__control(event)
         evgame = self.player.inter()
-        if evgame == 'mort':
-            for i in self.endGmeDead:
+        if evgame == 'mort'and self.isFin == False:
+            self.isFin = True
+            for i in self.endGameDead:
                 i()    
-            return ['gameover',True,self.view[2]]
-        elif evgame == 'fin':
+            self.fin = ['gameover',True,self.view[2]]
+        elif evgame == 'fin' and self.isFin == False:
+            self.isFin = True
             for i in self.endGameInLife:
                 i()
-            return ['win',True,'']
+            self.fin = ['win',True,'']
+
+    def viewIs(self):
+        if self.naration.stop() and self.fin != []:
+            t = self.fin
+            self.fin = []
+            return t
         return self.view
 
     def eventEscape(self,event):
@@ -89,8 +99,11 @@ class Game:
         '''
         permet de mettre a jour l'affichage du jeu
         '''
-        self.map.aff(self.window,self.player.rect)
-        self.player.affUpdate(self.window)
+        if self.naration.stop():
+            self.map.aff(self.window,self.player.rect)
+            self.player.affUpdate(self.window)
+        else:
+            self.naration.affupdate()
 
     def aff(self):
         '''

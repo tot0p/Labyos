@@ -70,6 +70,7 @@ if __name__ == '__main__':
                 view[1] = False
                 game = Game(window,view[2])
                 game.aff()
+            view = game.viewIs()
             game.affUpdate()
         elif Isoption:
             if view[1]:
@@ -98,7 +99,7 @@ if __name__ == '__main__':
                view = menuLevel.events(event)
                run = menuLevel.eventEscape(event)
            elif Isgame:
-               view = game.events(event)
+               game.events(event)
                run = game.eventEscape(event)
            elif Isoption:
                 view = option.events(event)
