@@ -2,8 +2,7 @@ assets/level/level1/level1.txt
 initGame
 {
 spawn(0(1;
-set_fog(1;
-diff_fog(2;
+set_fog(0;
 }/
 endGameInLife
 {
@@ -12,5 +11,4 @@ hist(....(True(1000;
 }/
 endGameDead
 {
-hist(t nul(False(3000;
 }

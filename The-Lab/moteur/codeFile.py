@@ -58,7 +58,10 @@ class codeFile:
         if t[0] == 'spawn':
             return lambda : self.player.set_spawn(int(t[1])*50,int(t[2])*50)
         elif t[0] == 'set_fog':
-            return lambda : self.map.set_fog(bool(t[1]))
+            if t[1] == '0':
+                return lambda : self.map.set_fog(False)
+            else:
+                return lambda : self.map.set_fog(True)
         elif t[0] == 'diff_fog':
             return lambda : self.map.fogofwar.set_dif(int(t[1]))
         elif t[0] == 'hist':
