@@ -1,0 +1,12 @@
+assets/level/leveldemo/level10.txt
+initGame
+{
+spawn(0(0;
+set_fog(0;
+}/
+endGameInLife
+{
+}/
+endGameDead
+{
+}
