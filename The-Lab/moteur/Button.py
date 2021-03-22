@@ -18,7 +18,7 @@ class Button:
 
     def EventClic(self,xC,yC,function):
         '''
-        Fonction qui permet de lancer une fonction en cliqaunt sur un bouton
+        Fonction qui permet de lancer une fonction en cliquant sur un bouton
         Prend en paramètre:
         xC= coordonnée du curseur en X
         xY= coordonnée du curseur en Y
