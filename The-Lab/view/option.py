@@ -22,7 +22,8 @@ class Option:
         self.retour = Button(self.imgretour,self.font2)
         self.attribut = ["avancer","reculer","gauche","droite"]
         self.buttonApply = Button(self.imgApply,self.font,'Apply')
-        self.view = ['option',False]
+        self.view = ['option',False,'']
+        self.keychange = [False,None,None]
 
 
     def events(self,event):
@@ -36,20 +37,25 @@ class Option:
                     g , v = self.button[i].EventClic(posCursor[0],posCursor[1],lambda : self.__change(self.attribut[i]))
                     if g:
                         return self.view
-                g , v = self.retour.EventClic(posCursor[0],posCursor[1],lambda :self.__view('menu'))
+                g , v = self.retour.EventClic(posCursor[0],posCursor[1],lambda :self.__echap())
                 if g:
                     return v
                 g ,v = self.buttonApply.EventClic(posCursor[0],posCursor[1],lambda : self.__apply())
                 return self.view
-
-                    
+            if self.keychange[0] and self.keychange[1] is not None and self.keychange[2] is not None:
+                    self.touche[self.keychange[1]] = str(self.keychange[2])
+                    self.keychange[0] = False
+            elif self.keychange[0] and self.keychange[1] is not None:
+                if event.type == pygame.KEYDOWN:
+                    self.keychange[2] = event.key
         return self.view
 
-    def __view(self,name):
+    def __echap(self):
         '''
-        fonction qui prend en parametre name et qui renvoie une liste qui comprend le nom, un bool qui vaut True
+        fonction permet de retourner a la vue menu
         '''
-        return [name,True]
+        self.touche = self.file.variableFileLecture()  
+        return ['menu',True,'']
                 
 
     def eventEscape(self,event):
@@ -77,7 +83,8 @@ class Option:
         fonction qui prend en paramètre: window de type Window
         sert a afficher la touche utiliser
         '''
-        draw_fill_rectangle(Point(0,0),500,500,black,window)
+        print('il marche tu va rager')
+        draw_fill_rectangle(Point(250,250),500,500,black,window)
         self.__affall(window)
         #self.font.aff(window,pygame.key.name(int(self.touche['avancer'])),400,65)
         #self.font.aff(window,pygame.key.name(int(self.touche['reculer'])),400,165)
@@ -92,10 +99,6 @@ class Option:
         window.reload(500,500)
         self.__affall(window)
 
-        
-
-
-
     def __apply(self):
         '''
         Fonction qui sert a afficher les nouvelle option
@@ -106,10 +109,4 @@ class Option:
         '''
         Fonction qui prend un attribut : str
         '''
-        key = None
-        while key == None:
-            for event in get_event():
-                if event.type == pygame.KEYDOWN:
-                    key = event.key
-            
-        self.touche[attribut] = str(key)
+        self.keychange = [True,attribut,None]
