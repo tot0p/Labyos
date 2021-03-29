@@ -4,6 +4,7 @@ from moteur.Button import Button
 from moteur.color import *
 from moteur.event import *
 from moteur.fichier import Fichier
+from moteur.forme import draw_fill_rectangle , Point
 
 #g{avancer : z,reculer : s,aller a gauche : q,aller a droite : d}
 #g['avancer'] 
@@ -57,22 +58,7 @@ class Option:
         '''
         return escape(event)
 
-    def affUpdate(self,window):
-        '''
-        fonction qui prend en paramètre: window de type Window
-        sert a afficher la touche utiliser '
-        '''
-        self.font.aff(window,pygame.key.name(int(self.touche['avancer'])),400,65)
-        self.font.aff(window,pygame.key.name(int(self.touche['reculer'])),400,165)
-        self.font.aff(window,pygame.key.name(int(self.touche['gauche'])),400,265)
-        self.font.aff(window,pygame.key.name(int(self.touche['droite'])),400,365)
-
-    def aff(self,window):
-        '''
-        fonction qui prend en paramètre: window de type Window
-        elle permet d'afficher les button, les str '='  
-        '''
-        window.reload(500,500)
+    def __affall(self,window):
         self.buttonApply.aff(window,150,450)
         self.retour.aff(window,25,25)
         self.font.aff(window,pygame.key.name(int(self.touche['avancer'])),400,65)
@@ -83,9 +69,28 @@ class Option:
         self.font.aff(window,'vaut',300,165)
         self.font.aff(window,'vaut',300,265)
         self.font.aff(window,'vaut',300,365)
-        self.affUpdate(window)
         for i in range(len(self.button)):
                 self.button[i].aff(window,100,50+100*i)
+
+    def affUpdate(self,window):
+        '''
+        fonction qui prend en paramètre: window de type Window
+        sert a afficher la touche utiliser
+        '''
+        draw_fill_rectangle(Point(0,0),500,500,black,window)
+        self.__affall(window)
+        #self.font.aff(window,pygame.key.name(int(self.touche['avancer'])),400,65)
+        #self.font.aff(window,pygame.key.name(int(self.touche['reculer'])),400,165)
+        #self.font.aff(window,pygame.key.name(int(self.touche['gauche'])),400,265)
+        #self.font.aff(window,pygame.key.name(int(self.touche['droite'])),400,365)
+
+    def aff(self,window):
+        '''
+        fonction qui prend en paramètre: window de type Window
+        elle permet d'afficher les button, les str '='  
+        '''
+        window.reload(500,500)
+        self.__affall(window)
 
         
 
