@@ -104,6 +104,7 @@
     <Folder Include="assets\level\level7\" />
     <Folder Include="assets\level\level8\" />
     <Folder Include="assets\level\level9\" />
+    <Folder Include="assets\level\leveldemo\" />
     <Folder Include="assets\level\leveltest\" />
     <Folder Include="moteur\" />
     <Folder Include="assets\" />
@@ -168,6 +169,8 @@
     <Content Include="assets\level\level8\level8.txt" />
     <Content Include="assets\level\level9\code.txt" />
     <Content Include="assets\level\level9\level9.txt" />
+    <Content Include="assets\level\leveldemo\code.txt" />
+    <Content Include="assets\level\leveldemo\level10.txt" />
     <Content Include="assets\level\leveltest\code.txt" />
     <Content Include="assets\level\leveltest\level10.txt" />
     <Content Include="assets\level\level1\code.txt" />

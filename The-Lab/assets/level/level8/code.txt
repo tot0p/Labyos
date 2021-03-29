@@ -1,4 +1,4 @@
-assets/level/level8/level8.txt
+level8.txt
 initGame
 {
 spawn(0(5;

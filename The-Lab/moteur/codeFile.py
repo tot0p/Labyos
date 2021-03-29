@@ -13,6 +13,7 @@ class codeFile:
         view est la view du jeu ou il faut load les events
         '''
         file = Fichier(filename)
+        self.path = filename.split('/');self.path.pop(len(self.path)-1);self.path = '/'.join(self.path)
         self.contenu = file.lectureTable()
         self.player = player
         self.view = view
@@ -28,7 +29,7 @@ class codeFile:
         prend en parrametre window de type Window
         '''
 
-        self.map = Map(window,self.contenu.pop(0))
+        self.map = Map(window,self.path + '/' +self.contenu.pop(0))
         self.naration = Naration(window)
         self.contenu = ''.join(self.contenu).split('/') #   'initGame{spawn(0,4)}/inGame{wall(3,5):to:wall(3,6)}/endGameInLife{hist('test')}/endGameDead{}'
         for i in range(len(self.contenu)):

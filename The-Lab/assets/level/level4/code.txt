@@ -1,4 +1,4 @@
-assets/level/level4/level4.txt
+level4.txt
 initGame
 {
 spawn(0(9;
