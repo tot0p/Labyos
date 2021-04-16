@@ -40,7 +40,7 @@ if __name__ == '__main__':
     play_music(1)
     img = Image('assets/img/logo/logo.png')
     img.resize(50,50)
-    window = Window(10,10,'Labios',img)
+    window = Window(10,10,'Labyos',img)
     run = 1
     tick = Tick(60)
     menu  = Menu()
