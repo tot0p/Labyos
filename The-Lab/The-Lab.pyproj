@@ -180,6 +180,7 @@
     <Content Include="assets\level\level3\code.txt" />
     <Content Include="assets\level\level3\level3.txt" />
     <Content Include="assets\song.wav" />
+    <Content Include="donne\info.txt" />
     <Content Include="donne\load.txt" />
     <Content Include="donne\touche.txt">
       <SubType>Code</SubType>

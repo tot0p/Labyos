@@ -108,7 +108,7 @@ class Game:
         '''
         permet d' afficher le jeu pour la premiere fois
         '''
-        self.window.reload(500,500,fullscreen = True)
+        self.window.reload(500,500)
         for i in self.initGame:
             i()
         self.map.aff(self.window,self.player.rect)

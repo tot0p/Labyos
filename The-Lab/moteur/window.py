@@ -15,6 +15,7 @@ class Window:
         self.display  = pygame.display
         self.W = int(W)
         self.H = int(H)
+        self.fullscreen = fullscreen
         if fullscreen:
             self.window = self.display.set_mode((int(W),int(H)),pygame.FULLSCREEN)
         else:
@@ -24,7 +25,7 @@ class Window:
         self.window.fill(bg_color)
         self.sprites = pygame.sprite.Group()
     
-    def reload(self,W,H,bg_color=black,fullscreen=0):
+    def reload(self,W,H,bg_color=black):
         '''
         permet de recharger la fenetre
         W(int) , H(int) represante la taille la fenetre
@@ -33,12 +34,19 @@ class Window:
         '''
         self.W = int(W)
         self.H = int(H)
-        if fullscreen:
+        if self.fullscreen:
             self.window = self.display.set_mode((int(W),int(H)),pygame.FULLSCREEN)
         else:
             self.window = self.display.set_mode((int(W),int(H)))
         self.window.fill(bg_color)
         self.update()
+
+    def set_fullscreen(self,fullscreen):
+        self.fullscreen = fullscreen
+        self.reload(self.W,self.H)
+
+    def get_fullscreen(self):
+        return self.fullscreen
 
     def get_size(self):
         '''

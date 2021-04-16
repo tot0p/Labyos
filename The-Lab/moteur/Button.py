@@ -38,6 +38,9 @@ class Button:
         
 
 
+    def change_text(self,text):
+        self.text = text
+
     def aff(self,window,x,y):
         '''
         permet d'afficher le buton sur la window de type Window et de coordoné x , y (int,int)

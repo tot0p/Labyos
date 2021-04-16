@@ -14,17 +14,25 @@ class Option:
 
         self.file = Fichier('donne/touche.txt')
         self.touche = self.file.variableFileLecture()  
-        self.img = Image('assets/img/vide.png');self.img2 = Image('assets/img/vide.png');self.img3= Image('assets/img/vide.png'); self.img4=Image('assets/img/vide.png');self.imgApply=Image('assets/img/button/200x50.png');self.imgretour = Image('assets/img/button/retour.png')
+        self.img = Image('assets/img/vide.png');self.img2 = Image('assets/img/vide.png');self.img3= Image('assets/img/vide.png'); self.img4=Image('assets/img/vide.png');self.imgApply=Image('assets/img/button/200x50.png');self.imgretour = Image('assets/img/button/retour.png');self.imgfullscreen = Image('assets/img/button/200x50.png')
         self.img.resize(200,50);self.img2.resize(200,50);self.img3.resize(200,50);self.img4.resize(200,50);self.imgretour.resize(50,50);self.imgApply.resize(200,50)
         self.font= Font(20,'Thick',salmon)
         self.font2=Font(8,'Thick',salmon)
         self.button = [Button(self.img,self.font,'Avancer'),Button(self.img2,self.font,'reculer'),Button(self.img3,self.font,'gauche'),Button(self.img4,self.font,'droite')]
         self.retour = Button(self.imgretour,self.font2)
+        self.Bfullscreen = Button(self.imgfullscreen,self.font2)
         self.attribut = ["avancer","reculer","gauche","droite"]
         self.buttonApply = Button(self.imgApply,self.font,'Apply')
         self.view = ['option',False,'']
         self.keychange = [False,None,None]
+        #fullscreen
+        self.fileInfo= Fichier('donne/info.txt')
+        self.info = self.fileInfo.variableFileLecture()
+        self.infoTemp = self.fileInfo.variableFileLecture()
+    
 
+    def get_fullscreen(self):
+        return bool(int(self.info['fullscreen']))
 
     def events(self,event):
         '''
@@ -34,8 +42,11 @@ class Option:
             click , posCursor = clicgauche(event)
             if click == True:
                 for i in range(len(self.button)):
-                    g , v = self.button[i].EventClic(posCursor[0],posCursor[1],lambda : self.__change(self.attribut[i]))
+                    g , v = self.button[i].EventClic(posCursor[0],posCursor[1],lambda : self.__changeKey(self.attribut[i]))
                     if g:
+                        return self.view
+                g, v =self.Bfullscreen.EventClic(posCursor[0],posCursor[1], lambda : self.__changeFullscreen())
+                if g:
                         return self.view
                 g , v = self.retour.EventClic(posCursor[0],posCursor[1],lambda :self.__echap())
                 if g:
@@ -56,7 +67,9 @@ class Option:
         '''
         self.touche = self.file.variableFileLecture()  
         return ['menu',True,'']
-                
+          
+    def __changeFullscreen(self):
+        self.infoTemp['fullscreen'] = str(int(not self.get_fullscreen()))
 
     def eventEscape(self,event):
         '''
@@ -64,32 +77,39 @@ class Option:
         '''
         return escape(event)
 
+    def __setTexteFullscreen(self):
+        if bool(int(self.infoTemp['fullscreen'])):
+            self.Bfullscreen.change_text('Fullscreen')
+        else:
+            self.Bfullscreen.change_text('Fenetre')
+
+
     def __affall(self,window):
+        if self.get_fullscreen() != window.get_fullscreen():
+            window.set_fullscreen(self.get_fullscreen())
         self.buttonApply.aff(window,150,450)
         self.retour.aff(window,25,25)
-        self.font.aff(window,pygame.key.name(int(self.touche['avancer'])),400,65)
-        self.font.aff(window,pygame.key.name(int(self.touche['reculer'])),400,165)
-        self.font.aff(window,pygame.key.name(int(self.touche['gauche'])),400,265)
-        self.font.aff(window,pygame.key.name(int(self.touche['droite'])),400,365)
-        self.font.aff(window,'vaut',300,65)
-        self.font.aff(window,'vaut',300,165)
-        self.font.aff(window,'vaut',300,265)
-        self.font.aff(window,'vaut',300,365)
+        self.font.aff(window,pygame.key.name(int(self.touche['avancer'])),400,50)
+        self.font.aff(window,pygame.key.name(int(self.touche['reculer'])),400,150)
+        self.font.aff(window,pygame.key.name(int(self.touche['gauche'])),400,250)
+        self.font.aff(window,pygame.key.name(int(self.touche['droite'])),400,350)
+        self.font.aff(window,'vaut',300,50)
+        self.font.aff(window,'vaut',300,150)
+        self.font.aff(window,'vaut',300,250)
+        self.font.aff(window,'vaut',300,350)
+        self.__setTexteFullscreen()
+        self.Bfullscreen.aff(window,150,390)
         for i in range(len(self.button)):
-                self.button[i].aff(window,100,50+100*i)
+                self.button[i].aff(window,100,36+100*i)
 
     def affUpdate(self,window):
         '''
         fonction qui prend en paramètre: window de type Window
         sert a afficher la touche utiliser
         '''
-        print('il marche tu va rager')
         draw_fill_rectangle(Point(250,250),500,500,black,window)
         self.__affall(window)
-        #self.font.aff(window,pygame.key.name(int(self.touche['avancer'])),400,65)
-        #self.font.aff(window,pygame.key.name(int(self.touche['reculer'])),400,165)
-        #self.font.aff(window,pygame.key.name(int(self.touche['gauche'])),400,265)
-        #self.font.aff(window,pygame.key.name(int(self.touche['droite'])),400,365)
+
 
     def aff(self,window):
         '''
@@ -104,8 +124,11 @@ class Option:
         Fonction qui sert a afficher les nouvelle option
         '''
         self.file.variableFileWrite(self.touche)
+        self.fileInfo.variableFileWrite(self.infoTemp)
+        self.info = self.fileInfo.variableFileLecture()
         
-    def __change(self,attribut:str):
+        
+    def __changeKey(self,attribut:str):
         '''
         Fonction qui prend un attribut : str
         '''

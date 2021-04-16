@@ -18,6 +18,7 @@ from view.option import Option
 from view.win import Win
 from view.gameover import GameOver
 from moteur.sound import play_music ,load_music
+from moteur.fichier import Fichier
 
 
 def whoIsSelect(view):
@@ -40,13 +41,13 @@ if __name__ == '__main__':
     play_music(1)
     img = Image('assets/img/logo/logo.png')
     img.resize(50,50)
-    window = Window(10,10,'Labyos',img)
+    option = Option()
+    window = Window(10,10,'Labyos',img,fullscreen = option.get_fullscreen())
     run = 1
     tick = Tick(60)
     menu  = Menu()
     menuJouer = MenuJouer()
     menuLevel = MenuLevel()
-    option = Option()
     win = Win()
     gameover = GameOver()
     game = None
