@@ -1,6 +1,6 @@
 from tkinter import Tk
 from tkinter import messagebox
-
+import sys
 
 def error(errortext,stop):
 
@@ -10,4 +10,4 @@ def error(errortext,stop):
     messagebox.showerror("Erreur", errortext)
     tk.destroy()
     if stop:
-        exit(0)
+        sys.exit(0)
