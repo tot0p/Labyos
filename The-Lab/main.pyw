@@ -19,7 +19,8 @@ from view.win import Win
 from view.gameover import GameOver
 from moteur.sound import play_music ,load_music
 from moteur.fichier import Fichier
-
+from moteur.error import error
+import sys
 
 def whoIsSelect(view):
     '''
@@ -70,7 +71,10 @@ if __name__ == '__main__':
             if view[1]:
                 view[1] = False
                 game = Game(window,view[2])
-                game.aff()
+                if game.error:
+                    error("le niveau n'est pas valide , le jeu vas s'arréter",True)
+                else:
+                    game.aff()
             view = game.viewIs()
             game.affUpdate()
         elif Isoption:

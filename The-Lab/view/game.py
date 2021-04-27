@@ -11,24 +11,28 @@ from moteur.codeFile import codeFile
 
 class Game:
 
-    def __init__(self,window,filename): 
-        self.window = window
-        self.isFin = False
-        self.__load()
-        file =Fichier('donne/touche.txt')
-        touche = file.variableFileLecture()
-        self.av = int(touche['avancer'])
-        self.re = int(touche['reculer'])
-        self.le = int(touche['gauche'])
-        self.ri = int(touche['droite'])
-        self.pressed = {self.av : False , self.re : False , self.le : False,self.ri : False}
-        self.view = ['game',False,filename]
-        self.player = Player('assets/img/player/IDLE.png','assets/img/player/RUNDOWN.png')
-        self.code = codeFile(window,filename,self.player,self)
-        self.map = self.code.get_map()
-        self.naration = self.code.get_narration()
-        self.player.def_map(self.map)
-        self.fin = []
+    def __init__(self,window,filename):
+        try : 
+            self.window = window
+            self.isFin = False
+            self.__load()
+            file =Fichier('donne/touche.txt')
+            touche = file.variableFileLecture()
+            self.av = int(touche['avancer'])
+            self.re = int(touche['reculer'])
+            self.le = int(touche['gauche'])
+            self.ri = int(touche['droite'])
+            self.pressed = {self.av : False , self.re : False , self.le : False,self.ri : False}
+            self.view = ['game',False,filename]
+            self.player = Player('assets/img/player/IDLE.png','assets/img/player/RUNDOWN.png')
+            self.code = codeFile(window,filename,self.player,self)
+            self.map = self.code.get_map()
+            self.naration = self.code.get_narration()
+            self.player.def_map(self.map)
+            self.fin = []
+            self.error = None
+        except :
+           self.error = True
 
     def __load(self):
         '''
