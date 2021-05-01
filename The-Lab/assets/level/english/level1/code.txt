@@ -1,0 +1,14 @@
+level1.txt
+initGame
+{
+spawn(0(1;
+set_fog(0;
+}/
+endGameInLife
+{
+hist(welcome to my*labyrinth if you are*here it is because*you are a test subject(False(6000;
+hist(....(True(1000;
+}/
+endGameDead
+{
+}

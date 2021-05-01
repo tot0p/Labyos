@@ -1,0 +1,15 @@
+level8.txt
+initGame
+{
+spawn(0(5;
+set_fog(1;
+diff_fog(2;
+}/
+endGameInLife
+{
+hist(how dare you * cut me off * you're so bad * discipline(False(6000;
+hist(.....(True(1000;
+}/
+endGameDead
+{
+}

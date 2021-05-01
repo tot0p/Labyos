@@ -1,0 +1,15 @@
+level9.txt
+initGame
+{
+spawn(0(9;
+set_fog(1;
+diff_fog(2;
+}/
+endGameInLife
+{
+hist(Well, it's okay * I forgive you * the next level * will be very easy(False(6000;
+hist(...(True(1000;
+}/
+endGameDead
+{
+}

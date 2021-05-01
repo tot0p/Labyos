@@ -1,0 +1,10 @@
+None,None,None,None,None,None,fire,fire,None,fire
+None,fire,fire,fire,fire,None,None,None,None,fire
+None,None,None,None,None,fire,fire,None,fire,fire
+None,None,fire,fire,fire,fire,fire,None,None,None
+None,None,None,None,None,fire,fire,fire,fire,None
+None,fire,fire,fire,None,fire,None,None,fire,None
+fire,fire,fire,None,None,None,None,fire,fire,None
+None,fire,None,None,fire,None,None,None,fire,None
+None,fire,None,fire,fire,fire,fire,fire,fire,None
+None,fire,None,None,None,None,None,None,end,fire

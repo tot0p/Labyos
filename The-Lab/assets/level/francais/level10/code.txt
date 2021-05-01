@@ -1,0 +1,15 @@
+level10.txt
+initGame
+{
+spawn(8(0;
+set_fog(1;
+diff_fog(0;
+}/
+endGameInLife
+{
+hist(tu vois il etait*tres simple*meme ma mere l a*reussi du premier coup(False(6000;
+hist(...(True(1000
+}/
+endGameDead
+{
+}

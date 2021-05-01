@@ -1,0 +1,15 @@
+level6.txt
+initGame
+{
+spawn(4(0;
+set_fog(1;
+diff_fog(2;
+}/
+endGameInLife
+{
+hist(Ah yes if you can * not speak these because * you are a robot(False(6000;
+hist(...(True(1000;
+}/
+endGameDead
+{
+}

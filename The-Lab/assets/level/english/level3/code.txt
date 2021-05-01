@@ -1,0 +1,13 @@
+level3.txt
+initGame
+{
+spawn(4(0;
+}/
+endGameInLife
+{
+hist(oh yes you know * I forgot that I * told you * during our * first meeting(False(6000;
+hist(...(True(1000;
+}/
+endGameDead
+{
+}

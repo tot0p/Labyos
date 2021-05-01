@@ -1,0 +1,15 @@
+level5.txt
+initGame
+{
+spawn(3(9;
+set_fog(1;
+diff_fog(2;
+}/
+endGameInLife
+{
+hist(I don't find you * very talking anyway * go tell me that * you find me very beautiful(False(6000;
+hist(.....(True(1000;
+}/
+endGameDead
+{
+}

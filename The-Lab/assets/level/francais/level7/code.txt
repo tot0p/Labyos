@@ -1,0 +1,15 @@
+level7.txt
+initGame
+{
+spawn(9(4;
+set_fog(1;
+diff_fog(2;
+}/
+endGameInLife
+{
+hist(Hier j etait chez ma mere*et elle ma preparer*un croc monsieur delicieux(False(6000;
+hist(...(True(1000;
+}/
+endGameDead
+{
+}

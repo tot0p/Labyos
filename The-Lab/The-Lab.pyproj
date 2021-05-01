@@ -109,6 +109,8 @@
     <Folder Include="assets\level\level9\" />
     <Folder Include="assets\level\leveldemo\" />
     <Folder Include="assets\level\leveltest\" />
+    <Folder Include="assets\level\english\" />
+    <Folder Include="assets\level\francais\" />
     <Folder Include="moteur\" />
     <Folder Include="assets\" />
     <Folder Include="donne\" />

@@ -1,0 +1,15 @@
+level8.txt
+initGame
+{
+spawn(0(5;
+set_fog(1;
+diff_fog(2;
+}/
+endGameInLife
+{
+hist(comment tu ose me*couper la parole*tu es si mal*discipliner(False(6000;
+hist(.....(True(1000;
+}/
+endGameDead
+{
+}
