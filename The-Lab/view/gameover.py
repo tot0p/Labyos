@@ -3,6 +3,7 @@ from moteur.text import Font
 from moteur.Button import Button
 from moteur.color import *
 from moteur.event import *
+from moteur.func import whatislang
 
 
 class GameOver:
@@ -27,7 +28,12 @@ class GameOver:
 
     def aff(self,window):
         window.reload(500,500)
-        self.font.aff(window,'vous etes mort',100,150)
+        if whatislang(self.filename) == "english":
+            self.font.aff(window,'you are dead',150,150)
+            self.button = [Button(self.img,self.font,'Try again'),Button(self.img2,self.font3,'Back to Menu')]
+        else:
+            self.font.aff(window,'vous etes mort',100,150)
+            self.button = [Button(self.img,self.font,'Ressayer'),Button(self.img2,self.font3,'Retour aux Menu')]
         for i in range(len(self.button)):
                 self.button[i].aff(window,35+250*i,350)
 

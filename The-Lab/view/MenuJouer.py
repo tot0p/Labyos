@@ -63,13 +63,17 @@ class MenuJouer:
         '''
         return escape(event)
 
-    def aff(self,window):
+    def aff(self,window,lang):
         '''
         fonction qui prend en paramètre: window de type Window
         elle permet d'afficher les button '
         '''
         
         window.reload(500,500)
+        if lang == "english":
+            self.button = [Button(self.img,self.font,'History'),Button(self.img2,self.font,'Load'),Button(self.img3,self.font2)]
+        else:
+            self.button = [Button(self.img,self.font,'Histoire'),Button(self.img2,self.font,'Charger'),Button(self.img3,self.font2)]
         self.button[2].aff(window,25,25)
         for i in range(0,len(self.button)-1):
                 self.button[i].aff(window,150,200+100*i)

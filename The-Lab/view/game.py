@@ -15,7 +15,7 @@ class Game:
         try : 
             self.window = window
             self.isFin = False
-            self.__load()
+            self.__load(filename)
             file =Fichier('donne/touche.txt')
             touche = file.variableFileLecture()
             self.av = int(touche['avancer'])
@@ -34,11 +34,11 @@ class Game:
         except :
            self.error = True
 
-    def __load(self):
+    def __load(self,filename):
         '''
         permet d'afficher l'ecran de chargement le temp de chargement + 2 secondes
         '''
-        load = Load()
+        load = Load(filename)
         load.aff(self.window)
         self.window.update()
         wait(2000)
@@ -83,7 +83,7 @@ class Game:
             self.isFin = True
             for i in self.endGameInLife:
                 i()
-            self.fin = ['win',True,'']
+            self.fin = ['win',True,self.view[2]]
 
     def viewIs(self):
         if self.naration.stop() and self.fin != []:

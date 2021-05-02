@@ -60,11 +60,11 @@ if __name__ == '__main__':
         if Ismenu:
             if view[1]:
                 view[1] = False
-                menu.aff(window)
+                menu.aff(window,lang)
         elif Ismenujouer:
             if view[1]:
                 view[1] = False
-                menuJouer.aff(window)
+                menuJouer.aff(window,lang)
         elif Ismenulevel:
             if view[1]:
                 view[1] = False
@@ -92,6 +92,8 @@ if __name__ == '__main__':
         elif Iswin:
             if view[1]:
                 view[1]=False
+                win.set_filename(view[2])
+                view[2]=''
                 win.aff(window)
             win.affUpdate(window)
                 

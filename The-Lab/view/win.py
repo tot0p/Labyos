@@ -4,6 +4,7 @@ from moteur.Button import Button
 from moteur.color import *
 from moteur.event import *
 from moteur.time import Chrono
+from moteur.func import whatislang
 
 
 class Win:
@@ -32,6 +33,9 @@ class Win:
         return [name,True,filename]
 
 
+    def set_filename(self,filename):
+        self.filename = filename
+
     def affUpdate(self,window):
         '''
         fonction qui met a jour l'affichage
@@ -48,7 +52,12 @@ class Win:
         Fonction qui affiche un message lorsque le joueur à gagner
         '''
         window.reload(500,500)
-        self.font.aff(window,'Vous avez reussie',100,125)
+        if whatislang(self.filename) == "english":
+            self.font.aff(window,'You have succeeded',75,125)
+            self.button = [Button(self.img,self.font4,'Back to Levels'),Button(self.img2,self.font3,'Back to Menu')]
+        else:
+            self.font.aff(window,'Vous avez reussie',100,125)
+            self.button = [Button(self.img,self.font4,'Retour aux Levels'),Button(self.img2,self.font3,'Retour aux Menu')]
         # affiche le perso
         for i in range(len(self.button)):
                 self.button[i].aff(window,25+250*i,350)

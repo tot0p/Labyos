@@ -55,11 +55,15 @@ class Menu:
         '''
         return escape(event) and not self.exit
 
-    def aff(self,window):
+    def aff(self,window,lang):
         '''
         fonction qui affiche les 3 boutons definie lors de l'initialisation
         '''
         window.reload(500,500)
+        if lang == "english":
+            self.button = [Button(self.img,self.font,'Play'),Button(self.img2,self.font,'Option'),Button(self.img3,self.font,'Leave')]      
+        else:
+            self.button = [Button(self.img,self.font,'Jouer'),Button(self.img2,self.font,'Option'),Button(self.img3,self.font,'Quitter')]      
         self.logo.aff(window,200,50)
         for i in range(len(self.button)):
             self.button[i].aff(window,150,200+100*i)

@@ -115,8 +115,6 @@ class Option:
             self.font.aff(window,'worth',250,225)
             self.font.aff(window,'worth',250,275)
             self.button = [Button(self.img,self.font,'forward'),Button(self.img2,self.font,'back'),Button(self.img3,self.font,'left'),Button(self.img4,self.font,'right')]
-            for i in range(len(self.button)):
-                    self.button[i].aff(window,65,50*i+111)
         else:
             self.font.aff(window,pygame.key.name(int(self.touche['avancer'])),375,125)
             self.font.aff(window,pygame.key.name(int(self.touche['reculer'])),375,175)
@@ -126,8 +124,8 @@ class Option:
             self.font.aff(window,'vaut',275,175)
             self.font.aff(window,'vaut',275,225)
             self.font.aff(window,'vaut',275,275)
-            for i in range(len(self.button)):
-                    self.button[i].aff(window,75,50*i+111)
+            self.button = [Button(self.img,self.font,'Avancer'),Button(self.img2,self.font,'reculer'),Button(self.img3,self.font,'gauche'),Button(self.img4,self.font,'droite')]
+
 
 
         self.font.aff(window,'Option',200,50)
@@ -136,6 +134,9 @@ class Option:
         self.__setTexteFullscreen()
         self.Bfullscreen.aff(window,150,330)
         self.Blang.aff(window,150,390)
+
+        for i in range(len(self.button)):
+                    self.button[i].aff(window,65,50*i+111)
 
     def affUpdate(self,window):
         '''
