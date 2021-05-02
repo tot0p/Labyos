@@ -44,11 +44,13 @@ if __name__ == '__main__':
     img.resize(50,50)
     option = Option()
     window = Window(10,10,'Labyos',img,fullscreen = option.get_fullscreen())
+    lang = option.get_lang()
+    langUpdate = option.get_lang()
     run = 1
     tick = Tick(60)
     menu  = Menu()
     menuJouer = MenuJouer()
-    menuLevel = MenuLevel()
+    menuLevel = MenuLevel(lang)
     win = Win()
     gameover = GameOver()
     game = None
@@ -109,6 +111,10 @@ if __name__ == '__main__':
            elif Isoption:
                 view = option.events(event)
                 run = option.eventEscape(event)
+                langUpdate = option.get_lang()
+                if lang != langUpdate:
+                    menuLevel = MenuLevel(lang)
+                    lang = langUpdate
            elif Isgameover:
                 view = gameover.events(event)
                 run = gameover.eventEscape(event)

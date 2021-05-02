@@ -1,1 +1,2 @@
 fullscreen=0
+lang=francais
