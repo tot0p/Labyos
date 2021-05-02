@@ -77,10 +77,10 @@ class Option:
         return ['menu',True,'']
           
     def __changeFullscreen(self):
-        self.infoTemp['fullscreen'] = str(int(not self.get_fullscreen()))
+        self.infoTemp['fullscreen'] = str(int(not bool(int(self.infoTemp['fullscreen'] ))))
 
     def __changeLang(self):
-        if self.info['lang'] == "francais":
+        if self.infoTemp['lang'] == "francais":
             self.infoTemp['lang'] = "english"
         else:
             self.infoTemp['lang'] = "francais"
