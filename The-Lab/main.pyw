@@ -115,7 +115,8 @@ if __name__ == '__main__':
                 run = option.eventEscape(event)
                 langUpdate = option.get_lang()
                 if lang != langUpdate:
-                    menuLevel = MenuLevel(lang)
+                    menuLevel = MenuLevel(langUpdate)
+                    print('oui')
                     lang = langUpdate
            elif Isgameover:
                 view = gameover.events(event)

@@ -32,7 +32,7 @@ class GameOver:
             self.font.aff(window,'you are dead',150,150)
             self.button = [Button(self.img,self.font,'Try again'),Button(self.img2,self.font3,'Back to Menu')]
         else:
-            self.font.aff(window,'vous etes mort',100,150)
+            self.font.aff(window,'vous etes mort',150,150)
             self.button = [Button(self.img,self.font,'Ressayer'),Button(self.img2,self.font3,'Retour aux Menu')]
         for i in range(len(self.button)):
                 self.button[i].aff(window,35+250*i,350)
