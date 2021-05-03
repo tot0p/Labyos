@@ -11,11 +11,11 @@ from moteur.codeFile import codeFile
 
 class Game:
 
-    def __init__(self,window,filename):
+    def __init__(self,window,filename,lang):
         try : 
             self.window = window
             self.isFin = False
-            self.__load(filename)
+            self.__load(filename,lang)
             file =Fichier('donne/touche.txt')
             touche = file.variableFileLecture()
             self.av = int(touche['avancer'])
@@ -34,11 +34,11 @@ class Game:
         except :
            self.error = True
 
-    def __load(self,filename):
+    def __load(self,filename,lang):
         '''
         permet d'afficher l'ecran de chargement le temp de chargement + 2 secondes
         '''
-        load = Load(filename)
+        load = Load(lang)
         load.aff(self.window)
         self.window.update()
         wait(2000)
@@ -74,6 +74,7 @@ class Game:
             self.pressed[event.key] = False
         self.__control(event)
         evgame = self.player.inter()
+        print(evgame)
         if evgame == 'mort'and self.isFin == False:
             self.isFin = True
             for i in self.endGameDead:
@@ -84,6 +85,8 @@ class Game:
             for i in self.endGameInLife:
                 i()
             self.fin = ['win',True,self.view[2]]
+        elif evgame == 'tp' and self.isFin == False:
+            self.map.reload(self.player.getTpfile())
 
     def viewIs(self):
         if self.naration.stop() and self.fin != []:

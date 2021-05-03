@@ -63,6 +63,8 @@ class codeFile:
                 return lambda : self.map.set_fog(False)
             else:
                 return lambda : self.map.set_fog(True)
+        elif t[0] == 'tp':
+            return lambda : self.map.set_tp(int(t[1])*50,int(t[2])*50,t[3],int(t[4])*50,int(t[5])*50,self.player)
         elif t[0] == 'diff_fog':
             return lambda : self.map.fogofwar.set_dif(int(t[1]))
         elif t[0] == 'hist':

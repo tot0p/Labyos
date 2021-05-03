@@ -26,9 +26,9 @@ class GameOver:
         return [name,True,filename]
 
 
-    def aff(self,window):
+    def aff(self,window,lang):
         window.reload(500,500)
-        if whatislang(self.filename) == "english":
+        if lang == "english":
             self.font.aff(window,'you are dead',150,150)
             self.button = [Button(self.img,self.font,'Try again'),Button(self.img2,self.font3,'Back to Menu')]
         else:

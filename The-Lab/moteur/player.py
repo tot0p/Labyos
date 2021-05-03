@@ -198,8 +198,38 @@ class Player:
             return "mort"
         elif hg == "fin" or hd == "fin" or bg == "fin" or bd == "fin":
             return "fin"
+        elif hg == "tp" or hd == "tp" or bg == "tp" or bd == "tp":
+            return "tp"
         elif hg == None or hd == None or bg == None or bd == None:
             return None
+
+    def getTpfile(self):
+        xhg = (self.rect.x // 50)
+        yhg = (self.rect.y // 50)
+        xhd = ((self.rect.x + self.rect.width) // 50) 
+        yhd = (self.rect.y // 50)
+        xbg = (self.rect.x // 50)
+        ybg = ((self.rect.y + self.rect.height) // 50)
+        xbd = ((self.rect.x + self.rect.width) // 50)
+        ybd = (self.rect.y // 50)
+        hg = self.map.listoftiles[yhg][xhg].get_event()
+        hd = None
+        bg = None
+        bd = None
+        if self.map.listoftiles[yhd][xhd].get_law():
+            hd = self.map.listoftiles[yhd][xhd].get_event()      
+        if self.map.listoftiles[ybg][xbg].get_law():
+            bg = self.map.listoftiles[ybg][xbg].get_event()
+        if self.map.listoftiles[ybd][xbd].get_law():
+            bd = self.map.listoftiles[ybd][xbd].get_event()
+        if hg == "tp":
+            return (xhg , yhg)
+        elif hd == "tp":
+            return (xhd , yhd)
+        elif bg == "tp":
+            return (xbg , ybg)
+        elif bd == "tp":
+            return (xbd , ybd)
 
     def get_rect(self):
         '''

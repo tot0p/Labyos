@@ -21,6 +21,18 @@ class Map(pygame.sprite.Group):
         self.__load(filename)
 
 
+    def reload(self,cord):
+        filename = self.encodageMap[cord[1]][cord[0]].get_filename()
+        self.encodageMap[cord[1]][cord[0]].tp()
+        self.listoftiles = []
+        self.encodageMap = []
+        for y in range(self.window.H//50):
+            self.listoftiles.append([])
+        self.listofwall = []
+        self.fogofwar = FogOfWar(window)
+        self.afffogofwar = True
+        self.__load(filename)
+
     def __load(self,filename):
         '''
         charge le fichier contenant l'encodage de la map
@@ -47,6 +59,8 @@ class Map(pygame.sprite.Group):
                     tile = Fire(x,y)
                 elif self.encodageMap[i][k] == 'end':
                     tile = arrive(x,y)
+                elif self.encodageMap[i][k] == 'fakehole':
+                    tile = FakeHole(x,y)
                 elif self.encodageMap[i][k] != 'None':
                     tile = Wall(int(self.encodageMap[i][k]),x,y)
                     self.listofwall.append(tile)
@@ -54,6 +68,11 @@ class Map(pygame.sprite.Group):
                     tile = Sol(x,y)
                 self.listoftiles[i].append(tile)
                 self.add(tile)
+
+    def set_tp(self,x,y,filename,player,spawnx,spawny):
+        tile = TP(x,y,filename,player,spawnx,spawny)
+        self.encodageMap[y//50][x//50] = tile
+        self.add(tile)
 
     def set_fog(self,bool):
         '''
@@ -72,7 +91,50 @@ class Map(pygame.sprite.Group):
             self.fogofwar.aff(playerRect)
 
         
+class TP(pygame.sprite.Sprite):
+    def __init__(self,x,y,filename,player,spawnx,spawny):
+        super().__init__()
+        image = Image('assets/img/texture-none.png')
+        image.resize(50,50)
+        self.image = image.get_imgFormpygame()
+        self.rect = image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        print(x,y)
+        self.filename = filename
+        self.player = player
+        self.spawnx , self.spawny = spawnx,spawny
 
+
+    def get_filename(self):
+        return self.filename
+
+    def tp(self):
+        self.player.set_spawn(self.spawnx,self.spawny)
+
+    def get_rect(self):
+        '''
+        return le rect du sol
+        '''
+        return self.rect
+
+    def get_law(self):
+        '''
+        return si le joueur a droit être là
+        '''
+        return True
+
+    def get_event(self):
+        '''
+        return l'event pour le player
+        '''
+        return 'tp'
+    
+    def aff(self,window):
+        '''
+        affiche l'objet
+        '''
+        window.aff(self.image,self.rect.x,self.rect.y)
 
 class Wall(pygame.sprite.Sprite):
     def __init__(self,name,x,y):
@@ -176,6 +238,40 @@ class Hole(pygame.sprite.Sprite):
         '''
         window.aff(self.image,self.rect.x,self.rect.y)
    
+class FakeHole(pygame.sprite.Sprite):
+    def __init__(self,x,y):
+        super().__init__()
+        image = Image('assets/img/map/holdfse.png')
+        image.resize(50,50)
+        self.image = image.get_imgFormpygame()
+        self.rect = image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+
+    def get_rect(self):
+        '''
+        return le rect de l'objet
+        '''
+        return self.rect
+
+    def get_law(self):
+        '''
+        return si le joueur a droit être là
+        '''
+        return True
+
+    def get_event(self):
+        '''
+        return l'event pour le player
+        '''
+        return None
+
+    def aff(self,window):
+        '''
+        affiche l'objet
+        '''
+        window.aff(self.image,self.rect.x,self.rect.y)
+
 class arrive(pygame.sprite.Sprite):
     def __init__(self,x,y):
         super().__init__()

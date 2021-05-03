@@ -72,7 +72,7 @@ if __name__ == '__main__':
         elif Isgame:
             if view[1]:
                 view[1] = False
-                game = Game(window,view[2])
+                game = Game(window,view[2],lang)
                 if game.error:
                     error("le niveau n'est pas valide , le jeu vas s'arréter",True)
                 else:
@@ -88,13 +88,13 @@ if __name__ == '__main__':
             if view[1]:
                 view[1] = False
                 gameover.set_filename(view[2])
-                gameover.aff(window)
+                gameover.aff(window,lang)
         elif Iswin:
             if view[1]:
                 view[1]=False
                 win.set_filename(view[2])
                 view[2]=''
-                win.aff(window)
+                win.aff(window,lang)
             win.affUpdate(window)
                 
         for event in get_event():

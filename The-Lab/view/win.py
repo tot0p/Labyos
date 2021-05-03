@@ -4,7 +4,7 @@ from moteur.Button import Button
 from moteur.color import *
 from moteur.event import *
 from moteur.time import Chrono
-from moteur.func import whatislang
+
 
 
 class Win:
@@ -47,12 +47,12 @@ class Win:
                 self.playerimg.changeImagewithtiletable(self.nIDLE)
                 self.playerimg.aff(window,175,175)
 
-    def aff(self,window):
+    def aff(self,window,lang):
         '''
         Fonction qui affiche un message lorsque le joueur à gagner
         '''
         window.reload(500,500)
-        if whatislang(self.filename) == "english":
+        if lang == "english":
             self.font.aff(window,'You have succeeded',75,125)
             self.button = [Button(self.img,self.font4,'Back to Levels'),Button(self.img2,self.font3,'Back to Menu')]
         else:
