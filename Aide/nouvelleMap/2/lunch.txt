@@ -1,0 +1,14 @@
+map.txt
+initGame
+{
+spawn(7(1;
+set_fog(3;
+}/
+endGameInLife
+{
+hist(oh tu as survecu(False(1000;
+}/
+endGameDead
+{
+hist(je t informes que tu es mort(False(1000;
+}

@@ -1,0 +1,14 @@
+map.txt
+initGame
+{
+spawn(0(0;
+set_fog(0;
+}/
+endGameInLife
+{
+hist(demo(False(1000;
+}/
+endGameDead
+{
+hist(demo(False(1000;
+}

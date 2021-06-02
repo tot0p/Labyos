@@ -1,0 +1,14 @@
+anexe.txt
+initGame
+{
+spawn(1(1;
+}/
+endGameInLife
+{
+hist(                            bien joue(False(1000;
+hist(....(True(1000;
+}/
+endGameDead
+{
+hist(T nul(False(1000;
+}

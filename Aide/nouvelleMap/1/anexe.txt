@@ -1,0 +1,10 @@
+6,0,0,18,0,0,0,0,0,5
+1,None,hole,8,hole,None,None,None,fire,1
+1,None,None,None,None,None,11,None,None,1
+1,fire,10,9,None,fire,1,hole,None,1
+19,18,9,hole,10,0,17,9,None,1
+19,4,None,None,None,None,None,None,None,1
+1,None,None,6,0,5,fire,None,hole,1
+1,None,hole,1,end,8,hole,None,fire,1
+1,fire,end,1,None,None,None,None,None,1
+7,0,0,17,0,0,0,0,0,4
