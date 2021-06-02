@@ -62,11 +62,17 @@ class Fichier:
         f.close()
 
     def writeFollowing(self,contenu:str):
+        """
+        ecrit a la suite d'un fichier
+        """
         f = open(self.fName,'a',encoding=self.encodage)
         f.write(contenu)
         f.close()
 
     def writeFollowingTable(self,contenu):
+        """
+        ecrit a la suite d'un fichier de type table
+        """
         f = open(self.fName,'a',encoding=self.encodage)
         for i in range(len(contenu)):
             contenu[i] = '\n' + contenu[i]

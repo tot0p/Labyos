@@ -204,6 +204,9 @@ class Player:
             return None
 
     def getTpfile(self):
+        '''
+        franchement la flemme pour ça lit c pas trop compliqué
+        '''
         xhg = (self.rect.x // 50)
         yhg = (self.rect.y // 50)
         xhd = ((self.rect.x + self.rect.width) // 50) 

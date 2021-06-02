@@ -1,9 +1,8 @@
 import pygame
 import cmath
-
-#forme de graphics_nsi addapter pour le moteur du jeu
-
-# PARTIE 1.2 : CLASSES PREDEFINIES
+'''
+permet de faire des formes sur la Window
+'''
 
 class Point :
     """
@@ -16,7 +15,6 @@ class Point :
         self.x = x
         self.y = y
 
-    # Ajout Loïc
     def __eq__(self, other) :
         """
         Rend le P1 == P2 fonctionnel
@@ -25,14 +23,12 @@ class Point :
             return self.x == other.x and self.y == other.y
         return False
 
-    # Ajout Loïc
     def __ne__(self, other) :
         """
         Rend le P1 != P2 fonctionnel
         """
         return not self.__eq__(other)
 
-    # Ajout Loïc
     def __str__(self) :
         """
         Permet d'écrire des points dans la console

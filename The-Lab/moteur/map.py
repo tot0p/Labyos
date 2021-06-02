@@ -22,6 +22,9 @@ class Map(pygame.sprite.Group):
 
 
     def reload(self,cord):
+        '''
+        permet de recharger la map
+        '''
         filename = self.encodageMap[cord[1]][cord[0]].get_filename()
         self.encodageMap[cord[1]][cord[0]].tp()
         self.listoftiles = []
@@ -70,6 +73,10 @@ class Map(pygame.sprite.Group):
                 self.add(tile)
 
     def set_tp(self,x,y,filename,player,spawnx,spawny):
+        '''
+        (pour un ajout)
+        permet de tp le player
+        '''
         tile = TP(x,y,filename,player,spawnx,spawny)
         self.encodageMap[y//50][x//50] = tile
         self.add(tile)
@@ -92,6 +99,10 @@ class Map(pygame.sprite.Group):
 
         
 class TP(pygame.sprite.Sprite):
+
+    '''
+    (nouvel object actuellement pas fonctionnel)
+    '''
     def __init__(self,x,y,filename,player,spawnx,spawny):
         super().__init__()
         image = Image('assets/img/texture-none.png')
@@ -239,6 +250,9 @@ class Hole(pygame.sprite.Sprite):
         window.aff(self.image,self.rect.x,self.rect.y)
    
 class FakeHole(pygame.sprite.Sprite):
+    '''
+    (nouveau) mais pas encore de texture
+    '''
     def __init__(self,x,y):
         super().__init__()
         image = Image('assets/img/map/holdfse.png')

@@ -42,13 +42,19 @@ class Window:
         self.update()
 
     def set_fullscreen(self,fullscreen):
+        """
+        permet de définir le fullscreen
+        """
         self.fullscreen = fullscreen
         self.reload(self.W,self.H)
 
-    def get_fullscreen(self):
+    def get_fullscreen(self)->bool:
+        '''
+        permet de récuperer si c en fullscreen
+        '''
         return self.fullscreen
 
-    def get_size(self):
+    def get_size(self)-> tuple:
         '''
         return un tuple de la taille de la fenetre
         '''
