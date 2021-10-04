@@ -2,9 +2,14 @@ from tkinter import Tk
 from tkinter import messagebox
 import sys
 
+
+#Thomas Lemaitre
+
+
 def error(errortext,stop):
     '''
     permet de créé une fenetre d'erreur
+    (pas propre mais manque de temp)
     '''
     tk = Tk()
     tk.geometry("0x0")

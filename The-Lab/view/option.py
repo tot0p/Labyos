@@ -6,8 +6,10 @@ from moteur.event import *
 from moteur.fichier import Fichier
 from moteur.forme import draw_fill_rectangle , Point
 
-#g{avancer : z,reculer : s,aller a gauche : q,aller a droite : d}
-#g['avancer'] 
+
+#Dany Costa , modifié par Thomas lemaitre pour l'ajout de la langue
+
+
 class Option:
 
     def __init__(self):

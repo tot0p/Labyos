@@ -1,7 +1,9 @@
 import pygame
 from moteur.Image import Image
 from moteur.fichier import *
-from moteur.loadtiletable import load_tile_table
+from moteur.loadtiletable import load_tile_table #a remplacé avec Image
+
+#Thomas Lemaitre
 
 class Map(pygame.sprite.Group):
 

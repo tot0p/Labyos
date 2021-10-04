@@ -1,6 +1,8 @@
 import pygame
 from moteur.color import *
 
+#Thomas Lemaitre
+
 pygame.font.init()
 
 class Font(pygame.font.Font):

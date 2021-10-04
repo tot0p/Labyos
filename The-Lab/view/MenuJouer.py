@@ -6,6 +6,10 @@ from moteur.event import *
 from tkinter import Tk
 from tkinter.filedialog import *
 
+
+#Dany Costa , modifié par Thomas lemaitre pour l'ajout de la langue
+
+
 class MenuJouer:
 
     def __init__(self):

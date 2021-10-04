@@ -2,6 +2,8 @@ from moteur.fichier import Fichier
 from moteur.map import Map
 from moteur.Senario import Naration
 
+#Thomas Lemaitre
+
 class codeFile:
 
     def __init__(self,window,filename,player,view):

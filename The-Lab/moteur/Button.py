@@ -1,5 +1,8 @@
 from moteur.Image import *
 from moteur.text import *
+
+#Thomas Lemaitre
+
 class Button:
 
 

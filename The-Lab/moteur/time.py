@@ -1,5 +1,7 @@
 import pygame
 
+#Thomas Lemaitre
+
 class Tick:
 
     def __init__(self,tick):

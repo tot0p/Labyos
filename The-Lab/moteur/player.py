@@ -4,7 +4,7 @@ from moteur.time import Chrono
 from moteur.event import keypressed
 from moteur.map import Wall
 
-
+#Thomas Lemaitre
 
 class Player:
 

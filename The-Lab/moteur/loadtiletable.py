@@ -1,6 +1,11 @@
 import pygame
 import pygame.locals
 
+
+#Thomas Lemaitre 
+
+#Encore utilisé dans le projet a 1 endroit ou 2 mais obsolète (Remplacé par un methode dans Image)
+
 def load_tile_table(filename, width, height):
     '''
     permet de charger un tile table en natif avec pygame (pour la classe map) car flemme de changer avec l'objet Image (même si possible)

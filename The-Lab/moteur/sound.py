@@ -1,6 +1,8 @@
 import pygame
 
 
+#Thomas Lemaitre
+
 pygame.mixer.init()
 
 

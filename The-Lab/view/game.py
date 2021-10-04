@@ -8,6 +8,8 @@ from moteur.event import keypressed
 from moteur.fichier import Fichier
 from moteur.codeFile import codeFile
 
+#Dany Costa , modifié par Thomas lemaitre pour l'ajout de la langue et path du bug des Touches
+
 
 class Game:
 

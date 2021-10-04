@@ -1,6 +1,8 @@
 import pygame
 from moteur.mouse import *
 
+#Thomas Lemaitre
+
 def clicgauche(event):
     '''
     prend en entré un event de pygame et vérifie si c'est un clic gauche et return True et les possition du clic si event est un clic sinon False et None

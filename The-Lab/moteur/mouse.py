@@ -1,5 +1,5 @@
 import pygame
-
+#Thomas Lemaitre
 
 def get_posMouse():
     '''

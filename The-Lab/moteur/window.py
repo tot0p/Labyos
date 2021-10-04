@@ -1,5 +1,7 @@
 from moteur.color import *
 
+#Thomas Lemaitre
+
 class Window:
 
     def __init__(self,W,H,name,icon,bg_color=black,fullscreen=0):

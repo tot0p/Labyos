@@ -5,6 +5,7 @@ from moteur.color import *
 from moteur.event import *
 from moteur.time import Chrono
 
+#Dany Costa , modifié par Thomas lemaitre pour l'ajout de la langue
 
 
 class Win:

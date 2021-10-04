@@ -5,6 +5,8 @@ from moteur.color import *
 from moteur.func import whatislang
 
 
+#Dany Costa , modifié par Thomas lemaitre pour l'ajout de la langue
+
 class Load:
 
     def __init__(self,lang):

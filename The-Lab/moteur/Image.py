@@ -1,5 +1,8 @@
 import pygame
 
+
+#Thomas Lemaitre
+
 class Image:
     '''
     Objet contenant une image

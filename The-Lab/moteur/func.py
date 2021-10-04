@@ -1,4 +1,5 @@
-
+#Thomas Lemaitre
+#Pour le Changement de la lang
 
 def whatislang(path):
     '''

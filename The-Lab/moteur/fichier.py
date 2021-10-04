@@ -1,6 +1,6 @@
 import os
 
-#lib de 2019 coder par thomas
+#code de 2019 (fond de tiroir) par Thomas Lemaitre
 
 class Fichier:
     '''

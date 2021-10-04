@@ -3,6 +3,10 @@ from moteur.text import Font
 from moteur.Button import Button
 from moteur.color import *
 from moteur.event import *
+
+#Dany Costa , modifié par Thomas lemaitre pour l'ajout de la langue
+
+
 class MenuLevel:
     def __init__(self,lang):
         '''

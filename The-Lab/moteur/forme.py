@@ -4,6 +4,8 @@ import cmath
 permet de faire des formes sur la Window
 '''
 
+#Thomas lemaitre
+
 class Point :
     """
     Cette classe définit un point prenant deux champs x et y.

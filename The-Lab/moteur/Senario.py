@@ -3,6 +3,10 @@ from moteur.Image import Image
 from moteur.text import Font
 from moteur.color import *
 from moteur.time import Chrono
+
+#Yannis haddadi
+#path par Thomas Lemaitre
+
 class Naration:
 
     def __init__(self,window):
