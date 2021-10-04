@@ -18,7 +18,6 @@ class codeFile:
         self.player = player
         self.view = view
         self.initGame = []
-        #self.inGame = []
         self.endGameInLife = []
         self.endGameDead = []
         self.__load(window)
@@ -31,7 +30,7 @@ class codeFile:
 
         self.map = Map(window,self.path + '/' +self.contenu.pop(0))
         self.naration = Naration(window)
-        self.contenu = ''.join(self.contenu).split('/') #   'initGame{spawn(0,4)}/inGame{wall(3,5):to:wall(3,6)}/endGameInLife{hist('test')}/endGameDead{}'
+        self.contenu = ''.join(self.contenu).split('/') #   'initGame{spawn(0,4)}/endGameInLife{hist('test')}/endGameDead{}'
         for i in range(len(self.contenu)):
             self.contenu[i] = self.contenu[i].split('{')
             self.contenu[i].pop(0)
@@ -42,8 +41,6 @@ class codeFile:
                 if t != '':
                     if i == 0:
                         self.initGame.append(self.__keyword(t))
-                    #elif i == 1:
-                        #self.inGame.append(self.__keyword(t))
                     elif i == 1:
                         self.endGameInLife.append(self.__keyword(t))
                     elif i == 2:
@@ -63,8 +60,6 @@ class codeFile:
                 return lambda : self.map.set_fog(False)
             else:
                 return lambda : self.map.set_fog(True)
-        elif t[0] == 'tp':
-            return lambda : self.map.set_tp(int(t[1])*50,int(t[2])*50,t[3],int(t[4])*50,int(t[5])*50,self.player)
         elif t[0] == 'diff_fog':
             return lambda : self.map.fogofwar.set_dif(int(t[1]))
         elif t[0] == 'hist':

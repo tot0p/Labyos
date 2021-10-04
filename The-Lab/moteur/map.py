@@ -62,7 +62,7 @@ class Map(pygame.sprite.Group):
                     tile = Fire(x,y)
                 elif self.encodageMap[i][k] == 'end':
                     tile = arrive(x,y)
-                elif self.encodageMap[i][k] == 'fakehole':
+                elif self.encodageMap[i][k] == 'fakehole': #no texture
                     tile = FakeHole(x,y)
                 elif self.encodageMap[i][k] != 'None':
                     tile = Wall(int(self.encodageMap[i][k]),x,y)
@@ -72,14 +72,6 @@ class Map(pygame.sprite.Group):
                 self.listoftiles[i].append(tile)
                 self.add(tile)
 
-    def set_tp(self,x,y,filename,player,spawnx,spawny):
-        '''
-        (pour un ajout)
-        permet de tp le player
-        '''
-        tile = TP(x,y,filename,player,spawnx,spawny)
-        self.encodageMap[y//50][x//50] = tile
-        self.add(tile)
 
     def set_fog(self,bool):
         '''
@@ -98,54 +90,6 @@ class Map(pygame.sprite.Group):
             self.fogofwar.aff(playerRect)
 
         
-class TP(pygame.sprite.Sprite):
-
-    '''
-    (nouvel object actuellement pas fonctionnel)
-    '''
-    def __init__(self,x,y,filename,player,spawnx,spawny):
-        super().__init__()
-        image = Image('assets/img/texture-none.png')
-        image.resize(50,50)
-        self.image = image.get_imgFormpygame()
-        self.rect = image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
-        print(x,y)
-        self.filename = filename
-        self.player = player
-        self.spawnx , self.spawny = spawnx,spawny
-
-
-    def get_filename(self):
-        return self.filename
-
-    def tp(self):
-        self.player.set_spawn(self.spawnx,self.spawny)
-
-    def get_rect(self):
-        '''
-        return le rect du sol
-        '''
-        return self.rect
-
-    def get_law(self):
-        '''
-        return si le joueur a droit être là
-        '''
-        return True
-
-    def get_event(self):
-        '''
-        return l'event pour le player
-        '''
-        return 'tp'
-    
-    def aff(self,window):
-        '''
-        affiche l'objet
-        '''
-        window.aff(self.image,self.rect.x,self.rect.y)
 
 class Wall(pygame.sprite.Sprite):
     def __init__(self,name,x,y):
