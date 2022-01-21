@@ -1,0 +1,10 @@
+1,None,fakehole,None,1,None,None,None,10,5
+8,None,11,None,8,None,11,None,hole,1
+None,None,1,None,None,None,1,hole,end,1
+None,6,17,18,0,0,14,0,0,16
+None,8,end,1,None,end,1,hole,None,1
+None,hole,None,1,None,10,17,9,None,1
+None,11,None,1,None,None,None,None,None,1
+None,8,fire,7,0,0,0,9,None,1
+None,None,None,None,None,None,None,None,None,1
+0,0,0,0,0,0,0,0,0,4

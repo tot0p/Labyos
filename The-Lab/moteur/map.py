@@ -64,7 +64,7 @@ class Map(pygame.sprite.Group):
                     tile = Fire(x,y)
                 elif self.encodageMap[i][k] == 'end':
                     tile = arrive(x,y)
-                elif self.encodageMap[i][k] == 'fakehole': #no texture
+                elif self.encodageMap[i][k] == 'fakehole':
                     tile = FakeHole(x,y)
                 elif self.encodageMap[i][k] != 'None':
                     tile = Wall(int(self.encodageMap[i][k]),x,y)
@@ -201,7 +201,7 @@ class FakeHole(pygame.sprite.Sprite):
     '''
     def __init__(self,x,y):
         super().__init__()
-        image = Image('assets/img/map/holdfse.png')
+        image = Image('assets/img/map/fakehole.png')
         image.resize(50,50)
         self.image = image.get_imgFormpygame()
         self.rect = image.get_rect()
