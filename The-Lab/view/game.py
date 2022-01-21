@@ -1,3 +1,4 @@
+from tkinter.constants import FALSE
 from moteur.map import Map
 #import random
 from view.Load import Load
@@ -24,7 +25,7 @@ class Game:
             self.re = int(touche['reculer'])
             self.le = int(touche['gauche'])
             self.ri = int(touche['droite'])
-            self.pressed = {self.av : False , self.re : False , self.le : False,self.ri : False}
+            self.pressed = {self.av : False , self.re : False , self.le : False,self.ri : False,pygame.K_UP: False,pygame.K_DOWN : False, pygame.K_LEFT :False, pygame.K_RIGHT:False}
             self.view = ['game',False,filename]
             self.player = Player('assets/img/player/IDLE.png','assets/img/player/RUNDOWN.png')
             self.code = codeFile(window,filename,self.player,self)
@@ -50,10 +51,10 @@ class Game:
         defini les controle du jouer avec event un event pygame
         '''
         rect = self.player.get_rect()
-        if self.pressed[self.av] and rect.y > 0 : self.player.move_on_axe_y(False)
-        elif self.pressed[self.re] and rect.y+50 <500 :self.player.move_on_axe_y()
-        elif self.pressed[self.le] and rect.x > 0:self.player.move_on_axe_x(False)
-        elif self.pressed[self.ri]  and rect.x + 50 < 500 :self.player.move_on_axe_x()
+        if (self.pressed[self.av] or self.pressed[pygame.K_UP]) and rect.y > 0 : self.player.move_on_axe_y(False)
+        elif (self.pressed[self.re]  or self.pressed[pygame.K_DOWN]) and rect.y+50 <500 :self.player.move_on_axe_y()
+        elif (self.pressed[self.le] or self.pressed[pygame.K_LEFT]) and rect.x > 0:self.player.move_on_axe_x(False)
+        elif (self.pressed[self.ri] or self.pressed[pygame.K_RIGHT]) and rect.x + 50 < 500 :self.player.move_on_axe_x()
         else:self.player.move=False
 
     def load_event(self,initGame,endGameInLife,endGameDead):
