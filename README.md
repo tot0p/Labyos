@@ -1,5 +1,5 @@
 <h1>Labyos</h1>
-Fonctionne uniquement en 3.9 et utilise pygame 2.0.1
+Fonctionne uniquement en 3.9+ et utilise pygame 2.0.1
 
 <h1> Description</h1>
 
