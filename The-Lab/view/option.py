@@ -45,30 +45,29 @@ class Option:
         '''
         fonction qui prend en paramètre un event pygame et qui renvoie une liste qui est constituer d'un str option et d'un bool False 
         '''
-        if Mouse_on_window():
-            click , posCursor = clicgauche(event)
-            if click == True:
-                for i in range(len(self.button)):
-                    g , v = self.button[i].EventClic(posCursor[0],posCursor[1],lambda : self.__changeKey(self.attribut[i]))
-                    if g:
-                        return self.view
-                g, v =self.Bfullscreen.EventClic(posCursor[0],posCursor[1], lambda : self.__changeFullscreen())
-                if g:
-                        return self.view
-                g , v = self.Blang.EventClic(posCursor[0],posCursor[1],lambda :self.__changeLang())
+        click , posCursor = clicgauche(event)
+        if click == True:
+            for i in range(len(self.button)):
+                g , v = self.button[i].EventClic(posCursor[0],posCursor[1],lambda : self.__changeKey(self.attribut[i]))
                 if g:
                     return self.view
-                g , v = self.retour.EventClic(posCursor[0],posCursor[1],lambda :self.__echap())
-                if g:
-                    return v
-                g ,v = self.buttonApply.EventClic(posCursor[0],posCursor[1],lambda : self.__apply())
+            g, v =self.Bfullscreen.EventClic(posCursor[0],posCursor[1], lambda : self.__changeFullscreen())
+            if g:
+                    return self.view
+            g , v = self.Blang.EventClic(posCursor[0],posCursor[1],lambda :self.__changeLang())
+            if g:
                 return self.view
-            if self.keychange[0] and self.keychange[1] is not None and self.keychange[2] is not None:
-                    self.touche[self.keychange[1]] = str(self.keychange[2])
-                    self.keychange[0] = False
-            elif self.keychange[0] and self.keychange[1] is not None:
-                if event.type == pygame.KEYDOWN:
-                    self.keychange[2] = event.key
+            g , v = self.retour.EventClic(posCursor[0],posCursor[1],lambda :self.__echap())
+            if g:
+                return v
+            g ,v = self.buttonApply.EventClic(posCursor[0],posCursor[1],lambda : self.__apply())
+            return self.view
+        if self.keychange[0] and self.keychange[1] is not None and self.keychange[2] is not None:
+                self.touche[self.keychange[1]] = str(self.keychange[2])
+                self.keychange[0] = False
+        elif self.keychange[0] and self.keychange[1] is not None:
+            if event.type == pygame.KEYDOWN:
+                self.keychange[2] = event.key
         return self.view
 
     def __echap(self):

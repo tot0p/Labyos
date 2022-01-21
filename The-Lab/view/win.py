@@ -69,12 +69,11 @@ class Win:
         '''
         fonction qui prend en parametre un event et qui renvoie une liste qui est constituer d'un str win, d'un bool False et d'un str vide(self.view)
         '''
-        if Mouse_on_window():
-            click , posCursor = clicgauche(event)
-            if click == True:
-                for i in range(len(self.button)):
-                    g , v = self.button[i].EventClic(posCursor[0],posCursor[1],self.function[i])
-                    if g:   return v
+        click , posCursor = clicgauche(event)
+        if click == True:
+           for i in range(len(self.button)):
+                g , v = self.button[i].EventClic(posCursor[0],posCursor[1],self.function[i])
+                if g:   return v
         return self.view
 
 

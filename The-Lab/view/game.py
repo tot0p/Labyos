@@ -61,7 +61,6 @@ class Game:
         permet de charger les events du fichier code.txt
         '''
         self.initGame = initGame
-        #self.inGame = inGame
         self.endGameInLife = endGameInLife
         self.endGameDead = endGameDead
 
