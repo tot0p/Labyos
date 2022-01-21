@@ -34,7 +34,7 @@ class Map(pygame.sprite.Group):
         for y in range(self.window.H//50):
             self.listoftiles.append([])
         self.listofwall = []
-        self.fogofwar = FogOfWar(window)
+        self.fogofwar = FogOfWar(self.window)
         self.afffogofwar = True
         self.__load(filename)
 

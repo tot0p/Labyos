@@ -18,7 +18,7 @@ class Player:
         self.nRun = 0
         self.left = False
         self.up = False
-        self.velocity = 4
+        self.velocity = 2
         self.imgRun = Image(imgrunDown)
         self.imgRun.split(36,36,0)
         self.imgRun.resize_all_tile(40,40)
@@ -189,6 +189,3 @@ class Player:
         affiche le player sur la window de type window
         """
         self.imgbase.aff(window,self.rect.x,self.rect.y)
-
-        
-

@@ -45,7 +45,7 @@ class Game:
         self.window.update()
         wait(2000)
 
-    def __control(self,event):
+    def __control(self):
         '''
         defini les controle du jouer avec event un event pygame
         '''
@@ -73,20 +73,6 @@ class Game:
             self.pressed[event.key] = True
         elif event.type == pygame.KEYUP:
             self.pressed[event.key] = False
-        self.__control(event)
-        evgame = self.player.inter()
-        if evgame == 'mort'and self.isFin == False:
-            self.isFin = True
-            for i in self.endGameDead:
-                i()    
-            self.fin = ['gameover',True,self.view[2]]
-        elif evgame == 'fin' and self.isFin == False:
-            self.isFin = True
-            for i in self.endGameInLife:
-                i()
-            self.fin = ['win',True,self.view[2]]
-        #elif evgame == 'tp' and self.isFin == False:
-        #    self.map.reload(self.player.getTpfile())
 
     def viewIs(self):
         if self.naration.stop() and self.fin != []:
@@ -106,6 +92,20 @@ class Game:
         permet de mettre a jour l'affichage du jeu
         '''
         if self.naration.stop():
+            self.__control()
+            evgame = self.player.inter()
+            if evgame == 'mort'and self.isFin == False:
+                self.isFin = True
+                for i in self.endGameDead:
+                    i()    
+                self.fin = ['gameover',True,self.view[2]]
+            elif evgame == 'fin' and self.isFin == False:
+                self.isFin = True
+                for i in self.endGameInLife:
+                    i()
+                self.fin = ['win',True,self.view[2]]
+        #elif evgame == 'tp' and self.isFin == False:
+        #    self.map.reload(self.player.getTpfile())
             self.map.aff(self.window,self.player.rect)
             self.player.affUpdate(self.window)
         else:
