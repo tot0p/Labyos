@@ -38,10 +38,9 @@ class MenuJouer:
        
         '''
         tk = Tk()
-        tk.geometry("0x0")
+        tk.withdraw()
         tk.iconbitmap('assets/img/logo/logo.ico')
         filename = askopenfilename(initialdir="/Desktop", title="Ouvrir", filetypes=(("Text Files","*.txt"),("Python Files","*.py"),("all files","*.*")))   
-        tk.destroy()
         if filename != '':
             return [name,True,filename]
         else:
