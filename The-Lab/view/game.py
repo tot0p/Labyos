@@ -76,7 +76,6 @@ class Game:
             self.pressed[event.key] = False
         self.__control(event)
         evgame = self.player.inter()
-        print(evgame)
         if evgame == 'mort'and self.isFin == False:
             self.isFin = True
             for i in self.endGameDead:
@@ -87,8 +86,8 @@ class Game:
             for i in self.endGameInLife:
                 i()
             self.fin = ['win',True,self.view[2]]
-        elif evgame == 'tp' and self.isFin == False:
-            self.map.reload(self.player.getTpfile())
+        #elif evgame == 'tp' and self.isFin == False:
+        #    self.map.reload(self.player.getTpfile())
 
     def viewIs(self):
         if self.naration.stop() and self.fin != []:

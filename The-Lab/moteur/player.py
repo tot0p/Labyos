@@ -18,7 +18,7 @@ class Player:
         self.nRun = 0
         self.left = False
         self.up = False
-        self.velocity = 2
+        self.velocity = 4
         self.imgRun = Image(imgrunDown)
         self.imgRun.split(36,36,0)
         self.imgRun.resize_all_tile(40,40)
@@ -95,7 +95,6 @@ class Player:
                     self.nIDLE = 0
                 self.imgbase.changeImagewithtiletable(self.nIDLE)
             self.imgbase.aff(window,self.rect.x,self.rect.y)
-
         if self.move:
             if self.chrono.get_val()%5 == 0:
                 self.nIDLE = 0
@@ -105,64 +104,6 @@ class Player:
                 self.imgRun.changeImagewithtiletable(self.nRun)
             self.imgRun.aff(window,self.rect.x,self.rect.y)
 
-
-    def prev_check_collision1(self,xb,yb):
-        '''
-        marche mais obslete et pas fluide
-        '''
-        x = (self.rect.x+(self.velocity*xb))
-        y = (self.rect.y+(self.velocity*yb))
-        rect = self.map.listoftiles[y//50][x//50].get_rect()
-        if xb == 1:
-            xb =(self.rect.x+self.rect.width+(self.velocity*xb))
-            yb = (self.rect.y+self.rect.height+(self.velocity*yb))
-            law = self.map.listoftiles[y//50][x//50+1].get_law()
-            print("law :",law)
-            print("name1 :",type(self.map.listoftiles[y//50][x//50+1]))
-            if not (xb >= rect.x and xb <= (rect.x + rect.width)) :
-                if not (yb >= rect.y and yb <= rect.y + rect.height):
-                    law = law and self.map.listoftiles[y//50+1][x//50+1].get_law()
-                    print("name2 :",type(self.map.listoftiles[y//50+1][x//50+1]))
-            print("law :",law)
-            self.rect.x +=2
-            return not law
-        elif xb == -1:
-            yb =y+self.rect.height
-            law = self.map.listoftiles[y//50][x//50].get_law()
-            print("law :",law)
-            print("name1 :",type(self.map.listoftiles[y//50][x//50]))
-            if not (yb >= rect.y and yb <= rect.y + rect.height):
-                print('yes')
-                law = law and self.map.listoftiles[y//50+1][x//50].get_law()
-                print("name2 :",type(self.map.listoftiles[y//50+1][x//50]))
-            print("law :",law)
-            self.rect.x -=2
-            return not law
-        elif yb == 1:
-            xb =(self.rect.x+self.rect.width+(self.velocity*xb))
-            yb =(self.rect.y+self.rect.height+(self.velocity*yb))
-            law = self.map.listoftiles[y//50+1][x//50].get_law()
-            print("law :",law)
-            print("name1 :",type(self.map.listoftiles[y//50+1][x//50]))
-            if not (xb >= rect.x and xb <= rect.x + rect.width):
-               law = law and self.map.listoftiles[y//50+1][x//50+1].get_law()
-               print("name2 :",type(self.map.listoftiles[y//50+1][x//50+1]))
-            print("law :",law)
-            self.rect.y +=2
-            return not law
-        elif yb == -1:
-            xb =x+self.rect.width
-            law = self.map.listoftiles[y//50][x//50].get_law()
-            print("law :",law)
-            print("name1 :",type(self.map.listoftiles[y//50][x//50]))
-            if not (xb >= rect.x and xb <= rect.x + rect.width):
-                print('yes')
-                law = law and self.map.listoftiles[y//50][x//50+1].get_law()
-                print("name2 :",type(self.map.listoftiles[y//50][x//50+1]))
-            print("law :",law)
-            self.rect.y -=2
-            return not law
-        return False
 
     def check_collision(self):
         '''
@@ -198,14 +139,14 @@ class Player:
             return "mort"
         elif hg == "fin" or hd == "fin" or bg == "fin" or bd == "fin":
             return "fin"
-        elif hg == "tp" or hd == "tp" or bg == "tp" or bd == "tp":
-            return "tp"
+        #elif hg == "tp" or hd == "tp" or bg == "tp" or bd == "tp":
+        #    return "tp"
         elif hg == None or hd == None or bg == None or bd == None:
             return None
 
     def getTpfile(self):
         '''
-        franchement la flemme pour ça lit c pas trop compliqué
+        franchement la flemme pour ça lit c pas trop compliqué ^^
         '''
         xhg = (self.rect.x // 50)
         yhg = (self.rect.y // 50)
